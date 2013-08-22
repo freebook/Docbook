@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: chapter.htmlforms.xml 428 2012-06-16 11:12:06Z netkiller $ -->
+<chapter id="htmlforms">
+	<title>The DocBook HTML Forms Document Type</title>
+	<screen>
+$ sudo apt-get install docbook-html-forms
+	</screen>
+	<para>To use this module, specify the public and system identifiers of this module in your document type declaration. For example, to use this module to write a book, use the following document type declaration:</para>
+	<programlisting>
+	<![CDATA[
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook HTML Forms Module V1.2CR1//EN"
+               "http://www.oasis-open.org/docbook/xml/htmlforms/1.2CR1/dbforms.dtd">
+	]]>
+	</programlisting>
+	<para>Naturally, you can include an internal subset if you wish.</para>
+	<para>To incorporate this module into a higher-level customization layer, use the public and system identifiers of this module in your customization layer. For example:</para>
+	<programlisting>
+	<![CDATA[
+
+<!DOCTYPE % docbookforms PUBLIC "-//OASIS//DTD DocBook HTML Forms Module V1.2CR1//EN"
+                        "http://www.oasis-open.org/docbook/xml/htmlforms/1.2CR1/dbforms.dtd">
+%docbookforms;
+	]]>
+	</programlisting>
+</chapter>

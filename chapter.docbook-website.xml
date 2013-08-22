@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="docbook-website">
+	<title>docbook-website - XML Website DTD and XSL Stylesheets</title>
+	<screen>
+sudo apt-get install docbook-website
+	</screen>
+	<screen>
+#!/bin/bash
+export DSSSL=/usr/share/xml/docbook/stylesheet/nwalsh/xhtml/onechunk.xsl
+mkdir tmp
+cd tmp
+xsltproc --stringparam html.stylesheet docbook.css ${DSSSL} ../book.xml
+	</screen>
+</chapter>

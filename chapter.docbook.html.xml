@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="html">
+	<title>Docbook HTML 输出选项</title>
+	<subtitle>HTML output options</subtitle>
+	<!-- http://docbook.sourceforge.net/release/xsl/current/doc/ -->
+	<section id="html.filename">
+		<title>指定多页输出时html文档名</title>
+		<screen>
+		<![CDATA[
+我们把docbook文档转换成html文档时，可以转换成一个大的html文档，也可以转换成多页的html文档。当转换成多页是，默认的文件是以ch01.html、ch02.html方式命名的，较不直观。我们可在docbook文档中添加一个属性，使它输出时按我们指定的文件名输出。
+
+方法一：
+<chapter><?dbhtml filename="first.html" ?>
+<title>Introduction</title>
+...
+		]]>
+		</screen>
+		<screen>
+		<![CDATA[
+方法二：
+<chapter id="first">
+<title>Introduction</title>
+...
+
+xsltproc --stringparam  use.id.as.filename 1 chunk.xsl myfile.xml
+		]]>
+		</screen>
+	</section>
+	<section id="html.dir">
+		<title>指定输出路径</title>
+		<screen>
+		<![CDATA[
+默认转换后的文档是保存在当前目录的，我们可在xsltproc命令行用-o选项指定转换后文档的输出路径，另外一种是在docbook中指定。
+
+<book><?dbhtml dir="neo" ?>
+<title>Docbook Guide</title>
+...
+<chapter id="first"><?dbhtml dir="technic" ?>
+...
+<chapter id="second">
+...
+<appendix id="three"><?dbhtml dir="read" ?>
+...
+
+输出后的路径：
+jims/index.html
+jims/technic/first.html
+jims/second.html
+jims/read/three.html
+		]]>
+		</screen>
+	</section>
+	<!-- http://www.sagehill.net/docbookxsl/InsertExtHtml.html -->
+	<section id="html.include">
+		<title>包含HTML文件</title>
+		<screen>
+		<![CDATA[
+...
+</para>
+<?dbhtml-include href="mycode.html"?>
+<para>
+...
+		]]>
+		</screen>
+	</section>
+	<section id="html.copy-of">
+		<title>包含HTML节点</title>
+		<screen>
+		<![CDATA[
+<xsl:template name="user.header.content">
+   <xsl:variable name="codefile" select="document('mycode.html',/)"/>
+   <xsl:copy-of select="$codefile/htmlcode/node()"/>
+</xsl:template>
+		]]>
+		</screen>
+	</section>
+	<section id="html.icon">
+		<title>图标</title>
+		<subtitle>Docbook icon graphics</subtitle>
+		<section>
+			<title>Admonition graphics</title>
+			<para>admon.graphics 1</para>
+			<screen>
+xsltproc  --stringparam admon.graphics 1 docbook.xsl myfile.xml
+			</screen>
+		</section>
+		<section>
+			<title>导航图标</title>
+			<subtitle>Navigational icons</subtitle>
+			<screen>
+xsltproc --stringparam  navig.graphics 1  chunk.xsl  myfile.xml
+			</screen>
+		</section>
+		<section>
+			<title>Callout icons</title>
+			<screen>
+If you use callout graphics, then there are three parameters that give you more control over the generated img tag.
+
+callout.graphics.extension
+Use this parameter to change the icon file extension from .png to something else. Of course, you must have the graphics that match that extension.
+
+callout.graphics.path
+Use this parameter to change the generated directory name from the default images/callouts/. Be sure to include the trailing slash.
+
+callout.graphics.number.limit
+Use this parameter to set the highest number for which you have a callout graphic. The stylesheets are distributed with callout graphics files with numbers up to 15, but you could create graphics with additional numbers if you need them. If you have more numbers but you do not reset this parameter, then any numbers over 15 will still format like (16).
+			</screen>
+		</section>
+	</section>
+</chapter>

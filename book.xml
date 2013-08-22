@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: book.xml 559 2013-04-10 07:03:49Z netkiller $ -->
+<!--
+<?xml-stylesheet type="text/xsl" href="../stylesheet/docbook-article.xsl"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V5.0//EN"
+	"http://www.oasis-open.org/docbook/xml/5.0b5/dtd/docbook.dtd" [
+-->
+<!DOCTYPE subject SYSTEM "/usr/share/xml/docbook/schema/dtd/5.0/docbook.dtd" [
+	<!ENTITY book.info.author.xml			SYSTEM "../common/book.info.author.xml">
+	<!ENTITY book.info.legalnotice.xml		SYSTEM "../common/book.info.legalnotice.xml">
+	<!ENTITY book.info.abstract.xml			SYSTEM "../common/book.info.abstract.xml">
+    <!ENTITY book.preface.xml           	SYSTEM "../common/book.preface.xml">
+	<!ENTITY preface.about.me.xml       	SYSTEM "../common/about.me.xml">
+	<!ENTITY book.dedication.xml       		SYSTEM "../common/book.dedication.xml">
+
+	<!ENTITY chapter.docbook 			 	SYSTEM "chapter.docbook.xml">
+	<!ENTITY chapter.docbook.doctype.xml 	SYSTEM "chapter.docbook.doctype.xml">
+	<!ENTITY chapter.docbook.list.xml	 	SYSTEM "chapter.docbook.list.xml">
+	<!ENTITY chapter.docbook.paragraphs.xml	SYSTEM "chapter.docbook.paragraphs.xml">
+	<!ENTITY chapter.docbook.admonition.xml	SYSTEM "chapter.docbook.admonition.xml">
+	<!ENTITY chapter.docbook-website.xml	SYSTEM "chapter.docbook-website.xml">
+	<!ENTITY chapter.docbook.epub.xml	 	SYSTEM "chapter.docbook.epub.xml">
+	<!ENTITY chapter.docbook.html.xml	 	SYSTEM "chapter.docbook.html.xml">
+
+	<!ENTITY chapter.htmlforms.xml		 	SYSTEM "chapter.htmlforms.xml">
+
+	<!ENTITY chapter.markdown.xml		 	SYSTEM "chapter.markdown.xml">
+	<!ENTITY chapter.sphinx.xml 	 		SYSTEM "chapter.sphinx.xml">
+	<!ENTITY chapter.team.xml			 	SYSTEM "chapter.team.xml">
+
+	<!ENTITY chapter.tex 				 	SYSTEM "chapter.tex.xml">
+	<!ENTITY chapter.tex.xetex.xml		 	SYSTEM "chapter.tex.xetex.xml">
+]>
+<book xml:base="http://netkiller.sf.net/book/publish/"
+	xmlns="http://docbook.org/ns/docbook" xml:lang="zh-cn">
+	<info>
+		<title>Netkiller Docbook 手札</title>
+		<subtitle>Docbook, EPUB and Latex</subtitle>
+		&book.info.author.xml;
+		<copyright>
+			<year>2008</year>
+			<year>2009</year>
+			<year>2010</year>
+			<year>2011</year>
+			<year>2012</year>
+			<year>2013</year>
+			<holder>Netkiller(Neo Chan). All rights reserved.</holder>
+		</copyright>
+		<pubdate>$Date: 2013-04-10 15:03:49 +0800 (Wed, 10 Apr 2013) $</pubdate>
+		<releaseinfo>
+			<para>文档始创于<date>2008-5-24</date></para>
+		</releaseinfo>
+
+		&book.info.legalnotice.xml;
+		&book.info.abstract.xml;
+		<keywordset>
+			<keyword>docbook</keyword>
+			<keyword>latex</keyword>
+			<keyword>epub</keyword>
+		</keywordset>
+	</info>
+
+	&book.dedication.xml;
+	&book.preface.xml;
+
+	&chapter.docbook;
+	&chapter.tex;
+	&chapter.markdown.xml;
+	&chapter.sphinx.xml;
+	&chapter.team.xml;
+
+</book>

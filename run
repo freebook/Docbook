@@ -1,0 +1,8 @@
+#!/bin/bash
+export DSSSL=/usr/share/xml/docbook/stylesheet/nwalsh/xhtml/onechunk.xsl
+mkdir tmp
+cd tmp
+xsltproc --stringparam html.stylesheet docbook.css ${DSSSL} ../book.xml
+mv * /home/neo/public_html/book/document/
+cd ..
+rm -rf tmp

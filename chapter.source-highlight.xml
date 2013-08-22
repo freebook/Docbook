@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="source-highlight">
+	<title>Source-highlight - convert source code to syntax highlighted document</title>
+	<para>http://www.gnu.org/software/src-highlite/source-highlight.html</para>
+	<screen>
+     source-highlight --src-lang cpp --out-format html \
+         --input <C++ file> \
+         --output <html file> \
+         --style-file <style file> \
+         options
+	</screen>
+	<section>
+		<title>tex</title>
+		<screen>
+source-highlight -f texinfo -i test.java -o test.java.texinfo -n
+		</screen>
+	</section>
+</chapter>

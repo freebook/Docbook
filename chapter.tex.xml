@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id: chapter.tex.xml 623 2013-06-20 09:59:17Z netkiller $ -->
+<part id="index"><?dbhtml dir="tex" ?>
+	<title>Tex</title>
+	<chapter id="tex.tools">
+		<title>Document Tools</title>
+		<section id="texlive">
+			<title>texlive - TeX Live: A decent selection of the TeX Live packages</title>
+			<screen>
+sudo apt-get install texlive
+			</screen>
+		</section>
+		<section id="latex2html">
+			<title>latex2html</title>
+			<para>install latex2html</para>
+			<screen>
+sudo apt-get install latex2html
+			</screen>
+			<para>latex2html charset='utf-8'</para>
+			<para><![CDATA[ <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8"> ]]></para>
+			<screen>
+latex2html -html_version 4.0,gb18030,unicode index.latex
+			</screen>
+			<para>Icons</para>
+			<screen>
+latex2html -local_icons index.latex
+			</screen>
+<!--
+ vim ~/.latex2html-init
+$CHARSET='utf-8';
+$USE_UTF=1;
+ -->
+		</section>
+		<section id="texi2html">
+			<title>texi2html</title>
+			<screen>
+$ sudo apt-get install texi2html
+			</screen>
+		</section>
+		&chapter.tex.xetex.xml;
+		<section id="tex2page">
+			<title>tex2page</title>
+			<para>install tex2page</para>
+			<screen>
+sudo apt-get install mzscheme
+			</screen>
+			<para>reference http://docs.huihoo.com/homepage/shredderyin/tex2page/intro.html</para>
+		</section>
+		<section id="cjk">
+			<title>CJK</title>
+			<para>CJK</para>
+			<screen>
+$ sudo apt-get install texlive cjk-latex freetype1-tools
+$ sudo apt-get install latex-cjk-all
+$ sudo mkdir -p  /usr/share/texmf/fonts/tfm /usr/share/texmf/fonts/truetype
+			</screen>
+			<example>
+				<title>example.latex</title>
+				<screen>
+\documentclass{article}
+\usepackage{CJK}
+\begin{document}
+\begin{CJK*}{UTF8}{simsun}
+中文
+\end{CJK*}
+\end{document}
+				</screen>
+				<para>生成html文件</para>
+				<screen>
+latex2html -split 0 example.latex
+				</screen>
+			</example>
+			<para>Fonts</para>
+			<screen>
+neo@master:~$ cd /usr/share/fonts/
+neo@master:/usr/share/fonts$ cp -r /home/neo/Fonts .
+neo@master:/usr/share/fonts$ sudo cp -r /home/neo/Fonts .
+
+neo@master:/usr/share/fonts$ cd Fonts/
+neo@master:/usr/share/fonts/Fonts$ sudo mkfontscale
+neo@master:/usr/share/fonts/Fonts$ sudo mkfontdir
+neo@master:/usr/share/fonts/Fonts$ sudo fc-cache
+			</screen>
+		</section>
+		<section id="texstudio">
+			<title>TeXstudio(LaTeX 编辑器)</title>
+			<para>http://texstudio.sourceforge.net/</para>
+		</section>
+	</chapter>
+	<chapter id="gb2312-utf-8">
+		<title>编码转换</title>
+		<para>gb2312转utf-8</para>
+		<screen>
+		<![CDATA[
+for f in `find .`; do [ -f $f ] && perl -MEncode -pi -e '$_=encode_utf8(decode(gb2312=>$_))' $f; done;
+		]]>
+		</screen>
+	</chapter>
+	<!-- http://latex.mschroeder.net/index_en.php -->
+	<chapter id="documentclass">
+		<title>排版</title>
+		<para>选择A4纸</para>
+		<screen>
+\documentclass[a4paper,12pt]{book}
+		</screen>
+		<para>设置页边距</para>
+		<para>Word中默认的页边距为 上边距=2.54cm, 下边距=2.54cm, 左边距=3.17cm, 右边距=3.17cm </para>
+		<screen>
+\usepackage[top=1in,bottom=1in,left=1.25in,right=1.25in]{geometry}
+		</screen>
+		<para>我的习惯 2cm </para>
+		<screen>
+\usepackage[top=20mm,bottom=20mm,left=20mm,right=20mm]{geometry}
+		</screen>
+	</chapter>
+	<chapter id="document">
+		<title>文章的组成元素</title>
+		<para>标题</para>
+		<screen>
+\title{文章的题目}
+\author{作者姓名}
+\date{2005/09/23}
+\maketitle
+		</screen>
+		<para>abstract</para>
+		<screen>
+\begin{abstract}
+	put your abstract here...
+\end{abstract}
+
+		</screen>
+		<para>目录</para>
+		<screen>
+\tableofcontents
+		</screen>
+		<para>章节</para>
+		<screen>
+\chapter{章的名称}
+\section{节的名称}
+\subsection{小节的名称}
+\subsubsection{子节的名称}
+		</screen>
+		<para>索引</para>
+		<screen>
+\printindex
+		</screen>
+		<para>参考文献</para>
+		<screen>
+\begin{thebibliography}
+\bibitem{}参考文献1
+\bibitem{}参考文献2
+\end{thebibliography}
+		</screen>
+		<example>
+			<title>article.latex</title>
+			<programlisting>
+% This is a comment line
+
+\documentclass{article}
+
+\begin{document}
+
+% Note to self:
+%    I must change this title later!
+\title{Hello World}
+
+\author{Your Name\\
+	Department of Computer Science\\
+	Courant Institute, NYU}
+\maketitle
+
+\begin{abstract}
+	...put your abstract here...
+\end{abstract}
+
+\section{First Section}
+	...text...
+\subsection{First subsection}
+	...text...
+\subsection{Second subsection}
+	...text...
+\section{Second Section}
+	...text...
+
+...and so on...
+\end{document}
+			</programlisting>
+		</example>
+		<example>
+			<title>book.latex</title>
+			<programlisting>
+% This is a comment line
+
+\documentclass{article}
+
+\begin{document}
+
+% Note to self:
+%    I must change this title later!
+\title{Hello World}
+
+\author{Your Name\\
+	Department of Computer Science\\
+	Courant Institute, NYU}
+\maketitle
+
+\begin{abstract}
+	...put your abstract here...
+\end{abstract}
+
+\chapter{First Chapter}
+	...text...
+\section{First Section}
+	...text...
+\subsection{First subsection}
+	...text...
+\subsection{Second subsection}
+	...text...
+
+\chapter{Second Chapter}
+	...text...
+\section{Second Section}
+	...text...
+
+...and so on...
+\end{document}
+			</programlisting>
+		</example>
+	</chapter>
+	<chapter id="fonts">
+		<title>Fonts</title>
+		<para>you can have bold font, italics font, etc as follows:</para>
+		<programlisting>
+{\bf This is in bold} and
+{\it this is in italics}
+and this is in default roman
+{\rm as is this}.
+		</programlisting>
+		<section id="font.size">
+			<title>Sizes </title>
+			<programlisting>
+\tiny
+\scriptsize
+\footnotesize
+\small
+\normalsize
+\large
+\Large
+\LARGE
+\huge
+\Huge
+			</programlisting>
+		</section>
+		<section>
+			<title>Styles</title>
+			<para>Here is a simple example that will probably show you all you need to know about bold, italics, and underlining.</para>
+			<programlisting>
+When something is \emph{really}, \textbf{really} important, you can \underline{underline it}, \emph{italicize it}, \textbf{bold it}. If you \underline{\textbf{\emph{must do all three}}}, then you can nest them.
+			</programlisting>
+		</section>
+	</chapter>
+	<chapter id="list">
+		<title>项目符号和编号</title>
+		<para>项目符号</para>
+		<screen>
+\begin{itemize}
+\item 我的第一个项目
+\item 我的第二个项目
+\item 我的第三个项目
+\end{itemize}
+		</screen>
+		<para>项目编号</para>
+		<screen>
+\begin{enumerate}
+\item 我的第一个项目
+\item 我的第二个项目
+\item 我的第三个项目
+\end{enumerate}
+		</screen>
+		<para>修改 \enumerate 的编号格式</para>
+		<screen>
+\usepackage{enumerate}
+
+然后enumerate环境就可以使用一个可选参数，像这样：
+
+\begin{enumerate}[(a)]
+\item $(p\rightarrow(q\rightarrow p))$;
+\item $((q\lor r)\rightarrow((\neg r)\rightarrow q))$;
+\end{enumerate}
+
+[]里面的 (a) 出来的结果是 (a)(b)(c)(d)这样子的。还可以用如下的：
+1，得到1,2,3,4....
+i，得到i,ii,iii.....
+I，得到I,II,III....
+a，得到a,b,c,d.....
+A，得到A,B,C,D....
+
+还可以加各种修饰，比如
+[Exer. i]，得到 Exer. i，Exer. ii，Exer. iii， Exer. iv，等等
+
+你要的这种结果稍微麻烦一点，要把[]用花括号括起来
+\begin{enumerate}[{[}1{]}]
+\item $(p\rightarrow(q\rightarrow p))$;
+\item $((q\lor r)\rightarrow((\neg r)\rightarrow q))$;
+\end{enumerate}
+		</screen>
+		<para>无符号</para>
+		<screen>
+\begin{description}
+\item 我的第一个项目
+\item 我的第二个项目
+\item 我的第三个项目
+\end{description}
+
+\begin{description}
+\item[(a)] First item...
+\item[(b)] Second item...
+\end{description}
+
+		</screen>
+	</chapter>
+	<chapter id="table">
+		<title>表格</title>
+		<para>使用tabular 环境可以生成表格，见下面这个例子：</para>
+		<screen>
+<![CDATA[
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline\\
+编号 & 姓名 & 性别 & 年龄 & 地址 & 电话号码\\
+\hline\\
+1    & 张三 & 男 & 45 & 重庆工学院 &12345678\\
+\hline\\
+2 & 李四 & 女 & 29 & 重庆杨家坪 & 654321\\
+\hline
+\end{tabular}
+]]>
+		</screen>
+		<para>
+<![CDATA[
+			这里要注意了，我们在第一行中，有几个 c 就表示有几列， c 表示你的列是居中对齐的，如果你想居左或居右，请用 l 或 r 。
+
+如果你的某行中的某一列是空的，你也要列出来，放个空格在那里就行了，你甚至可以什么都不放，在要空的那里前后各放一个 & 符号就行。
+
+在这里看到，对齐是用& 来实现的，我们前面说过。竖线是用 c 两边的那些竖杠实现的，横线是用命令\hline来实现的。如果你不想要这些线，你可以把它们去掉。
+]]>
+		</para>
+		<!-- \multicolumn -->
+	</chapter>
+
+	<chapter id="image">
+		<title>图片</title>
+			<para>\documentclass[12pt]{article} 下面加入</para>
+			<screen>
+\usepackage{graphicx}
+		</screen>
+		<para>插入图片</para>
+		<screen>
+\includegraphics[width=0.8\textwidth]{fig1.eps}
+		</screen>
+	</chapter>
+	<chapter id="include">
+		<title>分割章节</title>
+		<para>main.tex</para>
+		<screen>
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{CJK}
+\begin{document}
+\begin{CJK*}{GBK}{song}
+
+\input{sec1.tex}
+\include{sec2.tex}
+\end{CJK*}
+		</screen>
+		<para>sec1.tex</para>
+		<screen>
+\section{第一节}
+恭承嘉惠兮，俟罪长沙。侧闻屈原兮，自沉汩罗。造托湘流兮，敬吊先生。
+		</screen>
+		<para>sec2.tex</para>
+		<screen>
+\section{第一节}
+贾生名谊，洛阳人也。年十八，以能诵诗属书闻于郡中。
+		</screen>
+	</chapter>
+		<!--
+在 /etc/apt/sources.list 中添加源:
+
+代码:
+    deb http://chinese.alioth.debian.org latex-cjk/
+    deb-src http://chinese.alioth.debian.org latex-cjk/
+
+然后
+代码:
+
+    apt-get install latex-cjk latex-cjk-chinese latex-cjk-chinese-arphic-gbsn00lp
+
+同样可以安装其他字体. 在 TeX 文件中将中文包含在
+代码:
+    \begin{CJK*}{UTF8}{gbsn}
+    ...
+    \end{CJK*}
+环境中即可. 注意文件编码需为 UTF-8
+
+
+ftp://cle.linux.org.tw/pub2/tex/cjk/fonts/nsungt1
+
+这里有个新宋的utf8 gb big5下面的字体
+
+安装也很方便 ./install.sh
+
+		 -->
+
+</part>

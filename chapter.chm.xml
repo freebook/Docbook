@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter>
+	<title>CHM to HTML under linux</title>
+	<screen>
+$ sudo apt-get install libchm-bin
+extract_chmLib book.chm outdir
+	</screen>
+
+	<section id="chmc">
+		<title>chmc</title>
+		<screen>
+sudo apt-get install libconfig8-dev libconfig++8-dev
+
+tar zxvf chmc-0.6.tar.gz
+cd chmc-0.6
+./configure --prefix=/srv/chmc-0.6
+make
+sudo make install
+		</screen>
+	</section>
+</chapter>

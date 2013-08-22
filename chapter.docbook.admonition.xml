@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="admonition">
+	<title>Admonition</title>
+	<para>caution, important, note, tip, warning</para>
+	<section id="caution">
+		<title>caution</title>
+		<programlisting>
+		<![CDATA[
+<para><caution>Text goes here.</caution></para>
+		]]>
+		</programlisting>
+		<para><caution>Text goes here.</caution></para>
+	</section>
+	<section id="important">
+		<title>important</title>
+		<programlisting>
+		<![CDATA[
+<para><important>Text goes here.</important></para>
+		]]>
+		</programlisting>
+		<para><important>Text goes here.</important></para>
+	</section>
+	<section id="note">
+		<title>note</title>
+		<programlisting>
+		<![CDATA[
+<para><note>Text goes here.</note></para>
+		]]>
+		</programlisting>
+		<para><note>Text goes here.</note></para>
+	</section>
+	<section id="tip">
+		<title>tip</title>
+		<programlisting>
+		<![CDATA[
+<para><tip>Text goes here.</tip></para>
+		]]>
+		</programlisting>
+		<para><tip>Text goes here.</tip></para>
+	</section>
+	<section id="warning">
+		<title>warning</title>
+		<programlisting>
+		<![CDATA[
+<para><warning>Text goes here.</warning></para>
+		]]>
+		</programlisting>
+		<para><warning>Text goes here.</warning></para>
+	</section>
+</chapter>
