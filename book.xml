@@ -26,6 +26,7 @@
 
 	<!ENTITY chapter.markdown.xml		 	SYSTEM "chapter.markdown.xml">
 	<!ENTITY chapter.sphinx.xml 	 		SYSTEM "chapter.sphinx.xml">
+	<!ENTITY chapter.pandoc.xml 	 		SYSTEM "chapter.pandoc.xml">
 	<!ENTITY chapter.team.xml			 	SYSTEM "chapter.team.xml">
 
 	<!ENTITY chapter.tex 				 	SYSTEM "chapter.tex.xml">
@@ -67,6 +68,7 @@
 	&chapter.tex;
 	&chapter.markdown.xml;
 	&chapter.sphinx.xml;
+	&chapter.pandoc.xml;
 	&chapter.team.xml;
 
 </book>
