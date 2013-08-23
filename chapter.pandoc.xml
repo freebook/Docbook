@@ -2,4 +2,10 @@
 <chapter id="pandoc">
 	<title>pandoc - general markup converter</title>
 	<para>http://johnmacfarlane.net/pandoc/</para>
+	<section>
+		<title>Docbook to Markdown</title>
+		<screen>
+pandoc -f docbook -t markdown -s howto.xml -o example.text
+		</screen>
+	</section>
 </chapter>
