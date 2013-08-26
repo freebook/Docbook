@@ -1,17 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter id="editor">
 	<title>写作团队的运作</title>
-	<para>前提条件： subversion 服务器一台，团队人员需要懂得docbook以及配置docbook环境</para>
-	<procedure>
-		<step>
-	    	<para>subversion 初始化</para>
-	    	<orderedlist>
-				<listitem><para>trunk</para></listitem>
-				<listitem><para>branches</para></listitem>
-				<listitem><para>releases</para></listitem>
-				<listitem><para>tags</para></listitem>
-			</orderedlist>
+	<para>前提条件： subversion 服务器一台,或者使用sf.net, github.com, code.google.com 等等提供的服务，团队人员需要懂得docbook以及配置docbook环境</para>
+
+	<section>
+		<title>Docbook 环境初始化</title>
+		<section>
+			<title>FreeBSD</title>
 			<screen>
+# pkg_add -r vim
+# pkg_add -r git
+# pkg_add -r libxml2 libxslt
+# pkg_add -r docbook-xsl
+			</screen>
+	<para>创建 book.xml</para>
+			<screen>
+			<![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE subject SYSTEM "/usr/local/share/xml/docbook/5.0/dtd/docbook.dtd">
+<book>
+    <bookinfo>
+        <title>An Example Book</title>
+
+        <author>
+            <firstname>Your first name</firstname>
+            <surname>Your surname</surname>
+            <affiliation>
+                <address>
+                    <email>foo@example.com</email>
+                </address>
+            </affiliation>
+        </author>
+
+        <copyright>
+            <year>2000</year>
+            <holder>Copyright string here</holder>
+        </copyright>
+
+        <abstract>
+            <para>If your book has an abstract then it should go here.</para>
+        </abstract>
+    </bookinfo>
+
+    <preface>
+        <title>Preface</title>
+
+        <para>Your book may have a preface, in which case it should be placed
+            here.</para>
+    </preface>
+
+    <chapter>
+        <title>My first chapter</title>
+
+        <para>This is the first chapter in my book.</para>
+
+        <section>
+            <title>My first section</title>
+
+            <para>This is the first section in my book.</para>
+        </section>
+
+    </chapter>
+</book>
+			]]>
+			</screen>
+			<para>生成文档</para>
+			<screen>
+$ xsltproc /usr/local/share/xsl/docbook/xhtml/docbook.xsl book.xml > book.html
+			</screen>
+		</section>
+		<section>
+			<title>Ubuntu/Debian</title>
+			<screen>
+$ sudo apt-get install docbook-xsl
+$ sudo apt-get install xsltproc xmlto
+$ sudo apt-get install make
+$ sudo apt-get install git
+			</screen>
+	<para>创建 book.xml</para>
+			<screen>
+			<![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE subject SYSTEM "/usr/share/xml/docbook/schema/dtd/4.5/docbookx.dtd">
+<book>
+    <bookinfo>
+        <title>An Example Book</title>
+
+        <author>
+            <firstname>Your first name</firstname>
+            <surname>Your surname</surname>
+            <affiliation>
+                <address>
+                    <email>foo@example.com</email>
+                </address>
+            </affiliation>
+        </author>
+
+        <copyright>
+            <year>2000</year>
+            <holder>Copyright string here</holder>
+        </copyright>
+
+        <abstract>
+            <para>If your book has an abstract then it should go here.</para>
+        </abstract>
+    </bookinfo>
+
+    <preface>
+        <title>Preface</title>
+
+        <para>Your book may have a preface, in which case it should be placed
+            here.</para>
+    </preface>
+
+    <chapter>
+        <title>My first chapter</title>
+
+        <para>This is the first chapter in my book.</para>
+
+        <section>
+            <title>My first section</title>
+
+            <para>This is the first section in my book.</para>
+        </section>
+
+    </chapter>
+</book>
+			]]>
+			</screen>
+			<para>生成文档</para>
+			<screen>
+$ xsltproc /usr/share/xml/docbook/stylesheet/docbook-xsl/xhtml/docbook.xsl book.xml > book.html
+			</screen>
+		</section>
+	</section>
+	<section>
+		<title>Subversion 版本控制</title>
+
+		<procedure>
+			<step>
+		    	<para>subversion 初始化</para>
+		    	<orderedlist>
+					<listitem><para>trunk</para></listitem>
+					<listitem><para>branches</para></listitem>
+					<listitem><para>releases</para></listitem>
+					<listitem><para>tags</para></listitem>
+				</orderedlist>
+				<screen>
 svn co svn://127.0.0.1/document
 cd project
 mkdir trunk
@@ -19,80 +154,104 @@ mkdir tags
 mkdir branches
 mkdir releases
 svn ci -m "Initialized empty subversion repository in your_project"
-			</screen>
-		</step>
-		<step>
-	    	<para>创建docbook文档，安排章节</para>
-	    	<para>将章节拆分成独立文件，并在主文档头部声明</para>
-	    	<programlisting role="xml">
-	    	<![CDATA[
+				</screen>
+			</step>
+			<step>
+		    	<para>创建docbook文档，安排章节</para>
+		    	<para>将章节拆分成独立文件，并在主文档头部声明</para>
+		    	<programlisting role="xml">
+		    	<![CDATA[
 	<!ENTITY chapter.system SYSTEM "chapter.system.xml">
 	<!ENTITY chapter.system.harddisk SYSTEM "chapter.system.harddisk.xml">
 	<!ENTITY chapter.network SYSTEM "chapter.network.xml">
-	    	]]>
-	    	</programlisting>
-	    	<para>完成后导入subversion的trunk中</para>
-		</step>
-		<step>
-			<para>创建版本分支</para>
-			<screen>
+		    	]]>
+		    	</programlisting>
+		    	<para>完成后导入subversion的trunk中</para>
+			</step>
+			<step>
+				<para>创建版本分支</para>
+				<screen>
 $ svn copy svn://netkiller.8800.org/document/trunk svn://netkiller.8800.org/document/branches/system
 $ svn copy svn://netkiller.8800.org/document/trunk svn://netkiller.8800.org/document/branches/network
-			</screen>
-		</step>
-		<step>
-			<para>开始写作</para>
-			<para>我们假设jam负责system章节</para>
-			<orderedlist>
-				<listitem><para>checkout</para>
-					<screen>
+				</screen>
+			</step>
+			<step>
+				<para>开始写作</para>
+				<para>我们假设jam负责system章节</para>
+				<orderedlist>
+					<listitem><para>checkout</para>
+						<screen>
 $ svn checkout svn://netkiller.8800.org/document/branches/system
-					</screen>
-				</listitem>
-				<listitem><para>编辑文件</para>
-					<screen>
+						</screen>
+					</listitem>
+					<listitem><para>编辑文件</para>
+						<screen>
 vim chapter.system.xml
-					</screen>
-				</listitem>
-				<listitem><para>校验XML</para>
-					<screen>
+						</screen>
+					</listitem>
+					<listitem><para>校验XML</para>
+						<screen>
 $ export DSSSL=/usr/share/xml/docbook/stylesheet/nwalsh/xhtml/chunk.xsl
 $ xsltproc --stringparam html.stylesheet docbook.css ${DSSSL} book.xml
-					</screen>
-				</listitem>
-				<listitem><para>提交文件</para>
-					<screen>
+						</screen>
+					</listitem>
+					<listitem><para>提交文件</para>
+						<screen>
 $ svn ci -m "I have finished this chapter."
-					</screen>
-				</listitem>
-			</orderedlist>
-			<para>其他编辑人员操作类似checkout自己branche上的network章节等等</para>
-		</step>
-		<step>
-			<para>tags运作</para>
-			<para>当jam完成了指派的任务的第一个阶段后，可以创建一个tags</para>
-			<screen>
+						</screen>
+					</listitem>
+				</orderedlist>
+				<para>其他编辑人员操作类似checkout自己branche上的network章节等等</para>
+			</step>
+			<step>
+				<para>tags运作</para>
+				<para>当jam完成了指派的任务的第一个阶段后，可以创建一个tags</para>
+				<screen>
 svn copy svn://netkiller.8800.org/document/branches/system svn://netkiller.8800.org/document/tags/system_phase_I
-			</screen>
-			<para>tags 一旦建立，以后不会在更改</para>
-			<para>然后jam可以在/document/branches/system继续写作</para>
-		</step>
-		<step>
-			<para>合并tags到主干</para>
-			<para>当tags完成后主编将其合并到trunk</para>
-			<screen>
+				</screen>
+				<para>tags 一旦建立，以后不会在更改</para>
+				<para>然后jam可以在/document/branches/system继续写作</para>
+			</step>
+			<step>
+				<para>合并tags到主干</para>
+				<para>当tags完成后主编将其合并到trunk</para>
+				<screen>
 svn merge svn://netkiller.8800.org/document/tags/system_phase_I
-			</screen>
-			<para>然后发行unstable版本，你也可以每天产生一个快照。等待用户反馈。</para>
-			<para>反馈结果由负责人在/document/branches/system上修改，等待下一次发布在下一个阶段。</para>
-		</step>
-		<step>
-			<para>发行文档</para>
-			<para>当一切OK时,我就可以把trunk 复制到 releases 中，随你怎命名。</para>
-			<screen>
+				</screen>
+				<para>然后发行unstable版本，你也可以每天产生一个快照。等待用户反馈。</para>
+				<para>反馈结果由负责人在/document/branches/system上修改，等待下一次发布在下一个阶段。</para>
+			</step>
+			<step>
+				<para>发行文档</para>
+				<para>当一切OK时,我就可以把trunk 复制到 releases 中，随你怎命名。</para>
+				<screen>
 $ svn copy svn://netkiller.8800.org/document/trunk svn://netkiller.8800.org/document/release/document_v1.0
-			</screen>
-			<para>这个版本/document/release/document_v1.0就可以提供给读者了。</para>
-		</step>
-	</procedure>
+				</screen>
+				<para>这个版本/document/release/document_v1.0就可以提供给读者了。</para>
+			</step>
+		</procedure>
+	</section>
+	<section>
+		<title>GIT</title>
+		<screen>
+配置GIT环境
+
+git config --global user.name "Neo Chan"
+git config --global user.email netkiller@msn.com
+
+克隆仓库
+git clone https://github.com/freebook/PHP.git
+
+...
+编辑文件
+...
+
+提交文件
+git add *
+git commit -a
+
+推送文件
+git push origin master
+		</screen>
+	</section>
 </chapter>
