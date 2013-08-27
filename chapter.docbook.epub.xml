@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter id="docbook.epub">
+<section id="docbook.epub">
 	<title>EPUB</title>
 	<section id="epub.create">
 		<title>创建.epub文件</title>
@@ -46,4 +46,4 @@ $ zip -Xr9D my-book.epub *
 		<title>Reader</title>
 		<para>http://calibre-ebook.com/</para>
 	</section>
-</chapter>
+</section>

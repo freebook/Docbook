@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="part-chapter-section">
+	<title>Part / Chapter / Section</title>
+	<section id="part">
+		<title>part</title>
+		<programlisting>
+		<![CDATA[
+<part>
+	<title>Part</title>
+	<partintro>
+        <para></para>
+	</partintro>
+</part>
+		]]>
+		</programlisting>
+		<programlisting>
+		<![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<book version="5.0" xmlns="http://docbook.org/ns/docbook"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:xi="http://www.w3.org/2001/XInclude">
+  <info>
+    <title>The Gallio Book</title>
+    <authorgroup>
+      <author><personname>The Gallio Documentation Team</personname></author>
+    </authorgroup>
+    <copyright>
+      <year>2009</year>
+      <holder>Gallio Project</holder>
+    </copyright>
+    <address>http://www.gallio.org/</address>
+    <xi:include href="ReleaseInfo.docbook"/>
+  </info>
+
+  <xi:include href="Preface.docbook" />
+  <part label="I" xml:id="part_Using">
+    <title>Using MbUnit and Gallio</title>
+    <xi:include href="Installation/Installation.docbook" />
+  </part>
+
+  <part label="II" xml:id="part_Developing">
+    <title>Developing MbUnit and Gallio</title>
+    <xi:include href="GallioDevelopmentBasics/GallioDevelopmentBasics.docbook" />
+  </part>
+
+  <part label="III" xml:id="appendices">
+    <title>Appendices</title>
+    <xi:include href="Appendices/MigrationGuide.docbook" />
+  </part>
+
+</book>
+		]]>
+		</programlisting>
+	</section>
+	<section id="chapter">
+		<title>chapter</title>
+		<programlisting>
+		<![CDATA[
+	<part>
+		<title>Part</title>
+		<chapter>
+			<title>Chapter</title>
+		</chapter>
+		<chapter>
+			<title>Chapter</title>
+		</chapter>
+	</part>
+		]]>
+		</programlisting>
+		<section>
+			<title>chapterinfo</title>
+			<programlisting>
+			<![CDATA[
+	<chapterinfo>
+		<abstract>
+		  <para>Kickstart 无人值守安装</para>
+		</abstract>
+		<keywordset>
+			<keyword>ISO</keyword>
+			<keyword>kickstart</keyword>
+			<keyword>ks</keyword>
+		</keywordset>
+	</chapterinfo>
+
+
+<chapterinfo>
+    <authorgroup>
+      <author>
+    	<firstname>Tom</firstname>
+	    <surname>Rhodes</surname>
+    	<contrib>Written by </contrib>
+      </author>
+    </authorgroup>
+</chapterinfo>
+
+<chapterinfo>
+<keywordset>
+  <keyword>images</keyword>
+  <keyword>illustrations</keyword>
+</keywordset>
+<itermset>
+  <indexterm zone="figures"><primary>Figures</primary></indexterm>
+  <indexterm zone="figures"><primary>Pictures</primary></indexterm>
+  <indexterm zone="notreal">
+    <primary>Sections</primary><secondary>Not Real</secondary>
+  </indexterm>
+</itermset>
+</chapterinfo>
+			]]>
+			</programlisting>
+		</section>
+		<section>
+			<title>epigraph</title>
+			<programlisting>
+			<![CDATA[
+<epigraph>
+
+<attribution>
+   <ulink url="http://www.margepiercy.com/">Marge Piercy</ulink>
+</attribution>
+
+<para>
+   Life is the first gift, love is the second, and understanding is the third.
+</para>
+
+</epigraph>
+			]]>
+			</programlisting>
+		</section>
+	</section>
+	<section id="section">
+		<title>section</title>
+
+		<programlisting>
+		<![CDATA[
+<part>
+	<title>Part I</title>
+	<chapter>
+		<title>Chapter 1</title>
+		<section>
+			<title>Section 1</title>
+		</section>
+	</chapter>
+</part>
+		]]>
+		</programlisting>
+	</section>
+	<section id="title">
+		<title>title</title>
+
+		<programlisting>
+		<![CDATA[
+<part>
+	<title>Part I</title>
+	<chapter>
+		<title>Chapter 1</title>
+		<section>
+			<title>Section 1</title>
+		</section>
+	</chapter>
+</part>
+		]]>
+		</programlisting>
+		<section>
+			<title>subtitle</title>
+			<programlisting>
+			<![CDATA[
+<part>
+	<title>Part I</title>
+	<subtitle>Part I subtitle</subtitle>
+	<chapter>
+		<title>Chapter 1</title>
+		<subtitle>Chapter 1 subtitle</subtitle>
+		<section>
+			<title>Section 1</title>
+			<subtitle>Section 1 subtitle</subtitle>
+		</section>
+	</chapter>
+</part>
+			]]>
+			</programlisting>
+		</section>
+		<section>
+			<title>titleabbrev</title>
+			<programlisting>
+			<![CDATA[
+<part>
+	<title>Part I</title>
+	<subtitle>Part I subtitle</subtitle>
+	<titleabbrev>Part I titleabbrev</titleabbrev>
+	<chapter>
+		<title>Chapter 1</title>
+		<subtitle>Chapter 1 subtitle</subtitle>
+		<titleabbrev>Chapter I titleabbrev</titleabbrev>
+		<section>
+			<title>Section 1</title>
+			<subtitle>Section 1 subtitle</subtitle>
+			<titleabbrev>Section I titleabbrev</titleabbrev>
+		</section>
+	</chapter>
+</part>
+			]]>
+			</programlisting>
+		</section>
+	</section>
+</chapter>
+
+<chapter id="appendix">
+	<title>appendix</title>
+	<programlisting>
+	<![CDATA[
+<appendix>
+    <title>Appendix One</title>
+    <para>Appendix content.</para>
+</appendix>
+
+	]]>
+	</programlisting>
+</chapter>
+
+<chapter id="glossary">
+	<title>术语表 glossary</title>
+	<programlisting>
+	<![CDATA[
+<glossary><title>词汇表的例子</title>
+	<glossdiv><title>E</title>
+
+		<glossentry id="xml"><glossterm>Extensible Markup Language</glossterm>
+			<acronym>XML</acronym>
+			<glossdef>
+			<para>关于XML的定义...</para>
+			<glossseealso otherterm="sgml">
+			</glossdef>
+		</glossentry>
+
+	</glossdiv>
+</glossary>
+	]]>
+	</programlisting>
+	<para>引用</para>
+	<programlisting>
+	<![CDATA[
+<glossterm linkend="xml">Extensible Markup Language</glossterm> is a new standard…
+	]]>
+	</programlisting>
+</chapter>
+
+	&chapter.docbook.paragraphs.xml;
+	&chapter.docbook.list.xml;
+<chapter id="table">
+	<title>Table</title>
+	<programlisting>
+	<![CDATA[
+<table>
+   <title>表格标题</title>
+   <tgroup cols="2">
+     <thead>
+       <row>
+          <entry>列标题1</entry>
+          <entry>列标题2</entry>
+       </row>
+     </thead>
+    <tbody>
+       <row>
+          <entry>列内容1</entry>
+          <entry>列内容2</entry>
+       </row>
+       ...
+    </tbody>
+   </tgroup>
+</table>
+		]]>
+	</programlisting>
+	<table>
+	   <title>表格标题</title>
+	   <tgroup cols="2">
+	     <thead>
+	       <row>
+	          <entry>列标题1</entry>
+	          <entry>列标题2</entry>
+	       </row>
+	     </thead>
+	    <tbody>
+	       <row>
+	          <entry>列内容1</entry>
+	          <entry>列内容2</entry>
+	       </row>
+	       ...
+	    </tbody>
+	   </tgroup>
+	</table>
+</chapter>
+<chapter id="images">
+	<title>Images</title>
+	<section id="figure">
+		<title>figure</title>
+		<programlisting>
+		<![CDATA[
+<figure>
+ <title>My Image</title>
+ <screenshot>
+  <screeninfo>Sample GNOME Display</screeninfo>
+  <graphic  format="png" fileref="myfile" srccredit="me">
+  </graphic>
+ </screenshot>
+</figure>
+		]]>
+		</programlisting>
+	</section>
+	<section id="mediaobject">
+		<title>mediaobject</title>
+		<programlisting>
+		<![CDATA[
+<figure>
+	<title>OpenOffice MS-compatible Spreadsheet</title>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="images/openoffice.png" format="PNG"></imagedata>
+		</imageobject>
+		<imageobject>
+			<imagedata fileref="images/openoffice.eps" format="EPS"></imagedata>
+		</imageobject>
+		<textobject>
+			<phrase>OpenOffice spreadsheet looks just like MS Office .xls file.</phrase>
+		</textobject>
+	</mediaobject>
+</figure>
+		]]>
+		</programlisting>
+	</section>
+	<section id="screenshot">
+		<title>screenshot</title>
+		<programlisting>
+		<![CDATA[
+<figure id="app-FIG-shot1">
+ <title>Screenshot</title>
+ <screenshot>
+  <mediaobject>
+   <imageobject>
+    <imagedata fileref="figures/example_screenshot.png" format="PNG"/>
+   </imageobject>
+   <textobject>
+     <phrase>Shows the application screenshot with several buttons.</phrase>
+   </textobject>
+   <caption>
+    <para>Screenshot of a program</para>
+   </caption>
+  </mediaobject>
+ </screenshot>
+</figure>
+		]]>
+		</programlisting>
+	</section>
+</chapter>
+
+	&chapter.docbook.admonition.xml;
+
+<chapter id="terminal">
+	<title>Computer terminal</title>
+	<section id="literallayout">
+		<title>literallayout</title>
+		<programlisting role="xml">
+		<![CDATA[
+<literallayout>
+1
+2
+3
+</literallayout>
+		]]>
+		</programlisting>
+	</section>
+	<section id="programlisting">
+		<title>programlisting</title>
+		<programlisting role="xml">
+		<![CDATA[
+<programlisting role="c">
+#include &lt;stdio.h&gt;
+
+int
+main(void)
+{
+    printf("hello, world\n");
+}
+</programlisting>
+
+<programlisting language="java">
+</programlisting>
+
+<programlisting linenumbering="numbered" startinglinenumber="12">
+
+</programlisting>
+
+<programlisting linenumbering="numbered" >
+<?dbhtml linenumbering.everyNth="2" linenumbering.separator=" &gt;" linenumbering.width="2" ?>
+<?dbfo linenumbering.everyNth="2" linenumbering.separator=" &gt;" linenumbering.width="2" ?>
+<textobject><textdata  fileref="mycode.c" /></textobject>
+</programlisting>
+
+<example><title>My program listing</title>
+  <programlisting><textobject><textdata
+     fileref="mycode.c" /></textobject></programlisting>
+</example>
+
+Using XInclude for text inclusions
+<example><title>My program listing</title>
+  <programlisting><xi:include  href="mycode.c"  parse="text"
+      xmlns:xi="http://www.w3.org/2001/XInclude"/></programlisting>
+</example>
+		]]>
+		</programlisting>
+		<programlisting>
+		<![CDATA[
+<programlisting linenumbering="numbered" startinglinenumber="12">
+<![CDATA[
+#include <stdio.h>
+
+int main(void)
+{
+   printf("Hello, world!\n");
+   return 0;
+}
+]] >
+</programlisting>
+
+<programlisting linenumbering="numbered" >
+	<?dbhtml linenumbering.everyNth="2" linenumbering.separator=" &gt;" linenumbering.width="2"?>
+	<?dbfo linenumbering.everyNth="2"   linenumbering.separator=" &gt;" linenumbering.width="2"?>
+	<textobject><textdata  fileref="mycode.c" /></textobject>
+</programlisting>
+		]]>
+		</programlisting>
+
+		<programlisting language="php" linenumbering="numbered" startinglinenumber="12">
+		<![CDATA[
+<?php
+
+class foo
+{
+	private $bar;
+
+	public function __construct($bar)
+	{
+		$this->bar = $bar;
+	}
+
+	/**
+	 * getFoo
+	 *
+	 * Returns bar if $this->bar is foo else foo .. Oo ;D
+	 *
+	 * @return string
+	 */
+	public function getFoo()
+	{
+		if($this->bar == 'foo')
+		{
+			return 'bar';
+		}
+		else
+		{
+			return 'foo';
+		}
+	}
+}
+		]]>
+		</programlisting>
+
+		<section id="calloutlist">
+			<title>Callouts</title>
+			<programlisting>
+			<![CDATA[
+<screen>
+bash@host:~/cvs/newbiedoc$ ls -l
+total 48
+<co id="perm">drwxr-sr-x    2 jesse    jesse        4096 May  4 16:26 CVS<co id="cvs">
+drwxr-sr-x    3 jesse    jesse        4096 Mar 29 03:29 dev
+drwxr-sr-x    3 jesse    jesse        4096 Apr  8 19:31 general
+drwxr-sr-x    3 jesse    jesse        4096 Apr  9 00:15 images
+</screen>
+
+<calloutlist>
+   <callout arearefs="cvs">
+      <para>
+      This is the CVS directory.  CVS files are stored here.
+      </para>
+   </callout>
+
+   <callout arearefs="perm">
+      <para>
+      These are the permissions for the CVS directory.
+      </para>
+   </callout>
+</calloutlist>
+			]]>
+			</programlisting>
+		</section>
+	</section>
+	<section id="userinput">
+		<title>userinput</title>
+		<para>ls -l $KDEDIR</para>
+		<programlisting>
+		<![CDATA[
+<userinput><command>ls</command>
+<option>-l</option>
+<parameter>$<envar>KDEDIR<envar></parameter>
+</userinput>
+		]]>
+		</programlisting>
+		<para>export $KDEDIR=/usr/local/kde</para>
+		<programlisting>
+		<![CDATA[
+<userinput>
+<command>export</command>
+<parameter>$<envar>KDEDIR</envar>=<filename>
+/usr/local/kde</filename></parameter></userinput>
+		]]>
+		</programlisting>
+	</section>
+	<section id="keyboard">
+		<title>Keyboard Input</title>
+		<programlisting>
+		<![CDATA[
+<keycombo>
+ <keycap>Ctrl</keycap>
+ <keycap>Alt</keycap>
+ <keycap>F1</keycap>
+</keycombo>
+		]]>
+		</programlisting>
+
+		<programlisting>
+		<![CDATA[
+<menuchoice>
+ <shortcut>
+  <keycombo><keycap>Ctrl</keycap><keycap>q</keycap></keycombo>
+ </shortcut>
+ <guimenuitem> Quit</guimenuitem>
+</menuchoice>
+		]]>
+		</programlisting>
+
+	</section>
+</chapter>
+
+<chapter id="references">
+	<title>Cross references</title>
+	<section id="link">
+		<title>link</title>
+		<programlisting>
+		<![CDATA[
+<link linkend="table">Table</link>
+<link linkend="article-My-Article-sec"><quote>sec</quote></link>
+
+<link linkend="font"><quote>font</quote></link>
+		]]>
+		</programlisting>
+	</section>
+	<section id="ulink">
+		<title>ulink</title>
+		<programlisting>
+		<![CDATA[
+<ulink url="http://netkiller.hikz.com">homepage</ulink>
+		]]>
+		</programlisting>
+	</section>
+	<section id="xref">
+		<title>xreflabel / xref</title>
+		<programlisting>
+		<![CDATA[
+<para  id="ChooseSCSIid"  xreflabel="choosing a SCSI id">The methods
+for choosing a <acronym>SCSI</acronym> id are ...
+</para>
+...
+<para>
+See the paragraph on <xref  linkend="ChooseSCSIid"/>.
+</para>
+		]]>
+		</programlisting>
+		<programlisting>
+		<![CDATA[
+<para  id="ChooseSCSIid"  >The methods
+for <phrase  id="SCSIxref">choosing a <acronym>SCSI</acronym> id</phrase>
+are ...
+</para>
+...
+<para>
+See the paragraph on <xref  linkend="ChooseSCSIid"  endterm="SCSIxref"/>.
+</para>
+		]]>
+		</programlisting>
+	</section>
+</chapter>
+	&chapter.htmlforms.xml;
+

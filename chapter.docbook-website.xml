@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter id="docbook-website">
+<section id="docbook-website">
 	<title>docbook-website - XML Website DTD and XSL Stylesheets</title>
 	<screen>
 sudo apt-get install docbook-website
@@ -11,4 +11,4 @@ mkdir tmp
 cd tmp
 xsltproc --stringparam html.stylesheet docbook.css ${DSSSL} ../book.xml
 	</screen>
-</chapter>
+</section>

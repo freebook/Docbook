@@ -2,17 +2,19 @@
 <!-- $Id: chapter.docbook.doctype.xml 465 2012-09-18 07:42:15Z netkiller $ -->
 <chapter id="doctype">
 	<title>DOCTYPE</title>
-	<para>在线引用DOCTYPE头，这样在创建文档的时候速度会比较慢。</para>
-	<programlisting>
-	<![CDATA[
+	<section id="doctype.system">
+		<title>SYSTEM</title>
+		<para>在线引用DOCTYPE头，这样在创建文档的时候速度会比较慢。</para>
+		<programlisting>
+		<![CDATA[
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook V5.0//EN"
 "http://www.oasis-open.org/docbook/xml/5.0/docbook.dtd">
-	]]>
-	</programlisting>
-	<para>我们也可使使用本地的DTD文件</para>
-	<programlisting>
-	<![CDATA[
+		]]>
+		</programlisting>
+		<para>我们也可使使用本地的DTD文件</para>
+		<programlisting>
+		<![CDATA[
 <!DOCTYPE subject SYSTEM "/usr/share/xml/docbook/schema/dtd/4.5/docbookx.dtd" [
 	<!ENTITY book.info.author.xml			SYSTEM "../common/book.info.author.xml">
 	<!ENTITY book.info.legalnotice.xml		SYSTEM "../common/book.info.legalnotice.xml">
@@ -28,8 +30,78 @@
 	<!ENTITY chapter.docbook-website.xml	SYSTEM "chapter.docbook-website.xml">
 	<!ENTITY chapter.docbook.epub.xml	 	SYSTEM "chapter.docbook.epub.xml">
 ]>
-	]]>
-	</programlisting>
+		]]>
+		</programlisting>
+		<programlisting>
+		<![CDATA[
+<!DOCTYPE article PUBLIC "-//FreeBSD//DTD DocBook XML V4.5-Based Extension//EN" "../../../share/xml/freebsd45.dtd">
+		]]>
+		</programlisting>
+	</section>
+	<section id="stringparam">
+		<title>Docbook参数</title>
+		<para>/usr/share/xml/docbook/stylesheet/nwalsh/xhtml/param.xsl</para>
+		<screen>
+		<![CDATA[
+默认HTML格式输出文件中的章内小节是没有自动编号功能的，如果要实现小节自动编号需要设置HTML格式的两个转换参数。
+
+section.autolabel参数为1代表章内小节可自动编号，为0表示不会自动编号；
+
+section.label.includes.component.label参数为1表示章内小节编号包含章节编号,为0表示不包含章节编号。
+
+设置这两个参数可通过命令行方式，也可通过修改XSL转换文件方法。下面分别介绍这两种方法：
+
+通过命令行方式：
+
+$ xsltproc --stringparam  section.autolabel 1 \
+           --stringparam  section.label.includes.component.label 1 \
+           docbook.xsl  myfile.xml>myfile.htm
+修改XSL转换文件方式：
+
+DocBook文档的HTML格式转换样式文件一般位于/usr/share/sgml/docbook/docbook-xsl-1.65.1/html/目录下。通过查看docbook.xsl文件可知，在docbook.xsl中引用param.xsl作为参数设置文件，所有的参数都在这里设置。我们打开param.xsl文件，找到以下两行，再把参数置成1就可以了。
+
+<xsl:param name="section.autolabel" select="1"/>
+<xsl:param name="section.label.includes.component.label" select="1"/>
+		]]>
+		</screen>
+		<para>另一种方法</para>
+		<screen>
+		<![CDATA[
+cat my_docbook.xsl
+<?xml version='1.0'?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                version='1.0'>
+<xsl:include href="/usr/share/xml/docbook/stylesheet/nwalsh/html/docbook.xsl"/>
+<xsl:output method="html"
+            encoding="UTF-8"
+            indent="no"/>
+</xsl:stylesheet>
+
+xsltproc -o docbook.html my_docbook.xsl docbook.xml
+		]]>
+		</screen>
+		<section>
+			<title>字符集</title>
+			<screen>
+--stringparam chunker.output.encoding UTF-8
+			</screen>
+		</section>
+		<section>
+			<title>Filename prefix</title>
+			<screen>
+			<![CDATA[
+base.dir parameter value	Description	Example 					chunk filename
+base.dir="htmlout/"			Output directory only.					htmlout/chap1.html
+base.dir="refbook-"			Filename prefix only.					refbook-chap1.html
+base.dir="htmlout/refbook-"	Output directory and filename prefix.	htmlout/refbook-chap1.html
+			]]>
+			</screen>
+			<para>base.dir parameter</para>
+			<screen>
+xsltproc --stringparam base.dir /usr/apache/htdocs/ chunk.xsl myfile.xml
+			</screen>
+		</section>
+	</section>
 	<section id="docbookx.dtd">
 		<title>DTD 引用</title>
 		<section>
@@ -210,338 +282,6 @@
 		</programlisting>
 	</section>
 
-	<section id="bookinfo">
-		<title>bookinfo / info</title>
-		<section>
-			<title>affiliation</title>
-			<programlisting>
-			<![CDATA[
-  <affiliation>
-    <shortaffil>IBM</shortaffil>
-    <jobtitle>Senior LAMP Engineer</jobtitle>
-    <orgname>ArborText, Inc.</orgname>
-    <orgdiv>Application Developement</orgdiv>
-  </affiliation>
-			]]>
-			</programlisting>
-		</section>
-		<section>
-			<title>address</title>
-			<programlisting>
-			<![CDATA[
-<address>
-  <street>162 Guelph Street</street>
-  <city>Georgetown</city>
-  <state>ON</state>
-  <country>Canada</country>
-  <postcode>L7G 5X7</postcode>
-  <phone>1-888-628-2028</phone>
-  <fax>(905) 702-7851</fax>
-  <email>info@cogent.ca</email>
-  <otheraddr>www.cogent.ca</otheraddr>
-</address>
-			]]>
-			</programlisting>
-		</section>
-		<section>
-			<title>reference</title>
-			<programlisting>
-			<![CDATA[
-<reference>
-    <title>Reference</title>
-    <refentry>
-(The content here is shown in the Reference Entries appendix.)
-    </refentry>
-</reference>
-			]]>
-			</programlisting>
-		</section>
+	&chapter.docbook.html.xml;
 
-		<section>
-			<title>author</title>
-			<programlisting>
-			<![CDATA[
-<authorgroup>
-	<author>
-		<FirstName>Bert</FirstName><Surname>Hubert</Surname>
-		<affiliation>
-	  		<orgname>Netherlabs BV</orgname>
-	  		<address><email>bert.hubert@netherlabs.nl</email></address>
-		</affiliation>
-	</author>
-
-    <collab>
-		<collabname>Thomas Graf (Section Author)</collabname>
-        <affiliation>
-        	<address><email>tgraf%suug.ch</email></address>
-		</affiliation>
-	</collab>
-</authorgroup>
-			]]>
-			</programlisting>
-			<section id="author.affiliation">
-				<title>affiliation</title>
-				<programlisting>
-				<![CDATA[
-<!DOCTYPE author PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
-          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
-<author>
-  <honorific>Mr</honorific>
-  <firstname>Norman</firstname>
-  <surname>Walsh</surname>
-  <othername role='mi'>D</othername>
-  <affiliation>
-    <shortaffil>ATI</shortaffil>
-    <jobtitle>Senior Application Analyst</jobtitle>
-    <orgname>ArborText, Inc.</orgname>
-    <orgdiv>Application Developement</orgdiv>
-  </affiliation>
-</author>
-				]]>
-				</programlisting>
-			</section>
-			<section id="author.editor">
-				<title>editor</title>
-				<programlisting>
-				<![CDATA[
-<!DOCTYPE authorgroup PUBLIC "-//OASIS//DTD DocBook V3.1//EN">
-<authorgroup>
-  <author>
-    <honorific>Dr.</honorific>
-    <firstname>Lois</firstname>
-    <surname>Common-Demoninator</surname>
-    <affiliation>
-      <shortaffil>Director, M. Behn School of Coop. Eng.</shortaffil>
-      <jobtitle>Director of Cooperative Efforts</jobtitle>
-      <orgname>The Marguerite Behn International School of
-               Cooperative Engineering</orgname>
-    </affiliation>
-  </author>
-
-  <editor>
-    <firstname>Peter</firstname>
-    <surname>Parker</surname>
-    <lineage>Sr.</lineage>
-    <othername>Spiderman</othername>
-    <authorblurb>
-      <para>
-      Peter's a super hero in his spare time.
-      </para>
-    </authorblurb>
-  </editor>
-</authorgroup>
-				]]>
-				</programlisting>
-			</section>
-			<section>
-				<title>othercredit</title>
-				<programlisting>
-				<![CDATA[
-<article xmlns='http://docbook.org/ns/docbook'>
-<info>
-  <title>Example othercredit</title>
-  <author>
-    <personname>
-      <firstname>Norman</firstname>
-      <surname>Walsh</surname>
-    </personname>
-  </author>
-  <othercredit>
-    <personname>
-      <firstname>John</firstname>
-      <surname>Doe</surname>
-    </personname>
-    <contrib>Extensive review and rough drafts of Section 1.3, 1.4, and 1.5
-    </contrib>
-  </othercredit>
-  <biblioid>5</biblioid>
-</info>
-
-<para>…</para>
-
-</article>
-				]]>
-				</programlisting>
-	            <programlisting>
-				<![CDATA[
-<!DOCTYPE articleinfo PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
-          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
-<articleinfo>
-  <title>Something Snappy</title>
-  <author>
-    <firstname>Norman</firstname>
-    <surname>Walsh</surname>
-  </author>
-  <othercredit>
-    <firstname>John</firstname>
-    <surname>Doe</surname>
-    <contrib>Extensive review and rough drafts of Section 1.3, 1.4, and 1.5
-      </contrib>
-  </othercredit>
-  <pubsnumber>5</pubsnumber>
-</articleinfo>
-				]]>
-				</programlisting>
-
-			</section>
-		</section>
-
-		<section>
-			<title>出版信息</title>
-			<section>
-				<title>publisher</title>
-				<programlisting>
-				<![CDATA[
-<publisher>                      <!-- 出版者 -->
-    <publishername>XXXXXX有限公司</publishername>  <!-- 出版機構名稱 -->
-    <address>
-        <street>xxx道xxx巷12号204</street>
-        <postcode>518000</postcode>
-        <city>深圳</city>
-        <state>广东</state>
-        <country>中国</country>
-        <phone>+86 755 xxxxxxxx</phone>
-        <fax>+86 755 xxxxxxxx</fax>
-        <email>your@domain.com</email>
-      </address>
-  </publisher>
-				]]>
-				</programlisting>
-			</section>
-			<section>
-				<title>printhistory</title>
-				<programlisting>
-				<![CDATA[
-<printhistory>
-<para>
-   June 2000: First Printed Edition.
-</para>
-</printhistory>
-				]]>
-				</programlisting>
-			</section>
-			<section>
-				<title>出版紀錄</title>
-				<programlisting>
-				<![CDATA[
-	<edition>User's Guide version 1.0 for DocBook V3.0</edition>
-	<pubdate>1997</pubdate>
-	<releaseinfo></releaseinfo>
-    <isbn>ISBN xx-xxxxxx-x-x</isbn>
-	<revhistory>                     	<!-- 出版紀錄，可以有很多版本。 -->
-		<revision>                     	<!-- 某一版本 -->
-			<revnumber>1.0.0</revnumber> <!-- 版本編號 -->
-			<date>2006-11-14</date>  	<!-- 發佈出版日期 -->
-			<authorinitials></authorinitials>  <!-- 作者簡稱識別 -->
-			<revremark></revremark>  	<!-- 版本發佈簡述 -->
-		</revision>
-	</revhistory>
-				]]>
-				</programlisting>
-			</section>
-		</section>
-		<section id="copyright">
-			<title>copyright</title>
-			<screen>
-			<![CDATA[
-	<copyright>
-		<year>2008</year>
-		<year>2009</year>
-		<year>2010</year>
-		<year>2011</year>
-		<holder>Netkiller(Neo Chan). All rights reserved.</holder>
-	</copyright>
-			]]>
-			</screen>
-		</section>
-		<section id="keyword">
-			<title>keyword</title>
-			<screen>
-			<![CDATA[
-	<keywordset>
-	    <keyword>Linux</keyword>
-	    <keyword>Beginners</keyword>
-	    <keyword>linux</keyword>
-	    <keyword>start</keyword>
-	    <keyword>Getting started</keyword>
-	    <keyword>guide</keyword>
-	    <keyword>Guide</keyword>
-	    <keyword>Exercises</keyword>
-	    <keyword>exercises</keyword>
-	</keywordset>
-			]]>
-			</screen>
-		</section>
-		<section id="info.dedication">
-			<title>dedication</title>
-			<programlisting>
-			<![CDATA[
-<book>
-	<info>
-		<dedication><title>鸣谢</title>
-			<para></para>
-			<para></para>
-			<para></para>
-			<para></para>
-		</dedication>
-	</info>
-</book>
-			]]>
-			</programlisting>
-		</section>
-		<section id="info.abstract">
-			<title>abstract</title>
-			<programlisting>
-			<![CDATA[
-<book>
-	<info>
-		<abstract><title>Abstract</title>
-			<para></para>
-			<para></para>
-			<para></para>
-			<para></para>
-		</abstract>
-	</info>
-</book>
-			]]>
-			</programlisting>
-		</section>
-		<section id="info.legalnotice">
-			<title>legalnotice</title>
-			<programlisting>
-			<![CDATA[
-<book>
-	<info>
-		<legalnotice><title>Legalnotice</title>
-			<para></para>
-			<para></para>
-			<para></para>
-			<para></para>
-		</legalnotice>
-	</info>
-</book>
-			]]>
-			</programlisting>
-		</section>
-	</section>
-</chapter>
-
-<chapter id="preface">
-	<title>preface</title>
-	<programlisting>
-	<![CDATA[
-<preface id="svn.foreword">
-  <prefaceinfo>
-    <author>
-      <firstname>Neo</firstname>
-      <surname>Chan</surname>
-    </author>
-    <pubdate>Chicago, March 14, 2004.</pubdate>
-  </prefaceinfo>
-
-  <title>Preface</title>
-  <para>...</para>
-</preface>
-	]]>
-	</programlisting>
 </chapter>
