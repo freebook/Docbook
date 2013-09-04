@@ -107,4 +107,21 @@ Use this parameter to set the highest number for which you have a callout graphi
 			</screen>
 		</section>
 	</section>
+	<section id="html.dbhtml-include">
+		<title>dbhtml-include</title>
+		<para>包含html文件到当前页面</para>
+		<screen>
+		<![CDATA[
+<?dbhtml-include href="file:///www/freebsd/faq.html"?>
+<?dbhtml-include href="http://www.example.org/freebsd/faq.html"?>
+		]]>
+		</screen>
+		<para>注意：需要开启下面两个选项才能生效</para>
+		<screen>
+		<![CDATA[
+	<xsl:param name="use.extensions" select="1"/>
+	<xsl:param name="textinsert.extension" select="1"/>
+		]]>
+		</screen>
+	</section>
 </section>
