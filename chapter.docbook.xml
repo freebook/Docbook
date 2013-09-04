@@ -180,10 +180,17 @@ fop -c fop.conf helloworld.fo -pdf helloworld.pdf
 	</section>
 	<section id="chm">
 		<title>CHM</title>
+		<para>下载<ulink url="http://download.microsoft.com/download/0/a/9/0a939ef6-e31c-430f-a3df-dfae7960d564/htmlhelp.exe">HTML Help Wordshop</ulink>工具，并安装</para>
 		<screen>
 copy “c:\Program Files\HTML Help Workshop\hhc.exe” d:\docbook\example
 xsltproc –xinclude docbook_chm.xsl docbook.xml
 hhc.exe htmlhelp.hhp
+		</screen>
+		<screen>
+		<![CDATA[
+set PATH=C:\Program Files (x86)\HTML Help Workshop;%PATH%
+hhc htmlhelp.hhp		
+		]]>
 		</screen>
 	</section>
 	<section id="docbook2odf">
