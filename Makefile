@@ -41,6 +41,8 @@ htmlhelp:
 	@../common/chm.sh $(HTMLHELP)
 	@iconv -f UTF-8 -t GB18030 -o $(HTMLHELP)/htmlhelp.hhp < $(HTMLHELP)/htmlhelp.hhp
 	@iconv -f UTF-8 -t GB18030 -o $(HTMLHELP)/toc.hhc < $(HTMLHELP)/toc.hhc
+	@$(shell test -d $(HTMLHELP)/images && find $(HTMLHELP)/images/ -type f -exec rm -rf {} \;)
+	@$(shell test -d images && rsync -au --exclude=.svn images $(HTMLHELP)/)
 	
 clean:
 	rm -rf $(PUBLIC_HTML)/$(DOCBOOK)
