@@ -3,13 +3,13 @@ WORKSPACE=~/workspace
 PROJECT=Docbook
 DOCBOOK=docbook
 PUBLIC_HTML=~/public_html
+HTMLHELP=$(PUBLIC_HTML)/htmlhelp/$(DOCBOOK)/chm
 
 DSSSL=../docbook-xsl/docbook.xsl
 TMPDIR = $(shell mktemp -d --suffix=.tmp -p /tmp docbook.html.XXXXXX)
 
 XSLTPROC_OPT=--stringparam epub.stylesheet docbook.css --stringparam use.id.as.filename 1
 DSSSL_EPUB=/usr/share/xml/docbook/stylesheet/docbook-xsl/epub/docbook.xsl
-
 
 all: html epub htmlhelp
 
@@ -34,15 +34,16 @@ epub:
 	#cp ${PROJECT}.epub ${PUBLIC_HTML}/${DOCBOOK}/ibook.epub
 	
 manpages:
-	${XSLTPROC} -o $(PUBLIC_HTML)/man/${DOCBOOK} /usr/share/xml/docbook/stylesheet/docbook-xsl/manpages/docbook.xsl $(WORKSPACE)/${PROJECT}/book.xml
+	${XSLTPROC} -o $(PUBLIC_HTML)/$@/${DOCBOOK} /usr/share/xml/docbook/stylesheet/docbook-xsl/manpages/docbook.xsl $(WORKSPACE)/${PROJECT}/book.xml
 		
 htmlhelp:
-	${XSLTPROC} -o $(PUBLIC_HTML)/chm/${DOCBOOK}/ ../docbook-xsl/htmlhelp/template.xsl $(WORKSPACE)/${PROJECT}/book.xml
-	@iconv -f UTF-8 -t GB18030 -o $(PUBLIC_HTML)/chm/${DOCBOOK}/htmlhelp.hhp < $(PUBLIC_HTML)/chm/${DOCBOOK}/htmlhelp.hhp
-	@iconv -f UTF-8 -t GB18030 -o $(PUBLIC_HTML)/chm/${DOCBOOK}/toc.hhc < $(PUBLIC_HTML)/chm/${DOCBOOK}/toc.hhc
+	@${XSLTPROC} -o $(HTMLHELP)/ --stringparam htmlhelp.chm ../$(PROJECT).chm ../docbook-xsl/htmlhelp/template.xsl $(WORKSPACE)/${PROJECT}/book.xml
+	@../common/chm.sh $(HTMLHELP)
+	@iconv -f UTF-8 -t GB18030 -o $(HTMLHELP)/htmlhelp.hhp < $(HTMLHELP)/htmlhelp.hhp
+	@iconv -f UTF-8 -t GB18030 -o $(HTMLHELP)/toc.hhc < $(HTMLHELP)/toc.hhc
 	
 clean:
-	rm -rf $(PUBLIC_HTML)/$@
+	rm -rf $(PUBLIC_HTML)/$(DOCBOOK)
 
 test:
 	@$(XSLTPROC) -o $(TMPDIR)/ $(DSSSL) book.xml
