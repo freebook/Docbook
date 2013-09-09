@@ -3,8 +3,8 @@
 <chapter id="index"><?dbhtml dir="markdown" ?>
 	<title>Markdown</title>
 	<para>http://daringfireball.net/projects/markdown/</para>
-	<section id="markdown.section">
-		<title>Section</title>
+	<section id="section">
+		<title>章节</title>
 		<screen>
 A First Level Header
 ====================
@@ -12,9 +12,25 @@ A First Level Header
 A Second Level Header
 ---------------------
 		</screen>
+		<para>#数量从1到6个代表HTML中的 H1...H6</para>
+		<screen>
+# 这是 H1
+
+## 这是 H2
+
+###### 这是 H6		
+		</screen>
+		<screen>
+# 这是 H1 #
+
+## 这是 H2 ##
+
+### 这是 H3 ###		
+		</screen>
 	</section>
-	<section id="markdown.list">
-		<title>Lists</title>
+	<section id="list">
+		<title>项目符号与编号</title>
+		<para>项目符号</para>
 		<screen>
 *   Candy.
 *   Gum.
@@ -29,6 +45,84 @@ A Second Level Header
 -   Candy.
 -   Gum.
 -   Booze.
+		</screen>
+		<para>编号</para>
+		<screen>
+1.  Bird
+2.  McHale
+3.  Parish		
+		</screen>
+	</section>
+	<section id="blockquotes">
+		<title>引用 </title>
+		<para>块引用</para>
+		<screen>
+		<![CDATA[
+> This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,
+> consectetuer adipiscing elit. Aliquam hendrerit mi posuere lectus.
+> Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.
+> 
+> Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse
+> id sem consectetuer libero luctus adipiscing.		
+		]]>
+		</screen>
+		<screen>
+		<![CDATA[
+> This is the first level of quoting.
+>
+> > This is nested blockquote.
+>
+> Back to the first level.		
+		]]>
+		</screen>
+	</section>
+	<section>
+		<title>分割线</title>
+		<screen>
+* * *
+
+***
+
+*****
+
+- - -
+
+---------------------------------------		
+		</screen>
+	</section>
+	<section id="link">
+		<title>连接</title>
+		<screen>
+This is [an example](http://example.com/ "Title") inline link.
+
+[This link](http://example.net/) has no title attribute.		
+		</screen>
+	</section>
+	<section id="images">
+		<title>图片</title>
+		<screen>
+![Alt text](/path/to/img.jpg)
+
+![Alt text](/path/to/img.jpg "Optional title")		
+		</screen>
+	</section>
+	<section id="font">
+		<title>字体格式</title>
+		<para>强调</para>
+		<screen>
+*single asterisks*
+
+_single underscores_
+
+**double asterisks**
+
+__double underscores__		
+		</screen>
+	</section>
+	<section id="example">
+		<title>范例</title>
+		<screen>
+		
 		</screen>
 	</section>
 </chapter>
