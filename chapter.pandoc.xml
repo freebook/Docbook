@@ -2,10 +2,37 @@
 <chapter id="pandoc">
 	<title>pandoc - general markup converter</title>
 	<para>http://johnmacfarlane.net/pandoc/</para>
-	<section>
+	<section id="docbook2markdown">
 		<title>Docbook to Markdown</title>
 		<screen>
 pandoc -f docbook -t markdown -s howto.xml -o example.text
 		</screen>
+	</section>
+	<section id="markdown2html">
+		<title>Markdown to HTML</title>
+		<screen>
+pandoc -f markdown -t html5 -s example.md -o example.html
+		</screen>
+		<example>
+			<title>Makefile</title>	
+			<screen>
+			<![CDATA[
+PANDOC = pandoc
+PANDOCOPTS = -f markdown -t html5
+PREFIX=..
+HTML := $(patsubst %.md,%.html,$(wildcard *.md))
+
+all: $(HTML)
+	
+%.html: %.md 
+	$(PANDOC) $(PANDOCOPTS) -s $< -o $(PREFIX)/$@
+
+clean:
+	@rm -rf $(PREFIX)/*.html
+	
+rebuild : clean all					
+			]]>
+			</screen>
+		</example>
 	</section>
 </chapter>
