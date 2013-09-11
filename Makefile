@@ -45,7 +45,7 @@ htmlhelp:
 	@$(shell test -d images && rsync -au --exclude=.svn images $(HTMLHELP)/)
 
 rpm:
-	rpmbuild -ba ../Miscellaneous/package/package.spec --define "book %(DOCBOOK)"
+	rpmbuild -ba --sign ../Miscellaneous/package/package.spec --define "book $(DOCBOOK)"
 	rpm -qpi ~/rpmbuild/RPMS/x86_64/netkiller-$(DOCBOOK)-*.x86_64.rpm
 	rpm -qpl ~/rpmbuild/RPMS/x86_64/netkiller-$(DOCBOOK)-*.x86_64.rpm
 
