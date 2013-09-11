@@ -30,12 +30,12 @@ epub:
 	cp ${PUBLIC_HTML}/${DOCBOOK}/docbook.css OEBPS ; \
 	echo "application/epub+zip" > mimetype ; \
 	zip -0Xq  ${PUBLIC_HTML}/download/epub/${PROJECT}.epub mimetype ; \
-	zip -Xr9D ${PUBLIC_HTML}/download/epub/${PROJECT}.epub *	
+	zip -Xr9D ${PUBLIC_HTML}/download/epub/${PROJECT}.epub *
 	#cp ${PROJECT}.epub ${PUBLIC_HTML}/${DOCBOOK}/ibook.epub
-	
+
 manpages:
 	${XSLTPROC} -o $(PUBLIC_HTML)/$@/${DOCBOOK} /usr/share/xml/docbook/stylesheet/docbook-xsl/manpages/docbook.xsl $(WORKSPACE)/${PROJECT}/book.xml
-		
+
 htmlhelp:
 	@${XSLTPROC} -o $(HTMLHELP)/ --stringparam htmlhelp.chm ../$(PROJECT).chm ../docbook-xsl/htmlhelp/template.xsl $(WORKSPACE)/${PROJECT}/book.xml
 	@../common/chm.sh $(HTMLHELP)
@@ -43,7 +43,12 @@ htmlhelp:
 	@iconv -f UTF-8 -t GB18030 -o $(HTMLHELP)/toc.hhc < $(HTMLHELP)/toc.hhc
 	@$(shell test -d $(HTMLHELP)/images && find $(HTMLHELP)/images/ -type f -exec rm -rf {} \;)
 	@$(shell test -d images && rsync -au --exclude=.svn images $(HTMLHELP)/)
-	
+
+rpm:
+	rpmbuild -ba ../Miscellaneous/package/package.spec --define "book %(DOCBOOK)"
+	rpm -qpi ~/rpmbuild/RPMS/x86_64/netkiller-$(DOCBOOK)-*.x86_64.rpm
+	rpm -qpl ~/rpmbuild/RPMS/x86_64/netkiller-$(DOCBOOK)-*.x86_64.rpm
+
 clean:
 	rm -rf $(PUBLIC_HTML)/$(DOCBOOK)
 
