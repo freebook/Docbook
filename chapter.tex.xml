@@ -4,12 +4,7 @@
 	<title>Tex</title>
 	<chapter id="tex.tools">
 		<title>Document Tools</title>
-		<section id="texlive">
-			<title>texlive - TeX Live: A decent selection of the TeX Live packages</title>
-			<screen>
-sudo apt-get install texlive
-			</screen>
-		</section>
+		&chapter.tex.texlive.xml;
 		<section id="latex2html">
 			<title>latex2html</title>
 			<para>install latex2html</para>
@@ -37,7 +32,6 @@ $USE_UTF=1;
 $ sudo apt-get install texi2html
 			</screen>
 		</section>
-		&chapter.tex.xetex.xml;
 		<section id="tex2page">
 			<title>tex2page</title>
 			<para>install tex2page</para>
@@ -251,7 +245,7 @@ and this is in default roman
 \Huge
 			</programlisting>
 		</section>
-		<section>
+		<section id="font.styles">
 			<title>Styles</title>
 			<para>Here is a simple example that will probably show you all you need to know about bold, italics, and underlining.</para>
 			<programlisting>

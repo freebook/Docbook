@@ -32,7 +32,7 @@
 	<!ENTITY chapter.team.xml			 	SYSTEM "chapter.team.xml">
 
 	<!ENTITY chapter.tex 				 	SYSTEM "chapter.tex.xml">
-	<!ENTITY chapter.tex.xetex.xml		 	SYSTEM "chapter.tex.xetex.xml">
+	<!ENTITY chapter.tex.texlive.xml		SYSTEM "chapter.tex.texlive.xml">
 ]>
 <book xml:base="http://netkiller.sf.net/book/publish/"
 	xmlns="http://docbook.org/ns/docbook" xml:lang="zh-cn">
