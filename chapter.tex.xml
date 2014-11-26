@@ -351,6 +351,15 @@ A，得到A,B,C,D....
 		<screen>
 \includegraphics[width=0.8\textwidth]{fig1.eps}
 		</screen>
+		<screen>
+\begin{figure}[htp]
+    \begin{center}
+        \includegraphics[width=450pt]{image/arch_02.png}
+        \caption{描述文字}
+        \label{fig:arch_02}
+    \end{center}
+\end{figure}
+		</screen>
 	</chapter>
 	<chapter id="include">
 		<title>分割章节</title>
@@ -375,6 +384,17 @@ A，得到A,B,C,D....
 		<screen>
 \section{第一节}
 贾生名谊，洛阳人也。年十八，以能诵诗属书闻于郡中。
+		</screen>
+	</chapter>
+	<chapter id="thebibliography">
+		<title>参考文献</title>
+		<screen>
+\begin{thebibliography}{}
+\bibitem[Gelman et al., 2004]{Gelman} Gelman, A., Carlin, J. B., Stern, H. S. \& Rubin, D. B.
+ (2004) Bayesian Data Analysis (Second Edition). \newblock Chapman \& Hall/CRC.
+\end{thebibliography}
+\clearpage
+\end{document}		
 		</screen>
 	</chapter>
 		<!--

@@ -26,7 +26,7 @@ $ sudo apt-get install texlive-latex-extra texlive-latex-recommended
 \usepackage{fontspec}
 \usepackage{xunicode}
 \usepackage{xltxtra}
-\setromanfont{AR PL ShanHeiSun Uni}
+\setmainfont[Mapping=tex-text]{WenQuanYi Micro Hei}
 \begin{document}
 \XeTeX 可以使用系统自带的字体，而不需要再另外生成。
 \end{document}
@@ -101,7 +101,54 @@ $ fc-list :lang=zh
 /usr/share/fonts/windows/STKAITI.TTF: STKaiti,华文楷体:style=Regular
 /usr/share/fonts/X11/misc/wenquanyi_12ptb.pcf: WenQuanYi Bitmap Song:style=Bold		
 		</screen>
-		<para>测试文件 xetex.tex</para>
+		<para>测试Unicode文件 xetex.tex</para>
+		<programlisting>
+%!Tex Program = xelatex
+\documentclass[a4paper]{article}
+\usepackage{xltxtra}
+\setmainfont[Mapping=tex-text]{WenQuanYi Micro Hei}
+\begin{document}\pagestyle{empty}
+\section{Unicode support}
+ 
+\subsection{English}
+All human beings are born free and equal in dignity and rights.
+ 
+\subsection{Íslenska}
+Hver maður er borinn frjáls og jafn öðrum að virðingu og réttindum.
+ 
+\subsection{Русский}  
+Все люди рождаются свободными
+и равными в своем достоинстве и 
+правах.
+ 
+\subsection{Tiếng Việt}
+Tất cả mọi người sinh ra đều được tự do và bình đẳng về nhân phẩm và 
+quyền lợi.
+ 
+\subsection{简体中文}
+每个人生来平等，享有相同的地位和权利。
+ 
+\subsection{繁體中文}
+每個人生來平等，享有相同的地位和權利。
+ 
+\subsection{日本語}
+すべての人間は自由であり、かつ、尊厳と権利とについて平等である。
+ 
+\section{Legacy syntax}
+When he goes---``Hello World!''\\
+She replies—“Hello dear!”
+ 
+\section{Ligatures}
+\fontspec[Ligatures={Common, Historical}]{Linux Libertine O Italic}
+\fontsize{12pt}{18pt}\selectfont Questo è strano assai!
+ 
+\section{Numerals}
+\fontspec[Numbers={OldStyle}]{Linux Libertine O}Old style: 1234567\\
+\fontspec[Numbers={Lining}]{Linux Libertine O}Lining: 1234567
+ 
+\end{document}		
+		</programlisting>
+		<para>测试字体</para>
 		<programlisting>
 		<![CDATA[
 \documentclass[12pt,a4paper]{article}
@@ -215,5 +262,16 @@ sudo apt-get install texlive-luatex
 		]]>
 		</screen>
 	</section>
-
+	<section>
+		<title>FAQ</title>
+		<section>
+			<title>! LaTeX Error: File `fontspec.sty' not found.</title>
+			<screen>
+$ texdoc fontsepc
+Sorry, no documentation found for fontsepc.
+If you are unsure about the name, try searching CTAN's TeX catalogue at
+http://ctan.org/search.html#byDescription.
+			</screen>
+		</section>
+	</section>
 </section>
