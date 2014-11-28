@@ -389,12 +389,14 @@ A，得到A,B,C,D....
 	<chapter id="thebibliography">
 		<title>参考文献</title>
 		<screen>
+		<![CDATA[
 \begin{thebibliography}{}
 \bibitem[Gelman et al., 2004]{Gelman} Gelman, A., Carlin, J. B., Stern, H. S. \& Rubin, D. B.
  (2004) Bayesian Data Analysis (Second Edition). \newblock Chapman \& Hall/CRC.
 \end{thebibliography}
 \clearpage
-\end{document}		
+\end{document}
+		]]>
 		</screen>
 	</chapter>
 		<!--
