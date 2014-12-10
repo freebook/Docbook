@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter id="list">
 	<title>Lists 项目符号与编号</title>
+	<info>
+		<keywordset>
+        	<keyword>calloutlist, glosslist, itemizedlist, listitem, orderedlist, segmentedlist, simplelist, variablelist</keyword>
+       	</keywordset>
+    </info>
 	<para>calloutlist, glosslist, itemizedlist, listitem, orderedlist, segmentedlist, simplelist, variablelist</para>
 	<section id="itemizedlist">
 		<title>itemizedlist</title>
@@ -182,6 +187,23 @@ three columns:
       <para>Definition or explanation.</para>
     </listitem>
   </varlistentry>
+</variablelist>
+
+<variablelist><title>Font Filename Extensions</title>
+	<varlistentry><term><filename>TTF</filename></term>
+		<listitem>
+		<para>TrueType fonts.</para>
+		</listitem>
+	</varlistentry>
+	<varlistentry><term><filename>PFA</filename></term>
+	              <term><filename>PFB</filename></term>
+		<listitem>
+		<para>PostScript fonts.  <filename>PFA</filename> files are common on 
+		<acronym>UNIX</acronym> systems, <filename>PFB</filename> files
+		are more common on Windows systems.
+		</para>
+		</listitem>
+	</varlistentry>
 </variablelist>
 		]]>
 		</programlisting>
