@@ -3,7 +3,7 @@
 	<title>写作团队的运作</title>
 	<para>前提条件： subversion 服务器一台,或者使用sf.net, github.com, code.google.com 等等提供的服务，团队人员需要懂得docbook以及配置docbook环境</para>
 
-	<section>
+	<section id="editor.env">
 		<title>Docbook 环境初始化</title>
 		<section>
 			<title>FreeBSD</title>
@@ -134,7 +134,7 @@ $ xsltproc /usr/share/xml/docbook/stylesheet/docbook-xsl/xhtml/docbook.xsl book.
 			</screen>
 		</section>
 	</section>
-	<section>
+	<section id="subversion">
 		<title>Subversion 版本控制</title>
 
 		<procedure>
@@ -231,7 +231,7 @@ $ svn copy svn://netkiller.8800.org/document/trunk svn://netkiller.8800.org/docu
 			</step>
 		</procedure>
 	</section>
-	<section>
+	<section id="git">
 		<title>GIT</title>
 		<screen>
 配置GIT环境
