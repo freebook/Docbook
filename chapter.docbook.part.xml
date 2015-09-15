@@ -655,5 +655,20 @@ See the paragraph on <xref  linkend="ChooseSCSIid"  endterm="SCSIxref"/>.
 		</programlisting>
 	</section>
 </chapter>
+
+<chapter id="references">
+	<title>Cross references</title>
+	<screen>
+	<![CDATA[
+	
+	<lot>
+		<title>List of Figures</title>
+		<lotentry pagenum='5'>The Letters inside their boxes</lotentry>
+		<lotentry pagenum='15'>Example figure produced by both TeX and troff</lotentry>
+		<!-- ... -->
+	</lot>
+	]]>
+	</screen>
+</chapter>
 	&chapter.htmlforms.xml;
 
