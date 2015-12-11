@@ -33,6 +33,8 @@
 
 	<!ENTITY chapter.tex 				 	SYSTEM "chapter.tex.xml">
 	<!ENTITY chapter.tex.texlive.xml		SYSTEM "chapter.tex.texlive.xml">
+	
+	<!ENTITY chapter.jekyll.xml			 	SYSTEM "jekyll/chapter.jekyll.xml">
 ]>
 <book xml:base="http://netkiller.sf.net/book/publish/"
 	xmlns="http://docbook.org/ns/docbook" xml:lang="zh-cn">
@@ -48,6 +50,7 @@
 			<year>2012</year>
 			<year>2013</year>
 			<year>2014</year>
+			<year>2015</year>
 			<holder>Netkiller(Neo Chan). All rights reserved.</holder>
 		</copyright>
 		<pubdate>$Date: 2013-04-10 15:03:49 +0800 (Wed, 10 Apr 2013) $</pubdate>
@@ -70,6 +73,7 @@
 	&chapter.docbook;
 	&chapter.tex;
 	&chapter.markdown.xml;
+	&chapter.jekyll.xml;
 	&chapter.sphinx.xml;
 	&chapter.pandoc.xml;
 	&chapter.team.xml;

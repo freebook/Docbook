@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="index"><?dbhtml dir="jekyll" ?>
+	<title>Jekyll</title>
+	<para><ulink url="http://jekyllrb.com/" /></para>
+	<section>
+		<title>安装 Jekyll</title>
+		<section>
+			<title>Ubuntu</title>
+			<screen>
+sudo apt-get install ruby jekyll
+			</screen>
+		</section>
+	</section>
+	<section>
+		<title></title>
+		<screen>
+$ jekyll new my-web-site 
+$ cd my-web-site 
+$ jekyll serve 	
+		</screen>
+	</section>
+</chapter>
