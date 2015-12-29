@@ -58,6 +58,7 @@ jims/read/three.html
 ...
 </para>
 <?dbhtml-include href="mycode.html"?>
+<?dbhtml-include href="../additonal.html"?>
 <para>
 ...
 		]]>
