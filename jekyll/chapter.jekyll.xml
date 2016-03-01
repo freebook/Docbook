@@ -11,12 +11,80 @@ sudo apt-get install ruby jekyll
 			</screen>
 		</section>
 	</section>
-	<section>
-		<title></title>
+	<section id="new">
+		<title>创建 Jekyll 项目</title>
 		<screen>
 $ jekyll new my-web-site 
 $ cd my-web-site 
 $ jekyll serve 	
+		</screen>
+		<para>http://192.168.4.7:4000/</para>
+	</section>
+	<section id="permalink">
+		<title>permalink</title>
+		<para>_config.yml：配置permalink格式 </para>
+		<screen>
+permalink: /:year/:month/:day/:title
+		</screen>
+	</section>
+	<section id="_post">
+		<title>_post</title>
+		<para>样式</para>
+		<screen>
+layout: post		
+		</screen>		
+		<para>标题</para>	
+		<screen>
+title:  "FreeBSD"		
+		</screen>
+		<para>文章分类</para>
+		<screen>
+categories: ebook
+		</screen>	
+		
+	</section>
+	
+	<section id="category">
+		<title>category / categories</title>
+		<para>使用Category进行文章分类</para>
+		<screen>
+使用 {{ category | first }} 输出分类的名称 
+使用 {{ category | last | size }} 输出该分类下文章的数目 
+遍历 category.last 输出所有文章的信息，构建到该文章的索引目录		
+		</screen>
+		<para>单一分类</para>
+		<screen>
+---
+layout: Template
+title: Category Sample
+category: computer
+---
+		</screen>
+		<para>多个分类</para>
+		<screen>
+---
+layout: Template
+title: Category Sample
+categories: [linux, freebsd]
+---
+		</screen>
+		<para>显示分类名称</para>
+		<screen>
+{% for category in site.categories %}
+	{{ category | first }}
+{% endfor %}   		
+		</screen>
+		<screen>
+		<![CDATA[
+{% for category in site.categories %}
+	<h2>{{ category | first }}</h2> </span>{{ category | last | size }}</span> 
+	<ul class="arc-list">
+		{% for post in category.last %}
+		<li>{{ post.date | date:"%d/%m/%Y"}}<a href="{{ post.url }}">{{ post.title }}</a></li>
+		{% endfor %}
+	</ul>
+{% endfor %}
+		]]>
 		</screen>
 	</section>
 </chapter>
