@@ -35,6 +35,7 @@
 	<!ENTITY chapter.tex.texlive.xml		SYSTEM "chapter.tex.texlive.xml">
 	
 	<!ENTITY chapter.jekyll.xml			 	SYSTEM "jekyll/chapter.jekyll.xml">
+	<!ENTITY chapter.hugo.xml			 	SYSTEM "hugo/chapter.hugo.xml">
 ]>
 <book xml:base="http://netkiller.sf.net/book/publish/"
 	xmlns="http://docbook.org/ns/docbook" xml:lang="zh-cn">
@@ -44,13 +45,8 @@
 		&book.info.author.xml;
 		<copyright>
 			<year>2008</year>
-			<year>2009</year>
-			<year>2010</year>
-			<year>2011</year>
-			<year>2012</year>
-			<year>2013</year>
-			<year>2014</year>
-			<year>2015</year>
+			<year>-</year>
+			<year>2016</year>
 			<holder>Netkiller(Neo Chan). All rights reserved.</holder>
 		</copyright>
 		<pubdate>$Date: 2013-04-10 15:03:49 +0800 (Wed, 10 Apr 2013) $</pubdate>
@@ -76,6 +72,7 @@
 	&chapter.jekyll.xml;
 	&chapter.sphinx.xml;
 	&chapter.pandoc.xml;
+	&chapter.hugo.xml;
 	&chapter.team.xml;
 
 </book>
