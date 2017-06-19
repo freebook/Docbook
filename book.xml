@@ -36,6 +36,8 @@
 	
 	<!ENTITY chapter.jekyll.xml			 	SYSTEM "jekyll/chapter.jekyll.xml">
 	<!ENTITY chapter.hugo.xml			 	SYSTEM "hugo/chapter.hugo.xml">
+	<!ENTITY chapter.asciidoctor.xml	 	SYSTEM "chapter.asciidoctor.xml">
+
 ]>
 <book xml:base="http://netkiller.sf.net/book/publish/"
 	xmlns="http://docbook.org/ns/docbook" xml:lang="zh-cn">
@@ -46,7 +48,7 @@
 		<copyright>
 			<year>2008</year>
 			<year>-</year>
-			<year>2016</year>
+			<year>2017</year>
 			<holder>Netkiller(Neo Chan). All rights reserved.</holder>
 		</copyright>
 		<pubdate>$Date: 2013-04-10 15:03:49 +0800 (Wed, 10 Apr 2013) $</pubdate>
@@ -74,5 +76,6 @@
 	&chapter.pandoc.xml;
 	&chapter.hugo.xml;
 	&chapter.team.xml;
+	&chapter.asciidoctor.xml;
 
 </book>
