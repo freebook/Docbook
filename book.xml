@@ -6,14 +6,12 @@
 	"http://www.oasis-open.org/docbook/xml/5.0b5/dtd/docbook.dtd" [
 -->
 <!DOCTYPE subject SYSTEM "/usr/share/xml/docbook/schema/dtd/5.0/docbook.dtd" [
-	<!ENTITY book.info.author.xml			SYSTEM "../common/book.info.author.xml">
-	<!ENTITY book.info.legalnotice.xml		SYSTEM "../common/book.info.legalnotice.xml">
-	<!ENTITY book.info.abstract.xml			SYSTEM "../common/book.info.abstract.xml">
-    <!ENTITY book.preface.xml           	SYSTEM "../common/book.preface.xml">
-	<!ENTITY preface.about.me.xml       	SYSTEM "../common/about.me.xml">
-	<!ENTITY book.dedication.xml       		SYSTEM "../common/book.dedication.xml">
+	
+	<!ENTITY % common.doctype.entity.xml 	SYSTEM "../common/doctype.entity.xml">
+	%common.doctype.entity.xml;
+	<!ENTITY book.info.abstract.xml 		SYSTEM "../common/book.info.abstract.xml">
 
-	<!ENTITY chapter.docbook 			 	SYSTEM "chapter.docbook.xml">
+	<!ENTITY chapter.docbook.xml		 	SYSTEM "chapter.docbook.xml">
 	<!ENTITY chapter.docbook.doctype.xml 	SYSTEM "chapter.docbook.doctype.xml">
 	<!ENTITY chapter.docbook.book.xml	 	SYSTEM "chapter.docbook.book.xml">
 	<!ENTITY chapter.docbook.part.xml	 	SYSTEM "chapter.docbook.part.xml">
@@ -31,7 +29,7 @@
 	<!ENTITY chapter.pandoc.xml 	 		SYSTEM "chapter.pandoc.xml">
 	<!ENTITY chapter.team.xml			 	SYSTEM "chapter.team.xml">
 
-	<!ENTITY chapter.tex 				 	SYSTEM "chapter.tex.xml">
+	<!ENTITY chapter.tex.xml			 	SYSTEM "chapter.tex.xml">
 	<!ENTITY chapter.tex.texlive.xml		SYSTEM "chapter.tex.texlive.xml">
 	
 	<!ENTITY chapter.jekyll.xml			 	SYSTEM "jekyll/chapter.jekyll.xml">
@@ -68,8 +66,8 @@
 	&book.dedication.xml;
 	&book.preface.xml;
 
-	&chapter.docbook;
-	&chapter.tex;
+	&chapter.docbook.xml;
+	&chapter.tex.xml;
 	&chapter.markdown.xml;
 	&chapter.jekyll.xml;
 	&chapter.sphinx.xml;
