@@ -38,70 +38,7 @@
 		]]>
 		</programlisting>
 	</section>
-	<section id="stringparam">
-		<title>Docbook参数</title>
-		<para>/usr/share/xml/docbook/stylesheet/nwalsh/xhtml/param.xsl</para>
-		<screen>
-		<![CDATA[
-默认HTML格式输出文件中的章内小节是没有自动编号功能的，如果要实现小节自动编号需要设置HTML格式的两个转换参数。
-
-section.autolabel参数为1代表章内小节可自动编号，为0表示不会自动编号；
-
-section.label.includes.component.label参数为1表示章内小节编号包含章节编号,为0表示不包含章节编号。
-
-设置这两个参数可通过命令行方式，也可通过修改XSL转换文件方法。下面分别介绍这两种方法：
-
-通过命令行方式：
-
-$ xsltproc --stringparam  section.autolabel 1 \
-           --stringparam  section.label.includes.component.label 1 \
-           docbook.xsl  myfile.xml>myfile.htm
-修改XSL转换文件方式：
-
-DocBook文档的HTML格式转换样式文件一般位于/usr/share/sgml/docbook/docbook-xsl-1.65.1/html/目录下。通过查看docbook.xsl文件可知，在docbook.xsl中引用param.xsl作为参数设置文件，所有的参数都在这里设置。我们打开param.xsl文件，找到以下两行，再把参数置成1就可以了。
-
-<xsl:param name="section.autolabel" select="1"/>
-<xsl:param name="section.label.includes.component.label" select="1"/>
-		]]>
-		</screen>
-		<para>另一种方法</para>
-		<screen>
-		<![CDATA[
-cat my_docbook.xsl
-<?xml version='1.0'?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                version='1.0'>
-<xsl:include href="/usr/share/xml/docbook/stylesheet/nwalsh/html/docbook.xsl"/>
-<xsl:output method="html"
-            encoding="UTF-8"
-            indent="no"/>
-</xsl:stylesheet>
-
-xsltproc -o docbook.html my_docbook.xsl docbook.xml
-		]]>
-		</screen>
-		<section>
-			<title>字符集</title>
-			<screen>
---stringparam chunker.output.encoding UTF-8
-			</screen>
-		</section>
-		<section>
-			<title>Filename prefix</title>
-			<screen>
-			<![CDATA[
-base.dir parameter value	Description	Example 					chunk filename
-base.dir="htmlout/"			Output directory only.					htmlout/chap1.html
-base.dir="refbook-"			Filename prefix only.					refbook-chap1.html
-base.dir="htmlout/refbook-"	Output directory and filename prefix.	htmlout/refbook-chap1.html
-			]]>
-			</screen>
-			<para>base.dir parameter</para>
-			<screen>
-xsltproc --stringparam base.dir /usr/apache/htdocs/ chunk.xsl myfile.xml
-			</screen>
-		</section>
-	</section>
+	
 	<section id="docbookx.dtd">
 		<title>DTD 引用</title>
 		<section>
