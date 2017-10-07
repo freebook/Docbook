@@ -205,7 +205,12 @@ docbook2odf book.xml
 
 	&chapter.docbook-website.xml;
 	&chapter.docbook.epub.xml;
-
+	<section id="mac">
+		<title>Apple Mac</title>
+		<screen>
+neo@MacBook-Pro ~ % brew install docbook-xsl
+		</screen>
+	</section>
 </chapter>
 
 <chapter id="docbook-xsl">
