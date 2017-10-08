@@ -207,6 +207,11 @@ docbook2odf book.xml
 	&chapter.docbook.epub.xml;
 	<section id="mac">
 		<title>Apple Mac</title>
+		<para>安装 dtd 文件</para>
+		<screen>
+neo@MacBook-Pro ~ % brew install docbook-xsl
+		</screen>
+		<para>安装 xsl 文件</para>
 		<screen>
 neo@MacBook-Pro ~ % brew install docbook-xsl
 		</screen>
