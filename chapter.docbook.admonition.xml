@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter id="admonition">
-	<title>Admonition</title>
+	<title>Admonition 警告与提示</title>
 	<para>caution, important, note, tip, warning</para>
 	<section id="caution">
 		<title>caution</title>
@@ -9,7 +9,9 @@
 <para><caution>Text goes here.</caution></para>
 		]]>
 		</programlisting>
-		<para><caution>Text goes here.</caution></para>
+		<para>
+			<caution>Text goes here.</caution>
+		</para>
 	</section>
 	<section id="important">
 		<title>important</title>
@@ -18,7 +20,9 @@
 <para><important>Text goes here.</important></para>
 		]]>
 		</programlisting>
-		<para><important>Text goes here.</important></para>
+		<para>
+			<important>Text goes here.</important>
+		</para>
 	</section>
 	<section id="note">
 		<title>note</title>
@@ -27,7 +31,9 @@
 <para><note>Text goes here.</note></para>
 		]]>
 		</programlisting>
-		<para><note>Text goes here.</note></para>
+		<para>
+			<note>Text goes here.</note>
+		</para>
 	</section>
 	<section id="tip">
 		<title>tip</title>
@@ -36,7 +42,9 @@
 <para><tip>Text goes here.</tip></para>
 		]]>
 		</programlisting>
-		<para><tip>Text goes here.</tip></para>
+		<para>
+			<tip>Text goes here.</tip>
+		</para>
 	</section>
 	<section id="warning">
 		<title>warning</title>
@@ -45,6 +53,23 @@
 <para><warning>Text goes here.</warning></para>
 		]]>
 		</programlisting>
-		<para><warning>Text goes here.</warning></para>
+		<para>
+			<warning>Text goes here.</warning>
+		</para>
+	</section>
+	<section id="footnote">
+		<title>footnote 脚注</title>
+		<screen>
+		<![CDATA[
+<para>During the installation of the product<footnote><para>In versions 2.3 and 2.4.</para> </footnote> you may see messages such as these. </para>		
+		]]>
+		</screen>
+		<para>
+			During the installation of the product
+			<footnote>
+				<para>In versions 2.3 and 2.4.</para>
+			</footnote>
+			you may see messages such as these.
+		</para>
 	</section>
 </chapter>

@@ -284,7 +284,7 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 	&chapter.docbook.paragraphs.xml;
 	&chapter.docbook.list.xml;
 <chapter id="table">
-	<title>Table</title>
+	<title>Table 表格</title>
 	<programlisting>
 	<![CDATA[
 <table>
@@ -325,9 +325,49 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 	    </tbody>
 	   </tgroup>
 	</table>
+	<section id="informaltable">
+		<title>informaltable</title>
+		<literallayout>
+		<![CDATA[
+<article xmlns='http://docbook.org/ns/docbook'>
+	<title>Example footnoteref</title>
+	<informaltable>
+		<tgroup cols='2'>
+		<tbody>
+			<row>
+				<entry>foo<footnote xml:id='fnrex1a'><para>A meaningless word</para></footnote></entry>
+				<entry>3<footnote xml:id='fnrex1b'><para>A meaningless number</para></footnote></entry>
+			</row>
+    			<row>
+ 				<entry>bar<footnoteref linkend='fnrex1a'/></entry>
+				<entry>5<footnoteref linkend='fnrex1b'/></entry>
+ 			</row>
+		</tbody>
+		</tgroup>
+	</informaltable>
+</article>		
+		]]>
+		</literallayout>
+		
+		<informaltable>
+			<tgroup cols='2'>
+			<tbody>
+				<row>
+					<entry>foo<footnote xml:id='fnrex1a'><para>A meaningless word</para></footnote></entry>
+					<entry>3<footnote xml:id='fnrex1b'><para>A meaningless number</para></footnote></entry>
+				</row>
+	    			<row>
+	 				<entry>bar<footnoteref linkend='fnrex1a'/></entry>
+					<entry>5<footnoteref linkend='fnrex1b'/></entry>
+	 			</row>
+			</tbody>
+			</tgroup>
+		</informaltable>
+		
+	</section>
 </chapter>
 <chapter id="images">
-	<title>Images</title>
+	<title>Images 图片</title>
 	<section id="figure">
 		<title>figure</title>
 		<programlisting>
