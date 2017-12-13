@@ -62,6 +62,24 @@
 		<screen>
 		<![CDATA[
 <para>During the installation of the product<footnote><para>In versions 2.3 and 2.4.</para> </footnote> you may see messages such as these. </para>		
+
+<para>
+			An annual percentage rate (
+			<abbrev>APR</abbrev>
+			) of 13.9%
+			<footnote>
+				<para>
+					The prime rate, as published in the
+					<citetitle>Wall Street
+						Journal
+					</citetitle>
+					on the first business day of the month,
+					plus 7.0%.
+				</para>
+			</footnote>
+			will be charged on all balances carried forward.
+		</para>
+		
 		]]>
 		</screen>
 		<para>
@@ -71,5 +89,23 @@
 			</footnote>
 			you may see messages such as these.
 		</para>
+
+		<para>
+			An annual percentage rate (
+			<abbrev>APR</abbrev>
+			) of 13.9%
+			<footnote>
+				<para>
+					The prime rate, as published in the
+					<citetitle>Wall Street
+						Journal
+					</citetitle>
+					on the first business day of the month,
+					plus 7.0%.
+				</para>
+			</footnote>
+			will be charged on all balances carried forward.
+		</para>
+
 	</section>
 </chapter>
