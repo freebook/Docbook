@@ -3,9 +3,9 @@
 	<title>Lists 项目符号与编号</title>
 	<info>
 		<keywordset>
-        	<keyword>calloutlist, glosslist, itemizedlist, listitem, orderedlist, segmentedlist, simplelist, variablelist</keyword>
-       	</keywordset>
-    </info>
+			<keyword>calloutlist, glosslist, itemizedlist, listitem, orderedlist, segmentedlist, simplelist, variablelist</keyword>
+		</keywordset>
+	</info>
 	<para>calloutlist, glosslist, itemizedlist, listitem, orderedlist, segmentedlist, simplelist, variablelist</para>
 	<section id="itemizedlist">
 		<title>itemizedlist</title>
@@ -20,9 +20,15 @@
 		]]>
 		</programlisting>
 		<itemizedlist>
-			<listitem><para>item 1</para></listitem>
-			<listitem><para>item 2</para></listitem>
-			<listitem><para>item 3</para></listitem>
+			<listitem>
+				<para>item 1</para>
+			</listitem>
+			<listitem>
+				<para>item 2</para>
+			</listitem>
+			<listitem>
+				<para>item 3</para>
+			</listitem>
 		</itemizedlist>
 		<programlisting>
 		<![CDATA[
@@ -49,17 +55,17 @@ Item 3
 			<listitem>
 				<para>
 					Item 1
-			</para>
+				</para>
 			</listitem>
 			<listitem override='bullet'>
 				<para>
 					Item 2
-			</para>
+				</para>
 			</listitem>
 			<listitem>
 				<para>
 					Item 3
-			</para>
+				</para>
 			</listitem>
 		</itemizedlist>
 	</section>
@@ -76,9 +82,15 @@ Item 3
 			]]>
 		</programlisting>
 		<orderedlist>
-			<listitem><para>列表内容 1</para></listitem>
-			<listitem><para>列表内容 2</para></listitem>
-			<listitem><para>列表内容 3</para></listitem>
+			<listitem>
+				<para>列表内容 1</para>
+			</listitem>
+			<listitem>
+				<para>列表内容 2</para>
+			</listitem>
+			<listitem>
+				<para>列表内容 3</para>
+			</listitem>
 		</orderedlist>
 	</section>
 	<section id="simplelist">
@@ -100,16 +112,19 @@ Item 3
 </para>
 			]]>
 			</programlisting>
-			<para>Here is a <tag>SimpleList</tag>, rendered inline:
-			<simplelist type='inline'>
-			<member>A</member>
-			<member>B</member>
-			<member>C</member>
-			<member>D</member>
-			<member>E</member>
-			<member>F</member>
-			<member>G</member>
-			</simplelist>
+			<para>
+				Here is a
+				<tag>SimpleList</tag>
+				, rendered inline:
+				<simplelist type='inline'>
+					<member>A</member>
+					<member>B</member>
+					<member>C</member>
+					<member>D</member>
+					<member>E</member>
+					<member>F</member>
+					<member>G</member>
+				</simplelist>
 			</para>
 
 			<programlisting>
@@ -128,17 +143,20 @@ three columns:
 </para>
 			]]>
 			</programlisting>
-			<para>Here is the same <tag>SimpleList</tag> rendered horizontally with
-			three columns:
-			<simplelist type='horiz' columns='3'>
-			<member>A</member>
-			<member>B</member>
-			<member>C</member>
-			<member>D</member>
-			<member>E</member>
-			<member>F</member>
-			<member>G</member>
-			</simplelist>
+			<para>
+				Here is the same
+				<tag>SimpleList</tag>
+				rendered horizontally with
+				three columns:
+				<simplelist type='horiz' columns='3'>
+					<member>A</member>
+					<member>B</member>
+					<member>C</member>
+					<member>D</member>
+					<member>E</member>
+					<member>F</member>
+					<member>G</member>
+				</simplelist>
 			</para>
 
 			<programlisting>
@@ -156,16 +174,17 @@ three columns:
 </para>
 			]]>
 			</programlisting>
-			<para>Finally, here is the list rendered vertically:
-			<simplelist type='vert' columns='3'>
-			<member>A</member>
-			<member>B</member>
-			<member>C</member>
-			<member>D</member>
-			<member>E</member>
-			<member>F</member>
-			<member>G</member>
-			</simplelist>
+			<para>
+				Finally, here is the list rendered vertically:
+				<simplelist type='vert' columns='3'>
+					<member>A</member>
+					<member>B</member>
+					<member>C</member>
+					<member>D</member>
+					<member>E</member>
+					<member>F</member>
+					<member>G</member>
+				</simplelist>
 			</para>
 		</example>
 	</section>
@@ -208,19 +227,19 @@ three columns:
 		]]>
 		</programlisting>
 		<variablelist>
-		  <title>A variable list</title>
-		  <varlistentry>
-		    <term>First term</term>
-		    <listitem>
-		      <para>Definition or explanation.</para>
-		    </listitem>
-		  </varlistentry>
-		  <varlistentry>
-		    <term>Second term</term>
-		    <listitem>
-		      <para>Definition or explanation.</para>
-		    </listitem>
-		  </varlistentry>
+			<title>A variable list</title>
+			<varlistentry>
+				<term>First term</term>
+				<listitem>
+					<para>Definition or explanation.</para>
+				</listitem>
+			</varlistentry>
+			<varlistentry>
+				<term>Second term</term>
+				<listitem>
+					<para>Definition or explanation.</para>
+				</listitem>
+			</varlistentry>
 		</variablelist>
 	</section>
 	<section id="segmentedlist">
@@ -307,37 +326,37 @@ three columns:
 		]]>
 		</programlisting>
 		<procedure>
-		  <step>
-		    <para>Do this.</para>
-		  </step>
+			<step>
+				<para>Do this.</para>
+			</step>
 
-		  <step>
-		    <para>Then do this.</para>
-		  </step>
+			<step>
+				<para>Then do this.</para>
+			</step>
 
-		  <step>
-		    <para>And now do this.</para>
-		  </step>
+			<step>
+				<para>And now do this.</para>
+			</step>
 		</procedure>
 		<procedure>
-		  <title>A procedure</title>
-		  <step>
-		    <para>Step 1.</para>
-		  </step>
-		  <step>
-		    <para>Step 2.</para>
-		    <substeps>
-		      <step>
-		        <para>Substep a.</para>
-		      </step>
-		      <step>
-		        <para>Substep b.</para>
-		      </step>
-		    </substeps>
-		  </step>
-		  <step>
-		    <para>Step 3.</para>
-		  </step>
+			<title>A procedure</title>
+			<step>
+				<para>Step 1.</para>
+			</step>
+			<step>
+				<para>Step 2.</para>
+				<substeps>
+					<step>
+						<para>Substep a.</para>
+					</step>
+					<step>
+						<para>Substep b.</para>
+					</step>
+				</substeps>
+			</step>
+			<step>
+				<para>Step 3.</para>
+			</step>
 		</procedure>
 	</section>
 	<section id="qandaset">
@@ -429,4 +448,32 @@ three columns:
 			</glossentry>
 		</glosslist>
 	</section>
+
+	<section id="glossary">
+		<title>glossary 术语表</title>
+		<programlisting>
+		<![CDATA[
+<glossary><title>词汇表的例子</title>
+	<glossdiv><title>E</title>
+
+		<glossentry id="xml"><glossterm>Extensible Markup Language</glossterm>
+			<acronym>XML</acronym>
+			<glossdef>
+			<para>关于XML的定义...</para>
+			<glossseealso otherterm="sgml">
+			</glossdef>
+		</glossentry>
+
+	</glossdiv>
+</glossary>
+		]]>
+		</programlisting>
+		<para>引用</para>
+		<programlisting>
+		<![CDATA[
+<glossterm linkend="xml">Extensible Markup Language</glossterm> is a new standard…
+		]]>
+		</programlisting>
+	</section>
+
 </chapter>

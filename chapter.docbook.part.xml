@@ -254,33 +254,6 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 	</programlisting>
 </chapter>
 
-<chapter id="glossary">
-	<title>术语表 glossary</title>
-	<programlisting>
-	<![CDATA[
-<glossary><title>词汇表的例子</title>
-	<glossdiv><title>E</title>
-
-		<glossentry id="xml"><glossterm>Extensible Markup Language</glossterm>
-			<acronym>XML</acronym>
-			<glossdef>
-			<para>关于XML的定义...</para>
-			<glossseealso otherterm="sgml">
-			</glossdef>
-		</glossentry>
-
-	</glossdiv>
-</glossary>
-	]]>
-	</programlisting>
-	<para>引用</para>
-	<programlisting>
-	<![CDATA[
-<glossterm linkend="xml">Extensible Markup Language</glossterm> is a new standard…
-	]]>
-	</programlisting>
-</chapter>
-
 	&chapter.docbook.paragraphs.xml;
 	&chapter.docbook.list.xml;
 <chapter id="table">
