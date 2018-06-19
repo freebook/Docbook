@@ -209,12 +209,14 @@ docbook2odf book.xml
 		<title>Apple Mac</title>
 		<para>安装 dtd 文件</para>
 		<screen>
-neo@MacBook-Pro ~ % brew install docbook-xsl
+neo@MacBook-Pro ~ % brew install docbook
 		</screen>
+		<para>安装目录 /usr/local/Cellar/docbook/5.0/docbook/xml/5.0</para>
 		<para>安装 xsl 文件</para>
 		<screen>
 neo@MacBook-Pro ~ % brew install docbook-xsl
 		</screen>
+		<para>安装目录/usr/local/Cellar/docbook-xsl/1.79.1/docbook-xsl/</para>
 	</section>
 </chapter>
 
