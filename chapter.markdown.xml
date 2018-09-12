@@ -3,57 +3,57 @@
 <chapter id="index"><?dbhtml dir="markdown" ?>
 	<title>Markdown</title>
 	<para>http://daringfireball.net/projects/markdown/</para>
-	<section id="section">
+	<section id="markdown.section">
 		<title>章节</title>
 		<screen>
-A First Level Header
-====================
+			A First Level Header
+			====================
 
-A Second Level Header
----------------------
+			A Second Level Header
+			---------------------
 		</screen>
 		<para>#数量从1到6个代表HTML中的 H1...H6</para>
 		<screen>
-# 这是 H1
+			# 这是 H1
 
-## 这是 H2
+			## 这是 H2
 
-###### 这是 H6		
+			###### 这是 H6
 		</screen>
 		<screen>
-# 这是 H1 #
+			# 这是 H1 #
 
-## 这是 H2 ##
+			## 这是 H2 ##
 
-### 这是 H3 ###		
+			### 这是 H3 ###
 		</screen>
 	</section>
-	<section id="list">
+	<section id="markdown.list">
 		<title>项目符号与编号</title>
 		<para>项目符号</para>
 		<screen>
-*   Candy.
-*   Gum.
-*   Booze.
+			* Candy.
+			* Gum.
+			* Booze.
 
 
-+   Candy.
-+   Gum.
-+   Booze.
+			+ Candy.
+			+ Gum.
+			+ Booze.
 
 
--   Candy.
--   Gum.
--   Booze.
+			- Candy.
+			- Gum.
+			- Booze.
 		</screen>
 		<para>编号</para>
 		<screen>
-1.  Bird
-2.  McHale
-3.  Parish		
+			1. Bird
+			2. McHale
+			3. Parish
 		</screen>
 	</section>
-	<section id="blockquotes">
+	<section id="markdown.blockquotes">
 		<title>引用 </title>
 		<para>块引用</para>
 		<screen>
@@ -76,53 +76,67 @@ A Second Level Header
 		]]>
 		</screen>
 	</section>
-	<section>
+	<section id="markdown.code">
+		<title>Code</title>
+		<section id="markdown.code.json">
+			<title>JSON</title>
+			<screen>
+			<![CDATA[
+```json
+{"nickname":"netkiller"}
+```			
+			]]>
+			</screen>
+		</section>
+	</section>
+
+	<section id="markdown.hr">
 		<title>分割线</title>
 		<screen>
-* * *
+			* * *
 
-***
+			***
 
-*****
+			*****
 
-- - -
+			- - -
 
----------------------------------------		
+			---------------------------------------
 		</screen>
 	</section>
-	<section id="link">
+	<section id="markdown.link">
 		<title>连接</title>
 		<screen>
-This is [an example](http://example.com/ "Title") inline link.
+			This is [an example](http://example.com/ "Title") inline link.
 
-[This link](http://example.net/) has no title attribute.		
+			[This link](http://example.net/) has no title attribute.
 		</screen>
 	</section>
-	<section id="images">
+	<section id="markdown.images">
 		<title>图片</title>
 		<screen>
-![Alt text](/path/to/img.jpg)
+			![Alt text](/path/to/img.jpg)
 
-![Alt text](/path/to/img.jpg "Optional title")		
+			![Alt text](/path/to/img.jpg "Optional title")
 		</screen>
 	</section>
-	<section id="font">
+	<section id="markdown.font">
 		<title>字体格式</title>
 		<para>强调</para>
 		<screen>
-*single asterisks*
+			*single asterisks*
 
-_single underscores_
+			_single underscores_
 
-**double asterisks**
+			**double asterisks**
 
-__double underscores__		
+			__double underscores__
 		</screen>
 	</section>
-	<section id="example">
+	<section id="markdown.example">
 		<title>范例</title>
 		<screen>
-		
+
 		</screen>
 	</section>
 </chapter>
