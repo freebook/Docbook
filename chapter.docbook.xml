@@ -2,61 +2,63 @@
 <!-- $Id: chapter.docbook.xml 611 2013-06-05 07:27:35Z netkiller $ -->
 <part id="index"><?dbhtml dir="docbook" ?>
 	<title>Docbook</title>
-	<para><ulink url="http://www.docbook.org/">http://www.docbook.org/</ulink></para>
+	<para>
+		<ulink url="http://www.docbook.org/">http://www.docbook.org/</ulink>
+	</para>
 	<para>http://docbook.org/tdg51/en/html/docbook.html</para>
 	<chapter id="license">
 		<title>Open Document Licenses</title>
-	 	<para>Creative Commons Attribution 3.0</para><!-- http://creativecommons.org/about/downloads -->
+		<para>Creative Commons Attribution 3.0</para><!-- http://creativecommons.org/about/downloads -->
 		<para>GNU Free Documentation License</para>
 		<para>Open Publication License</para>
 		<para>The FreeBSD Documentation License</para>
 	</chapter>
 
-<chapter id="docbook.tools">
-	<title>Document Tools</title>
-	<para>Docbook SGML,XML 转换程序</para>
-	<section id="docbook-utils">
-		<title>SGML</title>
-		<screen>
-sudo apt-get install docbook-utils
-		</screen>
-		<para>CentOS</para>
-		<screen>
-# yum install docbook*
-		</screen>
-	</section>
-	<section id="docbook-xml">
-		<title>XML 转换</title>
-		<para>docbook-xsl-1.73.2.tar.gz</para>
-		<para>docbook-dsssl-1.79.tar.gz</para>
-		<para>rxp - A validating XML parser</para>
-		<para>rxp -s file.xml</para>
-		<para>To validate file.xml, use the command:</para>
-		<para>$ rxp -s -V file.xml</para>
-		<section id="xsltproc">
-			<title>xsltproc - XSLT command line processor</title>
-			<para>xsltproc --stringparam html.stylesheet docbook.css ../../docbook-xsl-1.73.2/xhtml/chunk.xsl ../book.xml</para>
+	<chapter id="docbook.tools">
+		<title>Document Tools</title>
+		<para>Docbook SGML,XML 转换程序</para>
+		<section id="docbook-utils">
+			<title>SGML</title>
 			<screen>
-$ sudo apt-get install docbook-xsl
-$ export DSSSL=/usr/share/xml/docbook/stylesheet/nwalsh/xhtml/chunk.xsl
-$ /usr/bin/xsltproc --stringparam html.stylesheet docbook.css ${DSSSL} ../book.xml
+				sudo apt-get install docbook-utils
+			</screen>
+			<para>CentOS</para>
+			<screen>
+				# yum install docbook*
+			</screen>
+		</section>
+		<section id="docbook-xml">
+			<title>XML 转换</title>
+			<para>docbook-xsl-1.73.2.tar.gz</para>
+			<para>docbook-dsssl-1.79.tar.gz</para>
+			<para>rxp - A validating XML parser</para>
+			<para>rxp -s file.xml</para>
+			<para>To validate file.xml, use the command:</para>
+			<para>$ rxp -s -V file.xml</para>
+			<section id="xsltproc">
+				<title>xsltproc - XSLT command line processor</title>
+				<para>xsltproc --stringparam html.stylesheet docbook.css ../../docbook-xsl-1.73.2/xhtml/chunk.xsl ../book.xml</para>
+				<screen>
+					$ sudo apt-get install docbook-xsl
+					$ export DSSSL=/usr/share/xml/docbook/stylesheet/nwalsh/xhtml/chunk.xsl
+					$ /usr/bin/xsltproc --stringparam html.stylesheet docbook.css ${DSSSL} ../book.xml
 
-			</screen>
-		</section>
-		<section id="docbook-ebnf">
-			<title>docbook-ebnf - EBNF module for the XML version of the DocBook DTD</title>
-			<para>docbook-ebnf - EBNF module for the XML version of the DocBook DTD</para>
-			<screen>
-$ sudo apt-get install docbook-ebnf
-			</screen>
-		</section>
-		<section id="docbook-xsl-saxon">
-			<title>docbook-xsl-saxon</title>
-			<screen>
-$ sudo apt-get install docbook-xsl-saxon
-			</screen>
-			<para>创建一个test.xml的测试文件</para>
-			<screen>
+				</screen>
+			</section>
+			<section id="docbook-ebnf">
+				<title>docbook-ebnf - EBNF module for the XML version of the DocBook DTD</title>
+				<para>docbook-ebnf - EBNF module for the XML version of the DocBook DTD</para>
+				<screen>
+					$ sudo apt-get install docbook-ebnf
+				</screen>
+			</section>
+			<section id="docbook-xsl-saxon">
+				<title>docbook-xsl-saxon</title>
+				<screen>
+					$ sudo apt-get install docbook-xsl-saxon
+				</screen>
+				<para>创建一个test.xml的测试文件</para>
+				<screen>
 			<![CDATA[
 SRCS = test.xml
 
@@ -97,51 +99,48 @@ clean:
 
 .PHONY: all check clean html validate
 			]]>
-			</screen>
-			<para>生成html</para>
-			<screen>
-cp  /usr/share/doc/docbook-xsl-saxon/examples/db2html.xsl 。
+				</screen>
+				<para>生成html</para>
+				<screen>
+					cp /usr/share/doc/docbook-xsl-saxon/examples/db2html.xsl 。
 
-make html
+					make html
+				</screen>
+			</section>
+		</section>
+
+		<section id="xmllint">
+			<title>XML 校验</title>
+			<screen>
+				$ xmllint book.xml
 			</screen>
 		</section>
-	</section>
 
-	<section id="xmllint">
-		<title>XML 校验</title>
-		<screen>
-$ xmllint book.xml
-		</screen>
-	</section>
+		<section id="docbook.pdf">
+			<title>PDF</title>
+			<screen>
+				sudo apt-get install docbook-xml docbook-xsl xsltproc fop
+			</screen>
+			<para>安装字体</para>
+			<screen>
+				sudo mkdir /usr/share/fonts/microsoft
+			</screen>
+			<para>将 C:\Windows\Fonts 目录中的字体复制到 /usr/share/fonts/microsoft </para>
+			<screen>
+				$ java -cp /usr/share/java/fop.jar org.apache.fop.fonts.apps.TTFReader /usr/share/fonts/microsoft/simhei.ttf simhei.xml
+				$ java -cp /usr/share/java/fop.jar org.apache.fop.fonts.apps.TTFReader -ttcname "SimSun" /usr/share/fonts/microsoft/simsun.ttc simsun.xml
+			</screen>
 
-	<section id="docbook.pdf">
-		<title>PDF</title>
-		<screen>
-sudo apt-get install docbook-xml docbook-xsl xsltproc fop
-		</screen>
-		<para>安装字体</para>
-		<screen>
-sudo mkdir /usr/share/fonts/microsoft
-		</screen>
-		<para>将 C:\Windows\Fonts 目录中的字体复制到 /usr/share/fonts/microsoft </para>
-		<screen>
-$ java -cp /usr/share/java/fop.jar  org.apache.fop.fonts.apps.TTFReader /usr/share/fonts/microsoft/simhei.ttf simhei.xml
-$ java -cp /usr/share/java/fop.jar  org.apache.fop.fonts.apps.TTFReader -ttcname "SimSun" /usr/share/fonts/microsoft/simsun.ttc simsun.xml
-		</screen>
-
-		<screen>
+			<screen>
 		<![CDATA[
 sudo vim /usr/share/xml/docbook/stylesheet/docbook-xsl/fo/param.xsl
 <xsl:param name="callout.unicode.font">simsun</xsl:param>
 <xsl:param name="symbol.font.family">simsun</xsl:param>
 <xsl:param name="callout.unicode.font">simsun</xsl:param>
 		]]>
-		</screen>
-		<!--
-<xsl:param name="body.font.family"></xsl:param>
-<xsl:param name="title.font.family"></xsl:param>
-		 -->
-		 <screen>
+			</screen>
+			<!-- <xsl:param name="body.font.family"></xsl:param> <xsl:param name="title.font.family"></xsl:param> -->
+			<screen>
 		 <![CDATA[
 $ vim fop.conf
 
@@ -172,59 +171,113 @@ $ vim fop.conf
 </renderers>
 </fop>
 		 ]]>
-		 </screen>
-		<screen>
-xsltproc -o helloworld.fo /usr/share/xml/docbook/stylesheet/docbook-xsl/fo/docbook.xsl helloworld.xml
-fop -c fop.conf helloworld.fo -pdf helloworld.pdf
-		</screen>
-	</section>
-	<section id="chm">
-		<title>CHM</title>
-		<para>下载<ulink url="http://download.microsoft.com/download/0/a/9/0a939ef6-e31c-430f-a3df-dfae7960d564/htmlhelp.exe">HTML Help Wordshop</ulink>工具，并安装</para>
-		<screen>
-copy “c:\Program Files\HTML Help Workshop\hhc.exe” d:\docbook\example
-xsltproc –xinclude docbook_chm.xsl docbook.xml
-hhc.exe htmlhelp.hhp
-		</screen>
-		<screen>
+			</screen>
+			<screen>
+				xsltproc -o helloworld.fo /usr/share/xml/docbook/stylesheet/docbook-xsl/fo/docbook.xsl helloworld.xml
+				fop -c fop.conf helloworld.fo -pdf helloworld.pdf
+			</screen>
+		</section>
+		<section id="chm">
+			<title>CHM</title>
+			<para>
+				下载
+				<ulink url="http://download.microsoft.com/download/0/a/9/0a939ef6-e31c-430f-a3df-dfae7960d564/htmlhelp.exe">HTML Help Wordshop</ulink>
+				工具，并安装
+			</para>
+			<screen>
+				copy “c:\Program Files\HTML Help Workshop\hhc.exe” d:\docbook\example
+				xsltproc –xinclude docbook_chm.xsl docbook.xml
+				hhc.exe htmlhelp.hhp
+			</screen>
+			<screen>
 		<![CDATA[
 set PATH=C:\Program Files (x86)\HTML Help Workshop;%PATH%
 hhc htmlhelp.hhp		
 		]]>
-		</screen>
-	</section>
-	<section id="docbook2odf">
-		<title>docbook2odf - Convert docbook document to Oasis Open Document</title>
-		<screen>
-sudo apt-get install docbook2odf
-		</screen>
-		<screen>
-docbook2odf book.xml
-		</screen>
-	</section>
+			</screen>
+		</section>
+		<section id="docbook2odf">
+			<title>docbook2odf - Convert docbook document to Oasis Open Document</title>
+			<screen>
+				sudo apt-get install docbook2odf
+			</screen>
+			<screen>
+				docbook2odf book.xml
+			</screen>
+		</section>
 
 	&chapter.docbook-website.xml;
 	&chapter.docbook.epub.xml;
-	<section id="mac">
-		<title>Apple Mac</title>
-		<para>安装 dtd 文件</para>
-		<screen>
-neo@MacBook-Pro ~ % brew install docbook
-		</screen>
-		<para>安装目录 /usr/local/Cellar/docbook/5.0/docbook/xml/5.0</para>
-		<para>安装 xsl 文件</para>
-		<screen>
-neo@MacBook-Pro ~ % brew install docbook-xsl
-		</screen>
-		<para>安装目录/usr/local/Cellar/docbook-xsl/1.79.1/docbook-xsl/</para>
-	</section>
-</chapter>
+		<section id="mac">
+			<title>Apple Mac</title>
+			<para>安装 dtd 文件</para>
+			<screen>
+				neo@MacBook-Pro ~ % brew install docbook
+			</screen>
+			<para>安装目录 /usr/local/Cellar/docbook/5.0/docbook/xml/5.0</para>
+			<para>安装 xsl 文件</para>
+			<screen>
+				neo@MacBook-Pro ~ % brew install docbook-xsl
+			</screen>
+			<para>安装目录/usr/local/Cellar/docbook-xsl/1.79.1/docbook-xsl/</para>
+			<screen>
+		<![CDATA[
+neo@MacBook-Pro /tmp/doc % cat sample.xml 
+<?xml version="1.0" encoding="utf-8"?>
+<book>
+  <bookinfo>
+    <title>My EPUB book</title>
+    <author><firstname>Liza</firstname>
+            <surname>Daly</surname></author>
+    <volumenum>1234</volumenum>
+  </bookinfo>
+  <preface id="preface">
+    <title>Title page</title>
+    <figure id="cover-image">
+      <title>Our EPUB cover image icon</title>
+      <graphic fileref="cover.png"/>
+    </figure>
+  </preface>
+  <chapter id="chapter1">
+    <title>This is a pretty simple DocBook example</title>
+    <para>
+      Not much to see here.
+    </para>
+  </chapter>
+  <chapter id="end-notes">
+    <title>End notes</title>
+    <para>
+      This space intentionally left blank.
+    </para>
+  </chapter>
+</book>		
+		]]>
+			</screen>
+			<screen>
+		<![CDATA[
+neo@MacBook-Pro /tmp/doc % xsltproc /usr/local/Cellar/docbook-xsl/1.79.1/docbook-xsl/html/chunk.xsl sample.xml
+Writing pr01.html for preface(preface)
+Writing ch01.html for chapter(chapter1)
+Writing ch02.html for chapter(end-notes)
+Writing index.html for book
 
-<chapter id="docbook-xsl">
-	<title>docbook-xsl</title>
-	<section id="docbook-xsl.example">
-		<title>example</title>
-		<screen>
+neo@MacBook-Pro /tmp/doc % ll
+total 40
+-rw-r--r--  1 neo  wheel   1.6K Sep 28 16:51 ch01.html
+-rw-r--r--  1 neo  wheel   1.5K Sep 28 16:51 ch02.html
+-rw-r--r--  1 neo  wheel   1.8K Sep 28 16:51 index.html
+-rw-r--r--  1 neo  wheel   1.8K Sep 28 16:51 pr01.html
+-rw-r--r--  1 neo  wheel   710B Sep 28 16:51 sample.xml		
+		]]>
+			</screen>
+		</section>
+	</chapter>
+
+	<chapter id="docbook-xsl">
+		<title>docbook-xsl</title>
+		<section id="docbook-xsl.example">
+			<title>example</title>
+			<screen>
 		<![CDATA[
 <?xml version='1.0' encoding="utf-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
@@ -393,12 +446,12 @@ var _hmt = _hmt || [];
 
 </xsl:stylesheet>
 		]]>
-		</screen>
-	</section>
-	<section id="stringparam">
-		<title>Docbook参数</title>
-		<para>/usr/share/xml/docbook/stylesheet/nwalsh/xhtml/param.xsl</para>
-		<screen>
+			</screen>
+		</section>
+		<section id="stringparam">
+			<title>Docbook参数</title>
+			<para>/usr/share/xml/docbook/stylesheet/nwalsh/xhtml/param.xsl</para>
+			<screen>
 		<![CDATA[
 默认HTML格式输出文件中的章内小节是没有自动编号功能的，如果要实现小节自动编号需要设置HTML格式的两个转换参数。
 
@@ -420,9 +473,9 @@ DocBook文档的HTML格式转换样式文件一般位于/usr/share/sgml/docbook/
 <xsl:param name="section.autolabel" select="1"/>
 <xsl:param name="section.label.includes.component.label" select="1"/>
 		]]>
-		</screen>
-		<para>另一种方法</para>
-		<screen>
+			</screen>
+			<para>另一种方法</para>
+			<screen>
 		<![CDATA[
 cat my_docbook.xsl
 <?xml version='1.0'?>
@@ -436,11 +489,11 @@ cat my_docbook.xsl
 
 xsltproc -o docbook.html my_docbook.xsl docbook.xml
 		]]>
-		</screen>
-	</section>
-	<section id="toc.max.depth">
-		<title>生成目录深度</title>
-		<screen>
+			</screen>
+		</section>
+		<section id="toc.max.depth">
+			<title>生成目录深度</title>
+			<screen>
 		<![CDATA[
 总深度
 <xsl:param name="toc.max.depth">8</xsl:param>
@@ -448,32 +501,32 @@ xsltproc -o docbook.html my_docbook.xsl docbook.xml
 章节深度
 <xsl:param name="toc.section.depth">2</xsl:param>
 		]]>
-		</screen>
-	</section>
-	
-	<section id="chunker.output.encoding">
-		<title>字符集</title>
-		<screen>
---stringparam chunker.output.encoding UTF-8
-		</screen>
-	</section>
-	<section id="base.dir">
-		<title>Filename prefix</title>
-		<screen>
+			</screen>
+		</section>
+
+		<section id="chunker.output.encoding">
+			<title>字符集</title>
+			<screen>
+				--stringparam chunker.output.encoding UTF-8
+			</screen>
+		</section>
+		<section id="base.dir">
+			<title>Filename prefix</title>
+			<screen>
 		<![CDATA[
 base.dir parameter value	Description	Example 					chunk filename
 base.dir="htmlout/"			Output directory only.					htmlout/chap1.html
 base.dir="refbook-"			Filename prefix only.					refbook-chap1.html
 base.dir="htmlout/refbook-"	Output directory and filename prefix.	htmlout/refbook-chap1.html
 		]]>
-		</screen>
-		<para>base.dir parameter</para>
-		<screen>
-xsltproc --stringparam base.dir /usr/apache/htdocs/ chunk.xsl myfile.xml
-		</screen>
-	</section>
-	
-</chapter>
+			</screen>
+			<para>base.dir parameter</para>
+			<screen>
+				xsltproc --stringparam base.dir /usr/apache/htdocs/ chunk.xsl myfile.xml
+			</screen>
+		</section>
+
+	</chapter>
 
 	&chapter.docbook.doctype.xml;
 	&chapter.docbook.book.xml;
