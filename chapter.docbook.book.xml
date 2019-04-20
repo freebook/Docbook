@@ -168,7 +168,7 @@
 </article>
 				]]>
 				</programlisting>
-	            <programlisting>
+				<programlisting>
 				<![CDATA[
 <!DOCTYPE articleinfo PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
           "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
@@ -535,7 +535,7 @@ or less the point.</para>
 	</programlisting>
 </chapter>
 <chapter id="preface">
-	<title>preface</title>
+	<title>preface 前言</title>
 	<programlisting>
 	<![CDATA[
 <preface id="svn.foreword">

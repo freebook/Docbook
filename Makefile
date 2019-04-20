@@ -15,6 +15,7 @@ all: html epub htmlhelp
 
 git:
 	@git pull
+	@git submodule update 
 
 html: git
 

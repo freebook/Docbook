@@ -2,7 +2,7 @@
 <chapter id="part-chapter-section">
 	<title>Part / Chapter / Section</title>
 	<section id="part">
-		<title>part</title>
+		<title>part 部</title>
 		<programlisting>
 		<![CDATA[
 <part>
@@ -89,7 +89,7 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 		</programlisting>
 	</section>
 	<section id="chapter">
-		<title>chapter</title>
+		<title>chapter 章</title>
 		<programlisting>
 		<![CDATA[
 	<part>
@@ -165,7 +165,7 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 		</section>
 	</section>
 	<section id="section">
-		<title>section</title>
+		<title>section 节</title>
 
 		<programlisting>
 		<![CDATA[
@@ -182,7 +182,7 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 		</programlisting>
 	</section>
 	<section id="title">
-		<title>title</title>
+		<title>title 标题</title>
 
 		<programlisting>
 		<![CDATA[
@@ -242,7 +242,7 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 </chapter>
 
 <chapter id="appendix">
-	<title>appendix</title>
+	<title>appendix 附录</title>
 	<programlisting>
 	<![CDATA[
 <appendix>
@@ -281,22 +281,22 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 		]]>
 	</programlisting>
 	<table>
-	   <title>表格标题</title>
-	   <tgroup cols="2">
-	     <thead>
-	       <row>
-	          <entry>列标题1</entry>
-	          <entry>列标题2</entry>
-	       </row>
-	     </thead>
-	    <tbody>
-	       <row>
-	          <entry>列内容1</entry>
-	          <entry>列内容2</entry>
-	       </row>
-	       ...
-	    </tbody>
-	   </tgroup>
+		<title>表格标题</title>
+		<tgroup cols="2">
+			<thead>
+				<row>
+					<entry>列标题1</entry>
+					<entry>列标题2</entry>
+				</row>
+			</thead>
+			<tbody>
+				<row>
+					<entry>列内容1</entry>
+					<entry>列内容2</entry>
+				</row>
+				...
+			</tbody>
+		</tgroup>
 	</table>
 	<section id="informaltable">
 		<title>informaltable</title>
@@ -321,22 +321,38 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 </article>		
 		]]>
 		</literallayout>
-		
+
 		<informaltable>
 			<tgroup cols='2'>
-			<tbody>
-				<row>
-					<entry>foo<footnote xml:id='fnrex1a'><para>A meaningless word</para></footnote></entry>
-					<entry>3<footnote xml:id='fnrex1b'><para>A meaningless number</para></footnote></entry>
-				</row>
-	    			<row>
-	 				<entry>bar<footnoteref linkend='fnrex1a'/></entry>
-					<entry>5<footnoteref linkend='fnrex1b'/></entry>
-	 			</row>
-			</tbody>
+				<tbody>
+					<row>
+						<entry>
+							foo
+							<footnote xml:id='fnrex1a'>
+								<para>A meaningless word</para>
+							</footnote>
+						</entry>
+						<entry>
+							3
+							<footnote xml:id='fnrex1b'>
+								<para>A meaningless number</para>
+							</footnote>
+						</entry>
+					</row>
+					<row>
+						<entry>
+							bar
+							<footnoteref linkend='fnrex1a' />
+						</entry>
+						<entry>
+							5
+							<footnoteref linkend='fnrex1b' />
+						</entry>
+					</row>
+				</tbody>
 			</tgroup>
 		</informaltable>
-		
+
 	</section>
 </chapter>
 <chapter id="images">
@@ -669,7 +685,7 @@ See the paragraph on <xref  linkend="ChooseSCSIid"  endterm="SCSIxref"/>.
 	</section>
 </chapter>
 
-<chapter id="references">
+<chapter id="lot">
 	<title>Cross references</title>
 	<screen>
 	<![CDATA[
