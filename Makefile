@@ -13,7 +13,10 @@ DSSSL_EPUB=/usr/share/xml/docbook/stylesheet/docbook-xsl/epub/docbook.xsl
 
 all: html epub htmlhelp
 
-html:
+git:
+	@git pull
+
+html: git
 
 	@mkdir -p ${PUBLIC_HTML}
 	@find ${PUBLIC_HTML} -type f -iname "*.html" -exec rm -rf {} \;

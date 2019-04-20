@@ -19,7 +19,7 @@
 		]]>
 		</programlisting>
 		<simpara>
-		Just the text, ma'am.
+			Just the text, ma'am.
 		</simpara>
 	</section>
 	<section id="formalpara">
@@ -42,7 +42,8 @@
 				The title paragraph is incorporated into the body paragraph in HTML,
 				and is separate in PDF. The body paragraph is a regular &lt;para&gt;
 				paragraph, and there is only one body paragraph allowed per formal
-				paragraph.</para>
+				paragraph.
+			</para>
 		</formalpara>
 	</section>
 	<section id="bridgehead">
@@ -56,9 +57,10 @@ sub-section.</para>
 		]]>
 		</programlisting>
 		<bridgehead renderas="sect3">Topic Heading</bridgehead>
-<para>You can use the Bridgehead element to create a heading
-between paragraphs, without creating a new section or
-sub-section.</para>
+		<para>You can use the Bridgehead element to create a heading
+			between paragraphs, without creating a new section or
+			sub-section.
+		</para>
 	</section>
 	<section id="blockquote">
 		<title>blockquote</title>
@@ -72,7 +74,7 @@ sub-section.</para>
 		]]>
 		</programlisting>
 		<blockquote>
-	    	<para> This text should be indented. </para>
+			<para> This text should be indented. </para>
 		</blockquote>
 	</section>
 	<section id="sidebar">
@@ -88,12 +90,12 @@ sub-section.</para>
 		]]>
 		</screen>
 
-<sidebar>
-	<title>A Sidebar</title>
-	<para>
-	Sidebar content.
-	</para>
-</sidebar>
+		<sidebar>
+			<title>A Sidebar</title>
+			<para>
+				Sidebar content.
+			</para>
+		</sidebar>
 
 	</section>
 	<section id="trademark">
@@ -105,7 +107,7 @@ sub-section.</para>
 		</programlisting>
 
 		<literallayout>
-		<trademark>Microsoft</trademark>
+			<trademark>Microsoft</trademark>
 		</literallayout>
 	</section>
 	<section id="epigraph">
@@ -138,7 +140,9 @@ sub-section.</para>
 <para><emphasis role="strong">Note</emphasis></para>
 			]]>
 			</programlisting>
-			<para><emphasis role="strong">Note</emphasis></para>
+			<para>
+				<emphasis role="strong">Note</emphasis>
+			</para>
 		</section>
 
 		<section id="bold">
@@ -148,7 +152,7 @@ sub-section.</para>
 <emphasis role="bold">text</emphasis>
 			]]>
 			</programlisting>
-	 		<emphasis role="bold">text</emphasis>
+			<emphasis role="bold">text</emphasis>
 		</section>
 		<section id="italic">
 			<title>italic</title>
@@ -167,7 +171,9 @@ sub-section.</para>
 <para><literal>literal</literal></para>
 			]]>
 			</programlisting>
-			<para><literal>literal</literal></para>
+			<para>
+				<literal>literal</literal>
+			</para>
 
 			<para>Code</para>
 			<programlisting>
@@ -188,5 +194,5 @@ sub-section.</para>
 			<remark>Some details are still a bit shaky</remark>
 		</section>
 	</section>
-	
+
 </chapter>
