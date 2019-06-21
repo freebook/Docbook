@@ -4,7 +4,7 @@
 	<section id="bookinfo">
 		<title>info</title>
 		<subtitle>bookinfo / articleinfo</subtitle>
-		<section>
+		<section id="affiliation">
 			<title>affiliation</title>
 			<programlisting>
 			<![CDATA[
@@ -17,7 +17,7 @@
 			]]>
 			</programlisting>
 		</section>
-		<section>
+		<section id="address">
 			<title>address</title>
 			<programlisting>
 			<![CDATA[
@@ -35,7 +35,7 @@
 			]]>
 			</programlisting>
 		</section>
-		<section>
+		<section id="reference">
 			<title>reference</title>
 			<programlisting>
 			<![CDATA[
@@ -49,7 +49,7 @@
 			</programlisting>
 		</section>
 
-		<section>
+		<section id="authorgroup">
 			<title>author</title>
 			<programlisting>
 			<![CDATA[
@@ -192,7 +192,7 @@
 			</section>
 		</section>
 
-		<section>
+		<section id="publisher">
 			<title>出版信息</title>
 			<section>
 				<title>publisher</title>
@@ -330,7 +330,7 @@
 			</programlisting>
 		</section>
 		<section id="info.cover">
-			<title>cover</title>
+			<title>cover 书籍封面图</title>
 			<programlisting>
 			<![CDATA[
 <book xmlns='http://docbook.org/ns/docbook'>
@@ -441,11 +441,9 @@
 			</programlisting>
 		</section>
 	</section>
-</chapter>
-
-<chapter id="toc">
-	<title>toc</title>
-	<programlisting>
+	<section id="toc">
+		<title>toc</title>
+		<programlisting>
 	<![CDATA[
 	
 <book xmlns='http://docbook.org/ns/docbook'>
@@ -513,11 +511,12 @@
 </book>	
 	
 	]]>
-	</programlisting>
-</chapter>
-<chapter>
-	<title>topic</title>
-	<programlisting>
+		</programlisting>
+	</section>
+
+	<section id="topic">
+		<title>topic</title>
+		<programlisting>
 	<![CDATA[
 	
 <topic xmlns='http://docbook.org/ns/docbook' version="5.1">
@@ -532,11 +531,11 @@ or less the point.</para>
 </topic>	
 	
 	]]>
-	</programlisting>
-</chapter>
-<chapter id="preface">
-	<title>preface 前言</title>
-	<programlisting>
+		</programlisting>
+	</section>
+	<section id="preface">
+		<title>preface 前言</title>
+		<programlisting>
 	<![CDATA[
 <preface id="svn.foreword">
   <prefaceinfo>
@@ -551,5 +550,7 @@ or less the point.</para>
   <para>...</para>
 </preface>
 	]]>
-	</programlisting>
+		</programlisting>
+	</section>
+
 </chapter>
