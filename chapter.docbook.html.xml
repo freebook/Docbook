@@ -125,4 +125,18 @@ Use this parameter to set the highest number for which you have a callout graphi
 		]]>
 		</screen>
 	</section>
+	<section id="dbtimestamp">
+		<title>显示当前时间</title>
+		<!-- http://www.sagehill.net/docbookxsl/Datetime.html -->
+		<screen>
+		<![CDATA[
+<para>This document was generated <?dbtimestamp format="Y-m-d H:M:S"?>. </para>
+		]]>
+		</screen>
+		<screen>
+		<![CDATA[
+<?dbtimestamp format="Y-m-d"  padding="0" ?>		
+		]]>
+		</screen>
+	</section>
 </section>
