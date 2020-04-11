@@ -194,5 +194,29 @@ sub-section.</para>
 			<remark>Some details are still a bit shaky</remark>
 		</section>
 	</section>
+	<section id="citetitle">
+		<title>citetitle</title>
+		<programlisting>
+		<![CDATA[
+<!DOCTYPE para PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<para>
+The <emphasis>most</emphasis> important example of this
+phenomenon occurs in A. Nonymous's book
+<citetitle>Power Snacking</citetitle>.
+</para>		
+		]]>
+		</programlisting>
+
+		<para>
+			The
+			<emphasis>most</emphasis>
+			important example of this
+			phenomenon occurs in A. Nonymous's book
+			<citetitle>Power Snacking</citetitle>
+			.
+		</para>
+	</section>
+
 
 </chapter>

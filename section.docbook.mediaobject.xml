@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="mediaobject">
+	<title>图片，视频，音乐</title>
+	<section id="figure">
+		<title>figure</title>
+		<programlisting>
+		<![CDATA[
+<figure><title>Notre Dame Cathedral</title>
+	<graphic srccredit="Norman Walsh, 1998" fileref="figures/notredame.png"/>
+</figure>		
+		
+<figure>
+ <title>My Image</title>
+ <screenshot>
+  <screeninfo>Sample GNOME Display</screeninfo>
+  <graphic  format="png" fileref="myfile" srccredit="me">
+  </graphic>
+ </screenshot>
+</figure>
+		]]>
+		</programlisting>
+	</section>
+	<section id="mediaobject">
+		<title>mediaobject</title>
+		<programlisting>
+		<![CDATA[
+<figure>
+	<title>OpenOffice MS-compatible Spreadsheet</title>
+	<mediaobject>
+		<imageobject>
+			<imagedata fileref="images/openoffice.png" format="PNG"></imagedata>
+		</imageobject>
+		<imageobject>
+			<imagedata fileref="images/openoffice.eps" format="EPS"></imagedata>
+		</imageobject>
+		<textobject>
+			<phrase>OpenOffice spreadsheet looks just like MS Office .xls file.</phrase>
+		</textobject>
+	</mediaobject>
+</figure>
+		]]>
+		</programlisting>
+		<programlisting>
+		<![CDATA[
+<mediaobject>
+	<videoobject>
+		<videodata fileref='movie.avi'/>
+	</videoobject>
+	<imageobject>
+		<imagedata fileref='movie-frame.gif'/>
+	</imageobject>
+	<textobject>
+		<para>This video illustrates the proper way to assemble an
+		inverting time distortion device.
+		</para>
+		<warning>
+			<para>
+			It is imperative that the primary and secondary temporal
+			couplings not be mounted in the wrong order. Temporal
+			catastrophe is the likely result. The future you destroy
+			may be your own.
+			</para>
+		</warning>
+	</textobject>
+</mediaobject>
+		]]>
+		</programlisting>
+		
+	</section>
+	<section id="imageobject">
+		<title>imageobject</title>
+		<programlisting>
+		<![CDATA[
+<article xmlns='http://docbook.org/ns/docbook'>
+<title>Example imageobject</title>
+
+<mediaobject>
+  <imageobject condition="web">
+    <imagedata fileref="figs/web/db5d_ref09.png" format="PNG" scale="70"/>
+  </imageobject>
+  <imageobject condition="print">
+    <imagedata fileref="figs/print/db5d_ref09.pdf" format="PDF"/>
+  </imageobject>
+  <textobject>
+    <phrase>The Eiffel Tower</phrase>
+  </textobject>
+  <caption>
+    <para>Designed by Gustave Eiffel in 1889, The Eiffel Tower is one
+          of the most widely recognized buildings in the world.
+    </para>
+  </caption>
+</mediaobject>
+
+</article>		
+		]]>
+		</programlisting>
+	</section>
+	<section id="videoobject">
+		<title>视频</title>
+		<programlisting>
+		<![CDATA[
+<article xmlns='http://docbook.org/ns/docbook'>
+<title>Example videoobject</title>
+
+<mediaobject>
+  <videoobject>
+    <videodata fileref='movie.avi' autoplay="true" classid="com.example.player">
+      <multimediaparam name="crossfade" value="false"/>
+    </videodata>
+  </videoobject>
+  <imageobject>
+    <imagedata fileref='movie-frame.gif'/>
+  </imageobject>
+  <textobject>
+    <para>This video illustrates the proper way to assemble an
+    inverting time distortion device.
+    </para>
+    <warning>
+      <para>It is imperative that the primary and secondary temporal
+      couplings not be mounted in the wrong order. Temporal
+      catastrophe is the likely result. The future you destroy
+      may be your own.
+      </para>
+    </warning>
+  </textobject>
+</mediaobject>
+
+</article>		
+		]]>
+		</programlisting>
+		<programlisting>
+		<![CDATA[
+<article xmlns='http://docbook.org/ns/docbook'>
+<title>Example videoobject</title>
+
+<mediaobject>
+  <videoobject>
+    <videodata fileref='movie.ogg' autoplay="true" classid="com.example.player">
+      <multimediaparam name="type" value="video/ogg"/>
+    </videodata>
+    <videodata fileref='movie.mp4' autoplay="true" classid="com.example.player">
+      <multimediaparam name="type" value="vidoe/mp4"/>
+    </videodata>
+    <videodata fileref='movie.webm' autoplay="true" classid="com.example.player">
+      <multimediaparam name="type" value="video/webm"/>
+    </videodata>
+  </videoobject>
+  <imageobject>
+    <imagedata fileref='movie-frame.gif'/>
+  </imageobject>
+  <textobject>
+    <para>This video illustrates the proper way to assemble an
+    inverting time distortion device.
+    </para>
+    <warning>
+      <para>It is imperative that the primary and secondary temporal
+      couplings not be mounted in the wrong order. Temporal
+      catastrophe is the likely result. The future you destroy
+      may be your own.
+      </para>
+    </warning>
+  </textobject>
+</mediaobject>
+
+</article>		
+		]]>
+		</programlisting>
+	</section>
+	<section id="audioobject">
+		<title>插入音乐</title>
+		<programlisting>
+		<![CDATA[
+<article xmlns='http://docbook.org/ns/docbook'>
+<title>Example audioobject</title>
+
+<mediaobject>
+  <audioobject>
+    <audiodata fileref="phaser.wav"/>
+  </audioobject>
+  <textobject>
+    <phrase>A <trademark>Star Trek</trademark> phaser sound effect</phrase>
+  </textobject>
+</mediaobject>
+
+</article>		
+		]]>
+		</programlisting>
+	</section>
+	<section id="screenshot">
+		<title>screenshot</title>
+		<programlisting>
+		<![CDATA[
+<figure id="app-FIG-shot1">
+ <title>Screenshot</title>
+ <screenshot>
+  <mediaobject>
+   <imageobject>
+    <imagedata fileref="figures/example_screenshot.png" format="PNG"/>
+   </imageobject>
+   <textobject>
+     <phrase>Shows the application screenshot with several buttons.</phrase>
+   </textobject>
+   <caption>
+    <para>Screenshot of a program</para>
+   </caption>
+  </mediaobject>
+ </screenshot>
+</figure>
+		]]>
+		</programlisting>
+	</section>
+</chapter>

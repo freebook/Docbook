@@ -6,7 +6,7 @@ PUBLIC_HTML=~/public_html
 HTMLHELP=~/htmlhelp/$(DOCBOOK)/htmlhelp
 
 DSSSL=docbook-xsl/docbook.xsl
-TMPDIR = $(shell mktemp -d --suffix=.tmp -p /tmp docbook.html.XXXXXX)
+TMPDIR = $(shell mktemp -d --suffix=.html -p /tmp docbook.XXXXXX)
 
 XSLTPROC_OPT=--stringparam epub.stylesheet docbook.css --stringparam use.id.as.filename 1
 DSSSL_EPUB=/usr/share/xml/docbook/stylesheet/docbook-xsl/epub/docbook.xsl
@@ -15,7 +15,8 @@ all: html epub htmlhelp
 
 git:
 	@git pull
-	@git submodule update 
+	@git submodule init
+	@git submodule update
 
 html: git
 

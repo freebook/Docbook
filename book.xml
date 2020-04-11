@@ -13,6 +13,7 @@
 	<!ENTITY chapter.docbook.part.xml	 	SYSTEM "chapter.docbook.part.xml">
 	<!ENTITY chapter.docbook.list.xml	 	SYSTEM "chapter.docbook.list.xml">
 	<!ENTITY chapter.docbook.paragraphs.xml	SYSTEM "chapter.docbook.paragraphs.xml">
+	<!ENTITY section.docbook.mediaobject.xml	SYSTEM "section.docbook.mediaobject.xml">
 	<!ENTITY chapter.docbook.admonition.xml	SYSTEM "chapter.docbook.admonition.xml">
 	<!ENTITY chapter.docbook-website.xml	SYSTEM "chapter.docbook-website.xml">
 	<!ENTITY chapter.docbook.epub.xml	 	SYSTEM "chapter.docbook.epub.xml">
@@ -33,7 +34,7 @@
 	<!ENTITY chapter.asciidoctor.xml	 	SYSTEM "chapter.asciidoctor.xml">
 
 ]>
-<book xml:base="http://netkiller.sf.net/book/publish/" xmlns="http://docbook.org/ns/docbook" xml:lang="zh-cn">
+<book xml:base="http://netkiller.github.com/docbook/" xmlns="http://docbook.org/ns/docbook" xml:lang="zh-cn">
 	<info>
 		<title>Netkiller Docbook 手札</title>
 		<subtitle>Docbook, EPUB and Latex</subtitle>
@@ -41,16 +42,11 @@
 		<copyright>
 			<year>2008</year>
 			<year>-</year>
-			<year>2017</year>
+			<year>2020</year>
 			<holder>Netkiller(Neo Chan). All rights reserved.</holder>
 		</copyright>
 		<pubdate>$Date: 2013-04-10 15:03:49 +0800 (Wed, 10 Apr 2013) $</pubdate>
-		<releaseinfo>
-			<para>
-				文档始创于
-				<date>2008-5-24</date>
-			</para>
-		</releaseinfo>
+		<!-- <releaseinfo> <para> 文档始创于 <date>2008-5-24</date> </para> </releaseinfo> -->
 
 		&book.info.legalnotice.xml;
 		&book.info.abstract.xml;
@@ -60,10 +56,10 @@
 			<keyword>epub</keyword>
 		</keywordset>
 		<cover>
-			<para role="tagline">The Official Documentation for DocBook</para>
+			<para role="tagline">The Documentation for DocBook</para>
 			<mediaobject>
 				<imageobject>
-					<imagedata fileref="graphics/duck-cover.png" />
+					<imagedata fileref="images/cover.png" />
 				</imageobject>
 			</mediaobject>
 		</cover>
