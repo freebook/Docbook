@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter id="book">
 	<title>book / article</title>
-	<section id="bookinfo">
+	<section id="info">
 		<title>info</title>
 		<subtitle>bookinfo / articleinfo</subtitle>
 		<section id="affiliation">
@@ -195,7 +195,7 @@
 		<section id="publisher">
 			<title>出版信息</title>
 			<section>
-				<title>publisher</title>
+				<title>出版者</title>
 				<programlisting>
 				<![CDATA[
 <publisher>                      <!-- 出版者 -->
@@ -215,7 +215,7 @@
 				</programlisting>
 			</section>
 			<section>
-				<title>printhistory</title>
+				<title>印刷历史</title>
 				<programlisting>
 				<![CDATA[
 <printhistory>
