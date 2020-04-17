@@ -239,22 +239,8 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 			</programlisting>
 		</section>
 	</section>
-</chapter>
-
-<chapter id="appendix">
-	<title>appendix 附录</title>
-	<programlisting>
-	<![CDATA[
-<appendix>
-    <title>Appendix One</title>
-    <para>Appendix content.</para>
-</appendix>
-
-	]]>
-	</programlisting>
-</chapter>
-
 	&chapter.docbook.paragraphs.xml;
+</chapter>
 	&chapter.docbook.list.xml;
 <chapter id="table">
 	<title>Table 表格</title>
@@ -593,13 +579,61 @@ See the paragraph on <xref  linkend="ChooseSCSIid"  endterm="SCSIxref"/>.
 		]]>
 		</programlisting>
 	</section>
-</chapter>
+	<section id="footnote">
+		<title>footnote 脚注</title>
+		<screen>
+		<![CDATA[
+<para>During the installation of the product<footnote><para>In versions 2.3 and 2.4.</para> </footnote> you may see messages such as these. </para>		
 
-<chapter id="lot">
-	<title>Cross references</title>
-	<screen>
-	<![CDATA[
-	
+<para>
+			An annual percentage rate (
+			<abbrev>APR</abbrev>
+			) of 13.9%
+			<footnote>
+				<para>
+					The prime rate, as published in the
+					<citetitle>Wall Street
+						Journal
+					</citetitle>
+					on the first business day of the month,
+					plus 7.0%.
+				</para>
+			</footnote>
+			will be charged on all balances carried forward.
+		</para>
+		
+		]]>
+		</screen>
+		<para>
+			During the installation of the product
+			<footnote>
+				<para>In versions 2.3 and 2.4.</para>
+			</footnote>
+			you may see messages such as these.
+		</para>
+
+		<para>
+			An annual percentage rate (
+			<abbrev>APR</abbrev>
+			) of 13.9%
+			<footnote>
+				<para>
+					The prime rate, as published in the
+					<citetitle>Wall Street
+						Journal
+					</citetitle>
+					on the first business day of the month,
+					plus 7.0%.
+				</para>
+			</footnote>
+			will be charged on all balances carried forward.
+		</para>
+
+	</section>
+	<section id="lot">
+		<title>lot — A list of the titles of formal objects (as tables or figures) in a document</title>
+		<screen>
+	<![CDATA[	
 	<lot>
 		<title>List of Figures</title>
 		<lotentry pagenum='5'>The Letters inside their boxes</lotentry>
@@ -607,7 +641,79 @@ See the paragraph on <xref  linkend="ChooseSCSIid"  endterm="SCSIxref"/>.
 		<!-- ... -->
 	</lot>
 	]]>
-	</screen>
+		</screen>
+		<lot>
+			<title>List of Figures</title>
+			<lotentry pagenum='5'>The Letters inside their boxes</lotentry>
+			<lotentry pagenum='15'>Example figure produced by both TeX and troff</lotentry>
+		</lot>
+	</section>
 </chapter>
+
 	&chapter.htmlforms.xml;
 
+<chapter id="equation">
+	<title>equation 公式</title>
+	<programlisting>
+	<![CDATA[
+<equation>
+  <title>Fermat's Last Theorem</title>
+  <alt>x^n + y^n ≠ z^n ∀ n ≠ 2</alt>
+  <mathphrase>
+    x<superscript>n</superscript>+y<superscript>n</superscript>≠z<superscript>n</superscript>
+    ∀ n ≠ 2
+  </mathphrase>
+</equation>
+
+<informalequation>
+  <alt>e^(pi*i) + 1 = 0</alt>
+  <mediaobject>
+    <imageobject condition="print"><imagedata fileref="figs/print/db5d_refeqn02.pdf"/></imageobject>
+    <imageobject condition="web"><imagedata fileref="figs/web/db5d_refeqn02.png"/></imageobject>
+  </mediaobject>
+</informalequation>	
+	]]>
+	</programlisting>
+
+	<equation>
+		<title>Fermat's Last Theorem</title>
+		<alt>x^n + y^n ≠ z^n ∀ n ≠ 2</alt>
+		<mathphrase>
+			x
+			<superscript>n</superscript>
+			+y
+			<superscript>n</superscript>
+			≠z
+			<superscript>n</superscript>
+			∀ n ≠ 2
+		</mathphrase>
+	</equation>
+
+	<informalequation>
+		<alt>e^(pi*i) + 1 = 0</alt>
+		<mediaobject>
+			<imageobject condition="print">
+				<imagedata fileref="figs/print/db5d_refeqn02.pdf" />
+			</imageobject>
+			<imageobject condition="web">
+				<imagedata fileref="figs/web/db5d_refeqn02.png" />
+			</imageobject>
+		</mediaobject>
+	</informalequation>
+	<section>
+		<title>引用latex公式</title>
+		<programlisting>
+		<![CDATA[
+<para>
+A presentation system using TeX as a back end might allow you to insert inline markup, such as <markup role="tex">$x^2$</markup>, using TeX syntax directly.
+</para>		
+		]]>
+		</programlisting>
+		<para>
+			A presentation system using TeX as a back end might allow you to insert inline markup, such as
+			<markup role="tex">$x^2$</markup>
+			, using TeX syntax directly.
+		</para>
+	</section>
+
+</chapter>

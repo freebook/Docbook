@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<chapter id="paragraphs">
+<section id="paragraphs">
 	<title>Paragraphs 段落</title>
 	<section id="para">
-		<title>para</title>
+		<title>para 段落</title>
 		<programlisting>
 		<![CDATA[
 <para>helloworld</para>
@@ -10,7 +10,7 @@
 		</programlisting>
 	</section>
 	<section id="simpara">
-		<title>simpara</title>
+		<title>simpara 简单段落</title>
 		<programlisting>
 		<![CDATA[
 <simpara>
@@ -23,7 +23,7 @@
 		</simpara>
 	</section>
 	<section id="formalpara">
-		<title>formalpara</title>
+		<title>formalpara 带标题的段落</title>
 		<programlisting>
 		<![CDATA[
 <formalpara>
@@ -217,6 +217,4 @@ phenomenon occurs in A. Nonymous's book
 			.
 		</para>
 	</section>
-
-
-</chapter>
+</section>

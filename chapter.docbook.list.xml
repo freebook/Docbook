@@ -8,7 +8,7 @@
 	</info>
 	<para>calloutlist, glosslist, itemizedlist, listitem, orderedlist, segmentedlist, simplelist, variablelist</para>
 	<section id="itemizedlist">
-		<title>itemizedlist</title>
+		<title>itemizedlist 符号列表</title>
 		<para>itemizedlist</para>
 		<programlisting>
 		<![CDATA[
@@ -70,8 +70,8 @@ Item 3
 		</itemizedlist>
 	</section>
 	<section id="orderedlist">
-		<title>orderedlist</title>
-		<para>orderedlist</para>
+		<title>orderedlist 编号列表</title>
+		<para>普通列表 orderedlist</para>
 		<programlisting>
 		<![CDATA[
 <orderedlist>
@@ -80,6 +80,17 @@ Item 3
 	<listitem><para>列表内容 3</para></listitem>
 </orderedlist>
 			]]>
+		</programlisting>
+		<para>有序列表可以指定序号形式（arabic，upperalpha，loweralpha，upperroman，lowerroman）</para>
+		<programlisting>
+		<![CDATA[
+<orderedlist numeration="lowerroman">
+	<listitem><para>One</para></listitem>
+	<listitem><para>Two</para></listitem>
+	<listitem><para>Three</para></listitem>
+	<listitem><para>Four</para></listitem>
+</orderedlist>		
+		]]>
 		</programlisting>
 		<orderedlist>
 			<listitem>
@@ -94,7 +105,8 @@ Item 3
 		</orderedlist>
 	</section>
 	<section id="simplelist">
-		<title>simplelist</title>
+		<title>simplelist 简单列表</title>
+		<para>简单列表只是分行显示</para>
 		<example>
 			<title>SimpleList</title>
 			<programlisting>
@@ -189,7 +201,8 @@ three columns:
 		</example>
 	</section>
 	<section id="variablelist">
-		<title>variablelist</title>
+		<title>variablelist 定义列表</title>
+		<para>定义列表主要用于名词解释</para>
 		<programlisting>
 		<![CDATA[
 <variablelist>

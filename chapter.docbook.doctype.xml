@@ -38,7 +38,7 @@
 		]]>
 		</programlisting>
 	</section>
-	
+
 	<section id="docbookx.dtd">
 		<title>DTD 引用</title>
 		<section>
@@ -215,6 +215,20 @@
 <chapter>
 	<title>Chapter 1</title>
 </chapter>
+		]]>
+		</programlisting>
+	</section>
+	<section>
+		<title>xi:include</title>
+		<programlisting>
+		<![CDATA[
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude">
+<title>Book</title>
+<xi:include href="ch1.xml"/>
+<xi:include href="ch2.xml"/>
+<xi:include href="ch3.xml"/>
+<xi:include href="ch4.xml"/>
+</book>		
 		]]>
 		</programlisting>
 	</section>

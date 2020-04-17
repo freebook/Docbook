@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- $Id: chapter.docbook.xml 611 2013-06-05 07:27:35Z netkiller $ -->
-<part id="index"><?dbhtml dir="docbook" ?>
+<part id="docbook"><!-- <?dbhtml dir="docbook" ?> -->
 	<title>Docbook</title>
 	<para>
 		<ulink url="http://www.docbook.org/">http://www.docbook.org/</ulink>

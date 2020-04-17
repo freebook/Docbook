@@ -278,23 +278,7 @@
 			]]>
 			</screen>
 		</section>
-		<section id="info.dedication">
-			<title>dedication</title>
-			<programlisting>
-			<![CDATA[
-<book>
-	<info>
-		<dedication><title>鸣谢</title>
-			<para></para>
-			<para></para>
-			<para></para>
-			<para></para>
-		</dedication>
-	</info>
-</book>
-			]]>
-			</programlisting>
-		</section>
+		
 		<section id="info.abstract">
 			<title>abstract</title>
 			<programlisting>
@@ -442,7 +426,7 @@
 		</section>
 	</section>
 	<section id="toc">
-		<title>toc</title>
+		<title>toc 自定义目录</title>
 		<programlisting>
 	<![CDATA[
 	
@@ -533,8 +517,22 @@ or less the point.</para>
 	]]>
 		</programlisting>
 	</section>
-	<section id="preface">
-		<title>preface 前言</title>
+	<section id="dedication">
+			<title>dedication 感谢</title>
+			<programlisting>
+			<![CDATA[
+<book>
+	<dedication><title>鸣谢</title>
+		<para></para>
+		<para></para>
+		<para></para>
+		<para></para>
+	</dedication>
+</book>
+			]]>
+			</programlisting>
+		</section><section id="preface">
+		<title>preface 序言</title>
 		<programlisting>
 	<![CDATA[
 <preface id="svn.foreword">
@@ -552,5 +550,16 @@ or less the point.</para>
 	]]>
 		</programlisting>
 	</section>
+	<section id="appendix">
+		<title>appendix 附录</title>
+		<programlisting>
+	<![CDATA[
+<appendix>
+    <title>Appendix One</title>
+    <para>Appendix content.</para>
+</appendix>
 
+	]]>
+		</programlisting>
+	</section>
 </chapter>
