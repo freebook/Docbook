@@ -8,6 +8,7 @@
 	<!ENTITY book.info.abstract.xml 		SYSTEM "common/book.info.abstract.xml">
 
 	<!ENTITY chapter.docbook.xml		 	SYSTEM "chapter.docbook.xml">
+	<!ENTITY chapter.docbook.xsl.xml	 	SYSTEM "chapter.docbook.xsl.xml">
 	<!ENTITY chapter.docbook.doctype.xml 	SYSTEM "chapter.docbook.doctype.xml">
 	<!ENTITY chapter.docbook.book.xml	 	SYSTEM "chapter.docbook.book.xml">
 	<!ENTITY chapter.docbook.part.xml	 	SYSTEM "chapter.docbook.part.xml">
@@ -67,7 +68,13 @@
 
 	&book.dedication.xml;
 	&book.preface.xml;
-
+	<chapter id="license">
+		<title>Open Document Licenses</title>
+		<para>Creative Commons Attribution 3.0</para><!-- http://creativecommons.org/about/downloads -->
+		<para>GNU Free Documentation License</para>
+		<para>Open Publication License</para>
+		<para>The FreeBSD Documentation License</para>
+	</chapter>
 	&chapter.docbook.xml;
 	&chapter.tex.xml;
 	&chapter.markdown.xml;
