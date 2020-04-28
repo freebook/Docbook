@@ -3,6 +3,7 @@
 	<title>Calibre</title>
 	<section id="ebook-convert">
 		<title>ebook-convert</title>
+		<para><ulink url="https://manual.calibre-ebook.com/generated/en/ebook-convert.html" /></para>
 		<screen>
 		<![CDATA[
 PATH=$PATH:/Applications/calibre.app/Contents/MacOS
