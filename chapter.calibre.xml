@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chapter id="calibre">
+	<title>Calibre</title>
+	<section id="ebook-convert">
+		<title>ebook-convert</title>
+		<screen>
+		<![CDATA[
+PATH=$PATH:/Applications/calibre.app/Contents/MacOS
+ebook-convert netkiller.epub netkiller.mobi 		
+		]]>
+		</screen>
+	</section>
+
+</chapter>

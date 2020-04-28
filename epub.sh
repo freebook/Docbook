@@ -4,20 +4,23 @@
 export DSSSL=/usr/local/opt/docbook-xsl/docbook-xsl/epub3/chunkfast.xsl
 #export XSLTPROC="xsltproc --stringparam epub.stylesheet docbook.css --stringparam use.id.as.filename 1 ${DSSSL}"
 export XSLTPROC="xsltproc --stringparam epub.stylesheet docbook.css ${DSSSL}"
-export PUBLIC_HTML="~/tmp/epub"
 
+PATH=$PATH:/Applications/calibre.app/Contents/MacOS
 WORKSPACE=~/workspace
-
+EPUB=~/tmp
 
 generator(){
 	#echo $@
 	PROJECT="Netkiller-"$(echo $1|sed "s/\//-/")
-        DOCBOOK=$WORKSPACE/$1
-	EPUB=$PUBLIC_HTML/$2
+    DOCBOOK=$WORKSPACE/$1
+	
 	echo $PROJECT
 	echo $EPUB
 
-	TMPDIR=$(mktemp -d --suffix=.tmp -p /tmp epub.$2.XXXXXX)
+	#TMPDIR=$(mktemp -d --suffix=.tmp -p /tmp epub.$2.XXXXXX)
+	TMPDIR=/tmp/$1
+	rm -rf $TMPDIR
+	mkdir -p $TMPDIR
 	echo $TMPDIR
 	cd $TMPDIR
 	
@@ -27,20 +30,22 @@ generator(){
 #	if [ ! -d ${PUBLIC_HTML}/${epub} ]; then
 #		mkdir ${PUBLIC_HTML}/${epub}
 #	fi
-	cp $WORKSPACE/common/docbook.css OEBPS
+
 	if [ -d $DOCBOOK/images ]; then
-		#cp -r $DOCBOOK/${xml}/images OEBPS
-		rsync -a --exclude=.svn $DOCBOOK/images .
-		rsync -a --exclude=.svn $WORKSPACE/Website/images/* images/
+		cp -r $DOCBOOK/images OEBPS
+		#rsync -a --exclude=.svn $DOCBOOK/images .
+		#rsync -a --exclude=.svn $WORKSPACE/Website/images/* images/
 	fi
-	find OEBPS -type d -iname ".svn" -exec rm -rf {} \; 
+	#find OEBPS -type d -iname ".svn" -exec rm -rf {} \; 
 
 	echo "application/epub+zip" > mimetype
 	zip -0Xq  ${PROJECT}.epub mimetype
 	zip -Xr9D ${PROJECT}.epub *
 
-	cp *.epub ${PUBLIC_HTML}/download/2019/epub/
-	#cp ${PROJECT}.epub ${EPUB}/ibook.epub
+	ebook-convert ${PROJECT}.epub ${EPUB}/${PROJECT}.mobi
+	#ebook-convert ${PROJECT}.epub ${EPUB}/${PROJECT}.pdf
+	
+	cp ${PROJECT}.epub ${EPUB}/
 
 	cd -
 	

@@ -33,6 +33,7 @@
 	<!ENTITY chapter.jekyll.xml			 	SYSTEM "jekyll/chapter.jekyll.xml">
 	<!ENTITY chapter.hugo.xml			 	SYSTEM "hugo/chapter.hugo.xml">
 	<!ENTITY chapter.asciidoctor.xml	 	SYSTEM "chapter.asciidoctor.xml">
+	<!ENTITY chapter.calibre.xml		 	SYSTEM "chapter.calibre.xml">
 
 ]>
 <book xml:base="http://netkiller.github.com/docbook/" xmlns="http://docbook.org/ns/docbook" xml:lang="zh-cn">
@@ -84,5 +85,6 @@
 	&chapter.hugo.xml;
 	&chapter.team.xml;
 	&chapter.asciidoctor.xml;
+	&chapter.calibre.xml;
 
 </book>
