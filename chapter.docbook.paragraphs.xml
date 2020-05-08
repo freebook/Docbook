@@ -46,58 +46,7 @@
 			</para>
 		</formalpara>
 	</section>
-	<section id="bridgehead">
-		<title>bridgehead</title>
-		<programlisting>
-		<![CDATA[
-<bridgehead renderas="sect3">Topic Heading</bridgehead>
-<para>You can use the Bridgehead element to create a heading
-between paragraphs, without creating a new section or
-sub-section.</para>
-		]]>
-		</programlisting>
-		<bridgehead renderas="sect3">Topic Heading</bridgehead>
-		<para>You can use the Bridgehead element to create a heading
-			between paragraphs, without creating a new section or
-			sub-section.
-		</para>
-	</section>
-	<section id="blockquote">
-		<title>blockquote</title>
-		<programlisting>
-		<![CDATA[
- <blockquote>
-    <para>
-      This text should be indented.
-    </para>
-</blockquote>
-		]]>
-		</programlisting>
-		<blockquote>
-			<para> This text should be indented. </para>
-		</blockquote>
-	</section>
-	<section id="sidebar">
-		<title>sidebar</title>
-		<screen>
-		<![CDATA[
-<sidebar>
-	<title>A Sidebar</title>
-	<para>
-	Sidebar content.
-	</para>
-</sidebar>
-		]]>
-		</screen>
 
-		<sidebar>
-			<title>A Sidebar</title>
-			<para>
-				Sidebar content.
-			</para>
-		</sidebar>
-
-	</section>
 	<section id="trademark">
 		<title>TM 商标 </title>
 		<programlisting>
@@ -110,29 +59,10 @@ sub-section.</para>
 			<trademark>Microsoft</trademark>
 		</literallayout>
 	</section>
-	<section id="epigraph">
-		<title>epigraph 题词</title>
-		<programlisting>
-		<![CDATA[
-<epigraph>
-	<attribution>William Safire</attribution>
-	<para>
-		Knowing how things work is the basis for appreciation, and is
-		thus a source of civilized delight.
-	</para>
-</epigraph>
-		]]>
-		</programlisting>
-		<epigraph>
-			<attribution>William Safire</attribution>
-			<para>
-				Knowing how things work is the basis for appreciation, and is
-				thus a source of civilized delight.
-			</para>
-		</epigraph>
-	</section>
+	
 	<section id="font">
-		<title>Font Formatting Codes</title>
+		<title>字体</title>
+		<subtitle>Font Formatting Codes</subtitle>
 		<section id="strong">
 			<title>strong</title>
 			<programlisting>
@@ -218,3 +148,39 @@ phenomenon occurs in A. Nonymous's book
 		</para>
 	</section>
 </section>
+
+	<section id="blockquote">
+		<title>blockquote 内容引用</title>
+		<programlisting>
+		<![CDATA[
+ <blockquote>
+    <para>
+      This text should be indented.
+    </para>
+</blockquote>
+		]]>
+		</programlisting>
+		<blockquote>
+			<para> This text should be indented. </para>
+		</blockquote>
+	</section><section id="epigraph">
+		<title>epigraph 题词</title>
+		<programlisting>
+		<![CDATA[
+<epigraph>
+	<attribution>William Safire</attribution>
+	<para>
+		Knowing how things work is the basis for appreciation, and is
+		thus a source of civilized delight.
+	</para>
+</epigraph>
+		]]>
+		</programlisting>
+		<epigraph>
+			<attribution>William Safire</attribution>
+			<para>
+				Knowing how things work is the basis for appreciation, and is
+				thus a source of civilized delight.
+			</para>
+		</epigraph>
+	</section>

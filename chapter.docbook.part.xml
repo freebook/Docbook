@@ -181,6 +181,40 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 		]]>
 		</programlisting>
 	</section>
+	<section>
+		<title>simplesect</title>
+		<para>simplesect 下面不能再有 section/sect1..3/simplesect</para>
+		<programlisting>
+		<![CDATA[
+<article xmlns='http://docbook.org/ns/docbook'>
+	<title>Example simplesect</title>
+
+	<section>
+		<title>Additional Coding</title>
+
+		<para>Support for the additional features requested will be provided. </para>
+
+		<simplesect>
+			<title>Estimated Time</title>
+
+			<para>2 to 3 weeks.</para>
+
+		</simplesect>
+	</section>
+
+</article>		
+		]]>
+		</programlisting>
+
+		<simplesect>
+			<title>Estimated Time</title>
+
+			<para>2 to 3 weeks.</para>
+
+		</simplesect>
+
+	</section>
+
 	<section id="title">
 		<title>title 标题</title>
 
@@ -239,6 +273,45 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 			</programlisting>
 		</section>
 	</section>
+
+	<section id="bridgehead">
+		<title>bridgehead</title>
+		<programlisting>
+		<![CDATA[
+<bridgehead renderas="sect3">Topic Heading</bridgehead>
+<para>You can use the Bridgehead element to create a heading
+between paragraphs, without creating a new section or
+sub-section.</para>
+		]]>
+		</programlisting>
+		<bridgehead renderas="sect3">Topic Heading</bridgehead>
+		<para>You can use the Bridgehead element to create a heading
+			between paragraphs, without creating a new section or
+			sub-section.
+		</para>
+	</section>
+	<section id="sidebar">
+		<title>sidebar</title>
+		<screen>
+		<![CDATA[
+<sidebar>
+	<title>A Sidebar</title>
+	<para>
+	Sidebar content.
+	</para>
+</sidebar>
+		]]>
+		</screen>
+
+		<sidebar>
+			<title>A Sidebar</title>
+			<para>
+				Sidebar content.
+			</para>
+		</sidebar>
+
+	</section>
+	
 	&chapter.docbook.paragraphs.xml;
 </chapter>
 	&chapter.docbook.list.xml;
@@ -533,9 +606,9 @@ drwxr-sr-x    3 jesse    jesse        4096 Apr  9 00:15 images
 </chapter>
 
 <chapter id="references">
-	<title>Cross references</title>
+	<title>Cross references (参见项)</title>
 	<section id="link">
-		<title>link</title>
+		<title>link 内部链接</title>
 		<programlisting>
 		<![CDATA[
 <link linkend="table">Table</link>
@@ -546,7 +619,7 @@ drwxr-sr-x    3 jesse    jesse        4096 Apr  9 00:15 images
 		</programlisting>
 	</section>
 	<section id="ulink">
-		<title>ulink</title>
+		<title>ulink 外部链接</title>
 		<programlisting>
 		<![CDATA[
 <ulink url="http://netkiller.hikz.com">homepage</ulink>
