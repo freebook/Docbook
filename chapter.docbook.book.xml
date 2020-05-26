@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter id="book">
-	<title>book / article</title>
+	<title>book 书 / article 文章</title>
 	<section id="info">
 		<title>info</title>
 		<subtitle>bookinfo / articleinfo</subtitle>
@@ -18,7 +18,7 @@
 			</programlisting>
 		</section>
 		<section id="address">
-			<title>address</title>
+			<title>address 地址</title>
 			<programlisting>
 			<![CDATA[
 <address>
@@ -36,7 +36,7 @@
 			</programlisting>
 		</section>
 		<section id="reference">
-			<title>reference</title>
+			<title>reference 参考信息</title>
 			<programlisting>
 			<![CDATA[
 <reference>
@@ -50,7 +50,7 @@
 		</section>
 
 		<section id="authorgroup">
-			<title>author</title>
+			<title>author 作者</title>
 			<programlisting>
 			<![CDATA[
 <authorgroup>
@@ -247,7 +247,7 @@
 			</section>
 		</section>
 		<section id="copyright">
-			<title>copyright</title>
+			<title>copyright 版权</title>
 			<screen>
 			<![CDATA[
 	<copyright>
@@ -280,7 +280,7 @@
 		</section>
 		
 		<section id="info.abstract">
-			<title>abstract</title>
+			<title>abstract 摘要</title>
 			<programlisting>
 			<![CDATA[
 <book>
@@ -297,7 +297,7 @@
 			</programlisting>
 		</section>
 		<section id="info.legalnotice">
-			<title>legalnotice</title>
+			<title>legalnotice 法律声明</title>
 			<programlisting>
 			<![CDATA[
 <book>

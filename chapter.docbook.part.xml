@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter id="part-chapter-section">
-	<title>Part / Chapter / Section</title>
+	<title>Part 部分 / Chapter 章 / Section 节</title>
 	<section id="part">
 		<title>part 部</title>
 		<programlisting>
