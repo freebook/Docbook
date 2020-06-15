@@ -181,7 +181,7 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 		]]>
 		</programlisting>
 	</section>
-	<section>
+	<section id="simplesect">
 		<title>simplesect</title>
 		<para>simplesect 下面不能再有 section/sect1..3/simplesect</para>
 		<programlisting>
