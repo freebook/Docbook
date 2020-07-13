@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter id="part-chapter-section">
 	<title>Part 部分 / Chapter 章 / Section 节</title>
+	<section id="title">
+		<title>title 标题</title>
+
+		<programlisting>
+		<![CDATA[
+<part>
+	<title>Part I</title>
+	<chapter>
+		<title>Chapter 1</title>
+		<section>
+			<title>Section 1</title>
+		</section>
+	</chapter>
+</part>
+		]]>
+		</programlisting>
+		<section>
+			<title>subtitle</title>
+			<programlisting>
+			<![CDATA[
+<part>
+	<title>Part I</title>
+	<subtitle>Part I subtitle</subtitle>
+	<chapter>
+		<title>Chapter 1</title>
+		<subtitle>Chapter 1 subtitle</subtitle>
+		<section>
+			<title>Section 1</title>
+			<subtitle>Section 1 subtitle</subtitle>
+		</section>
+	</chapter>
+</part>
+			]]>
+			</programlisting>
+		</section>
+		<section>
+			<title>titleabbrev</title>
+			<programlisting>
+			<![CDATA[
+<part>
+	<title>Part I</title>
+	<subtitle>Part I subtitle</subtitle>
+	<titleabbrev>Part I titleabbrev</titleabbrev>
+	<chapter>
+		<title>Chapter 1</title>
+		<subtitle>Chapter 1 subtitle</subtitle>
+		<titleabbrev>Chapter I titleabbrev</titleabbrev>
+		<section>
+			<title>Section 1</title>
+			<subtitle>Section 1 subtitle</subtitle>
+			<titleabbrev>Section I titleabbrev</titleabbrev>
+		</section>
+	</chapter>
+</part>
+			]]>
+			</programlisting>
+		</section>
+	</section>
 	<section id="part">
 		<title>part 部</title>
 		<programlisting>
@@ -180,11 +238,10 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 </part>
 		]]>
 		</programlisting>
-	</section>
-	<section id="simplesect">
-		<title>simplesect</title>
-		<para>simplesect 下面不能再有 section/sect1..3/simplesect</para>
-		<programlisting>
+		<section id="simplesect">
+			<title>simplesect</title>
+			<para>simplesect 下面不能再有 section/sect1..3/simplesect</para>
+			<programlisting>
 		<![CDATA[
 <article xmlns='http://docbook.org/ns/docbook'>
 	<title>Example simplesect</title>
@@ -204,95 +261,35 @@ See <systemitem role="url">http://www.ora.com/catalog/books/javanut</systemitem>
 
 </article>		
 		]]>
-		</programlisting>
-
-		<simplesect>
-			<title>Estimated Time</title>
-
-			<para>2 to 3 weeks.</para>
-
-		</simplesect>
-
-	</section>
-
-	<section id="title">
-		<title>title 标题</title>
-
-		<programlisting>
-		<![CDATA[
-<part>
-	<title>Part I</title>
-	<chapter>
-		<title>Chapter 1</title>
-		<section>
-			<title>Section 1</title>
-		</section>
-	</chapter>
-</part>
-		]]>
-		</programlisting>
-		<section>
-			<title>subtitle</title>
-			<programlisting>
-			<![CDATA[
-<part>
-	<title>Part I</title>
-	<subtitle>Part I subtitle</subtitle>
-	<chapter>
-		<title>Chapter 1</title>
-		<subtitle>Chapter 1 subtitle</subtitle>
-		<section>
-			<title>Section 1</title>
-			<subtitle>Section 1 subtitle</subtitle>
-		</section>
-	</chapter>
-</part>
-			]]>
 			</programlisting>
-		</section>
-		<section>
-			<title>titleabbrev</title>
-			<programlisting>
-			<![CDATA[
-<part>
-	<title>Part I</title>
-	<subtitle>Part I subtitle</subtitle>
-	<titleabbrev>Part I titleabbrev</titleabbrev>
-	<chapter>
-		<title>Chapter 1</title>
-		<subtitle>Chapter 1 subtitle</subtitle>
-		<titleabbrev>Chapter I titleabbrev</titleabbrev>
-		<section>
-			<title>Section 1</title>
-			<subtitle>Section 1 subtitle</subtitle>
-			<titleabbrev>Section I titleabbrev</titleabbrev>
-		</section>
-	</chapter>
-</part>
-			]]>
-			</programlisting>
-		</section>
-	</section>
 
-	<section id="bridgehead">
-		<title>bridgehead</title>
-		<programlisting>
+			<simplesect>
+				<title>Estimated Time</title>
+
+				<para>2 to 3 weeks.</para>
+
+			</simplesect>
+
+		</section>
+		<section id="bridgehead">
+			<title>bridgehead</title>
+			<programlisting>
 		<![CDATA[
 <bridgehead renderas="sect3">Topic Heading</bridgehead>
 <para>You can use the Bridgehead element to create a heading
 between paragraphs, without creating a new section or
 sub-section.</para>
 		]]>
-		</programlisting>
-		<bridgehead renderas="sect3">Topic Heading</bridgehead>
-		<para>You can use the Bridgehead element to create a heading
-			between paragraphs, without creating a new section or
-			sub-section.
-		</para>
-	</section>
-	<section id="sidebar">
-		<title>sidebar</title>
-		<screen>
+			</programlisting>
+			<bridgehead renderas="sect3">Topic Heading</bridgehead>
+			<para>You can use the Bridgehead element to create a heading
+				between paragraphs, without creating a new section or
+				sub-section.
+			</para>
+		</section>
+		<section id="sidebar">
+			<title>sidebar</title>
+			<screen>
 		<![CDATA[
 <sidebar>
 	<title>A Sidebar</title>
@@ -301,17 +298,18 @@ sub-section.</para>
 	</para>
 </sidebar>
 		]]>
-		</screen>
+			</screen>
 
-		<sidebar>
-			<title>A Sidebar</title>
-			<para>
-				Sidebar content.
-			</para>
-		</sidebar>
+			<sidebar>
+				<title>A Sidebar</title>
+				<para>
+					Sidebar content.
+				</para>
+			</sidebar>
 
+		</section>
 	</section>
-	
+
 	&chapter.docbook.paragraphs.xml;
 </chapter>
 	&chapter.docbook.list.xml;
