@@ -14,11 +14,12 @@
 	<!ENTITY chapter.docbook.part.xml	 	SYSTEM "chapter.docbook.part.xml">
 	<!ENTITY chapter.docbook.list.xml	 	SYSTEM "chapter.docbook.list.xml">
 	<!ENTITY chapter.docbook.paragraphs.xml	SYSTEM "chapter.docbook.paragraphs.xml">
-	<!ENTITY section.docbook.mediaobject.xml	SYSTEM "section.docbook.mediaobject.xml">
 	<!ENTITY chapter.docbook.admonition.xml	SYSTEM "chapter.docbook.admonition.xml">
-	<!ENTITY chapter.docbook-website.xml	SYSTEM "chapter.docbook-website.xml">
-	<!ENTITY chapter.docbook.epub.xml	 	SYSTEM "chapter.docbook.epub.xml">
 	<!ENTITY chapter.docbook.html.xml	 	SYSTEM "chapter.docbook.html.xml">
+	<!ENTITY section.docbook.mediaobject.xml	SYSTEM "section.docbook.mediaobject.xml">
+	<!ENTITY section.docbook.website.xml	SYSTEM "section.docbook.website.xml">
+	<!ENTITY section.docbook.utils.xml	 	SYSTEM "section.docbook.utils.xml">
+
 
 	<!ENTITY chapter.htmlforms.xml		 	SYSTEM "chapter.htmlforms.xml">
 
