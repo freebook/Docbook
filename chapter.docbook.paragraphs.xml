@@ -59,7 +59,7 @@
 			<trademark>Microsoft</trademark>
 		</literallayout>
 	</section>
-	
+
 	<section id="font">
 		<title>字体</title>
 		<subtitle>Font Formatting Codes</subtitle>
@@ -149,9 +149,9 @@ phenomenon occurs in A. Nonymous's book
 	</section>
 </section>
 
-	<section id="blockquote">
-		<title>blockquote 内容引用</title>
-		<programlisting>
+<section id="blockquote">
+	<title>blockquote 内容引用</title>
+	<programlisting>
 		<![CDATA[
  <blockquote>
     <para>
@@ -159,13 +159,15 @@ phenomenon occurs in A. Nonymous's book
     </para>
 </blockquote>
 		]]>
-		</programlisting>
-		<blockquote>
-			<para> This text should be indented. </para>
-		</blockquote>
-	</section><section id="epigraph">
-		<title>epigraph 题词</title>
-		<programlisting>
+	</programlisting>
+	<blockquote>
+		<para> This text should be indented. </para>
+	</blockquote>
+</section>
+
+<section id="epigraph">
+	<title>epigraph 题词</title>
+	<programlisting>
 		<![CDATA[
 <epigraph>
 	<attribution>William Safire</attribution>
@@ -175,12 +177,27 @@ phenomenon occurs in A. Nonymous's book
 	</para>
 </epigraph>
 		]]>
-		</programlisting>
-		<epigraph>
-			<attribution>William Safire</attribution>
-			<para>
-				Knowing how things work is the basis for appreciation, and is
-				thus a source of civilized delight.
-			</para>
-		</epigraph>
-	</section>
+	</programlisting>
+	<programlisting>
+			<![CDATA[
+<epigraph>
+
+<attribution>
+   <ulink url="http://www.margepiercy.com/">Marge Piercy</ulink>
+</attribution>
+
+<para>
+   Life is the first gift, love is the second, and understanding is the third.
+</para>
+
+</epigraph>
+			]]>
+	</programlisting>
+	<epigraph>
+		<attribution>William Safire</attribution>
+		<para>
+			Knowing how things work is the basis for appreciation, and is
+			thus a source of civilized delight.
+		</para>
+	</epigraph>
+</section>

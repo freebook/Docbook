@@ -15,13 +15,11 @@
 	<!ENTITY chapter.docbook.list.xml	 	SYSTEM "chapter.docbook.list.xml">
 	<!ENTITY chapter.docbook.paragraphs.xml	SYSTEM "chapter.docbook.paragraphs.xml">
 	<!ENTITY chapter.docbook.admonition.xml	SYSTEM "chapter.docbook.admonition.xml">
-	<!ENTITY chapter.docbook.html.xml	 	SYSTEM "chapter.docbook.html.xml">
 	<!ENTITY section.docbook.mediaobject.xml	SYSTEM "section.docbook.mediaobject.xml">
 	<!ENTITY section.docbook.website.xml	SYSTEM "section.docbook.website.xml">
 	<!ENTITY section.docbook.utils.xml	 	SYSTEM "section.docbook.utils.xml">
-
-
-	<!ENTITY chapter.htmlforms.xml		 	SYSTEM "chapter.htmlforms.xml">
+	<!ENTITY section.docbook.html.xml	 	SYSTEM "section.docbook.html.xml">
+	<!ENTITY section.docbook.htmlforms.xml	SYSTEM "section.docbook.htmlforms.xml">
 
 	<!ENTITY chapter.markdown.xml		 	SYSTEM "chapter.markdown.xml">
 	<!ENTITY chapter.sphinx.xml 	 		SYSTEM "chapter.sphinx.xml">
