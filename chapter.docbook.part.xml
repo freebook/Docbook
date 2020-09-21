@@ -601,6 +601,35 @@ drwxr-sr-x    3 jesse    jesse        4096 Apr  9 00:15 images
 <link linkend="font"><quote>font</quote></link>
 		]]>
 		</programlisting>
+		<programlisting>
+		<![CDATA[
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<sect1>
+	<title>Examples of <sgmltag>Link</sgmltag></title>
+
+	<para>
+	In this sentence <link linkend='nextsect'>this</link> word is
+	hot and points to the following section.
+	</para>
+	
+	<para>
+	There is also a link to the section called
+	<quote><link linkend='nextsect' endterm="nextsect.title"/></quote>
+	in this sentence.
+	</para>
+
+	<sect2 id='nextsect'>
+		<title id='nextsect.title'>A Subsection</title>
+	
+	<para>
+	This section only exists to be the target of a couple of links.
+	</para>
+	
+	</sect2>
+</sect1>		
+		]]>
+		</programlisting>
 	</section>
 	<section id="ulink">
 		<title>ulink 外部链接</title>
@@ -633,6 +662,41 @@ are ...
 <para>
 See the paragraph on <xref  linkend="ChooseSCSIid"  endterm="SCSIxref"/>.
 </para>
+		]]>
+		</programlisting>
+		<para></para>
+		<programlisting>
+		<![CDATA[
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<book>
+	<title>An Example Book</title>
+<chapter id="ch01">
+	<title>XRef Samples</title>
+	<para>This paragraph demonstrates several features of<sgmltag>XRef</sgmltag>.</para>
+	<itemizedlist>
+		<listitem><para>A straight link generates the cross-reference text: <xref linkend="ch02"/>.</para></listitem>
+		<listitem><para>A link to an element with an <sgmltag class="attribute">XRefLabel</sgmltag>:<xref linkend="ch03"/>.</para></listitem>
+		<listitem><para>A link with an<sgmltag class="attribute">EndTerm</sgmltag>:<xref linkend="ch04" endterm="ch04short"/>.</para></listitem>
+	</itemizedlist>
+</chapter>
+
+<chapter id="ch02">
+  <title>The Second Chapter</title>
+  <para>Some content here</para>
+</chapter>
+
+<chapter id="ch03" xreflabel="Chapter the Third">
+  <title>The Third Chapter</title>
+  <para>Some content here</para>
+</chapter>
+
+<chapter id="ch04">
+  <title>The Fourth Chapter</title>
+  <titleabbrev id="ch04short">Chapter 4</titleabbrev>
+  <para>Some content here</para>
+</chapter>
+</book>		
 		]]>
 		</programlisting>
 	</section>
