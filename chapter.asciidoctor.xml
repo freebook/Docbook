@@ -1,4 +1,12 @@
 <chapter id="asciidoctor">
 	<title>Asciidoctor - A fast text processor &amp; publishing toolchain for converting AsciiDoc to HTML5, DocBook &amp; more.</title>
 	<para>http://asciidoctor.org/</para>
+	<section>
+		<title>安装环境</title>
+		<screen>
+		<![CDATA[
+brew install asciidoctor		
+		]]>
+		</screen>
+	</section>
 </chapter>
