@@ -125,7 +125,7 @@
 		</section>
 	</section>
 	<section id="citetitle">
-		<title>citetitle</title>
+		<title>citetitle — The title of a cited work</title>
 		<programlisting>
 		<![CDATA[
 <!DOCTYPE para PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
@@ -135,6 +135,12 @@ The <emphasis>most</emphasis> important example of this
 phenomenon occurs in A. Nonymous's book
 <citetitle>Power Snacking</citetitle>.
 </para>		
+
+<para>
+For a complete methodology for DTD creation, see
+<citetitle pubwork="book">Developing SGML DTDs: From Text to Model
+to Markup</citetitle> by Eve Maler and Jeanne El Andaloussi.
+</para>
 		]]>
 		</programlisting>
 
@@ -146,6 +152,36 @@ phenomenon occurs in A. Nonymous's book
 			<citetitle>Power Snacking</citetitle>
 			.
 		</para>
+		<para>
+			For a complete methodology for DTD creation, see
+			<citetitle pubwork="book">Developing SGML DTDs: From Text to Model
+				to Markup
+			</citetitle>
+			by Eve Maler and Jeanne El Andaloussi.
+		</para>
+		<para>pubwork 类型</para>
+		<screen>
+		<![CDATA[
+article
+bbs
+book
+cdrom
+chapter
+dvd
+emailmessage
+gopher
+journal
+manuscript
+newsposting
+part
+refentry
+section
+series
+set
+webpage
+wiki		
+		]]>
+		</screen>
 	</section>
 </section>
 
