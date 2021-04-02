@@ -20,6 +20,7 @@
 	<!ENTITY section.docbook.utils.xml	 	SYSTEM "section.docbook.utils.xml">
 	<!ENTITY section.docbook.html.xml	 	SYSTEM "section.docbook.html.xml">
 	<!ENTITY section.docbook.htmlforms.xml	SYSTEM "section.docbook.htmlforms.xml">
+	<!ENTITY section.docbook.computer.xml	SYSTEM "section.docbook.computer.xml">
 
 	<!ENTITY chapter.markdown.xml		 	SYSTEM "chapter.markdown.xml">
 	<!ENTITY chapter.sphinx.xml 	 		SYSTEM "chapter.sphinx.xml">

@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section>
+	<title>计算机专业标签</title>
+	<section>
+		<title>软件名称</title>
+		<programlisting>
+		<![CDATA[
+<para>
+<application>Word Perfect</application> is one of several word
+processors to claim support for <acronym>SGML</acronym>.
+</para>		
+		]]>
+		</programlisting>
+		<para>
+			<application>Word Perfect</application>
+			is one of several word
+			processors to claim support for
+			<acronym>SGML</acronym>
+			.
+		</para>
+	</section>
+	<section>
+		<title>硬件名称</title>
+		<programlisting>
+		<![CDATA[
+<para>
+The <acronym>IRQ</acronym> of the <hardware>SCSI Controller</hardware>
+can be set to 7, 11, or 15.  The factory default setting is 7.
+</para>		
+		]]>
+		</programlisting>
+		<para>
+			The
+			<acronym>IRQ</acronym>
+			of the
+			<hardware>SCSI Controller</hardware>
+			can be set to 7, 11, or 15. The factory default setting is 7.
+		</para>
+	</section>
+
+	<section>
+		<title>数据库</title>
+		<programlisting>
+		<![CDATA[
+<para>
+The <database>ProjectStatus</database> database has been updated.
+Please note that <database class='field'>Year</database> has been
+extended to four digits.
+</para>		
+		]]>
+		</programlisting>
+		<para>
+			The
+			<database>ProjectStatus</database>
+			database has been updated.
+			Please note that
+			<database class='field'>Year</database>
+			has been
+			extended to four digits.
+		</para>
+	</section>
+	<section>
+		<title>程序标签</title>
+		<section>
+			<title>函数</title>
+			<programlisting>
+			<![CDATA[
+<funcprototype>
+  <funcdef>void <function>sort</function></funcdef>
+    <paramdef>int *<parameter>arr</parameter>[]</paramdef>
+    <paramdef>int <parameter>(* comp)</parameter>
+      <funcparams>int *, int *</funcparams></paramdef>
+</funcprototype>			
+			]]>
+			</programlisting>
+			<funcprototype>
+				<funcdef>
+					void
+					<function>sort</function>
+				</funcdef>
+				<paramdef>
+					int *
+					<parameter>arr</parameter>
+					[]
+				</paramdef>
+				<paramdef>
+					int
+					<parameter>(* comp)</parameter>
+					<funcparams>int *, int *</funcparams>
+				</paramdef>
+			</funcprototype>
+		</section>
+
+
+		<section>
+			<title>类名</title>
+			<programlisting>
+		<![CDATA[
+<para>
+	All user-interface components must be descendants of the
+	<classname>Widget</classname>
+	class.
+</para>		
+		]]>
+			</programlisting>
+			<para>
+				All user-interface components must be descendants of the
+				<classname>Widget</classname>
+				class.
+			</para>
+		</section>
+		<section>
+			<title>变量名</title>
+			<programlisting>
+		<![CDATA[
+<para>
+	In Perl,
+	<varname>@ARGV</varname>
+	contains the command line parameters
+	used when the script was run.
+</para>		
+		]]>
+			</programlisting>
+
+			<para>
+				In Perl,
+				<varname>@ARGV</varname>
+				contains the command line parameters
+				used when the script was run.
+			</para>
+		</section>
+		<section>
+			<title>synopsis</title>
+			<programlisting>
+			<![CDATA[
+<synopsis>
+chgrp [-R [-H | -L | -P]] [-f] group file...
+</synopsis>			
+			]]>
+			</programlisting>
+			<synopsis>
+				chgrp [-R [-H | -L | -P]] [-f] group file...
+			</synopsis>
+		</section>
+		<section>
+			<title></title>
+			<programlisting>
+			<![CDATA[
+<para>
+In ACL, <constant>main::PCS</constant> contains the path component
+separator character.
+</para>
+<para>
+The maximum legal length for a path name is 
+<constant class='limit'>PATH_MAX</constant>, defined in
+<filename class='headerfile'>limits.h</filename>.
+</para>
+			]]>
+			</programlisting>
+			<para>
+				In ACL,
+				<constant>main::PCS</constant>
+				contains the path component
+				separator character.
+			</para>
+			<para>
+				The maximum legal length for a path name is
+				<constant class='limit'>PATH_MAX</constant>
+				, defined in
+				<filename class='headerfile'>limits.h</filename>
+				.
+			</para>
+		</section>
+	</section>
+	<section>
+		<title>命令</title>
+		<programlisting>
+		<![CDATA[
+<para>
+In <acronym>UNIX</acronym>,
+<command>ls</command> is used to get a directory listing.
+</para>		
+		]]>
+		</programlisting>
+		<para>
+			In
+			<acronym>UNIX</acronym>
+			,
+			<command>ls</command>
+			is used to get a directory listing.
+		</para>
+		<section>
+			<title>参数</title>
+			<programlisting>
+				<![CDATA[
+<para>
+Using the <parameter class='command'>/w</parameter> parameter on the
+DOS <command>dir</command> command prints a wide directory listing.
+</para>				
+				]]>
+			</programlisting>
+			<para>
+				Using the
+				<parameter class='command'>/w</parameter>
+				parameter on the
+				DOS
+				<command>dir</command>
+				command prints a wide directory listing.
+			</para>
+		</section>
+		<section>
+			<title>环境变量</title>
+			<programlisting>
+			<![CDATA[
+<para>
+In order to translate public identifiers into local system identifiers,
+<application>Jade</application> and <application>SP</application> read the catalog files
+pointed to by <envar>SGML_CATALOG_FILES</envar>.
+</para>			
+			]]>
+			</programlisting>
+			<para>
+				In order to translate public identifiers into local system identifiers,
+				<application>Jade</application>
+				and
+				<application>SP</application>
+				read the catalog files
+				pointed to by
+				<envar>SGML_CATALOG_FILES</envar>
+				.
+			</para>
+		</section>
+		<section>
+			<title>输入提示</title>
+			<programlisting>
+			<![CDATA[
+<para>
+Enter your user name when the system presents the 
+<prompt>login:</prompt> prompt.
+</para>			
+			]]>
+			</programlisting>
+			<para>
+				Enter your user name when the system presents the
+				<prompt>login:</prompt>
+				prompt.
+			</para>
+		</section>
+		<section>
+			<title>用户输入</title>
+			<programlisting>
+			<![CDATA[
+<para>
+At the system prompt, enter <userinput>xyzzy</userinput> to gain
+supervisor access to the system.
+</para>			
+			]]>
+			</programlisting>
+			<para>
+				At the system prompt, enter
+				<userinput>xyzzy</userinput>
+				to gain
+				supervisor access to the system.
+			</para>
+		</section>
+		<section>
+			<title>主机名</title>
+			<programlisting>
+			<![CDATA[
+<para>
+For many years, O'Reilly's primary web server, 
+<ulink url="http://www.oreilly.com/">http://www.oreilly.com/</ulink>,
+was hosted by <application>WN</application> on
+<systemitem class="systemname">helio.oreilly.com</systemitem>.
+</para>			
+			]]>
+			</programlisting>
+			<para>
+				For many years, O'Reilly's primary web server,
+				<ulink url="http://www.oreilly.com/">http://www.oreilly.com/</ulink>
+				,
+				was hosted by
+				<application>WN</application>
+				on
+				<systemitem class="systemname">helio.oreilly.com</systemitem>
+				.
+			</para>
+		</section>
+		<section>
+			<title>文件名</title>
+			<programlisting>
+			<![CDATA[
+<para>
+The symbolic constants for error numbers are defined in
+<filename class='headerfile'>errno.h</filename> in
+<filename class='directory'>/usr/include/sys</filename>.
+</para>			
+			]]>
+			</programlisting>
+			<para>
+				The symbolic constants for error numbers are defined in
+				<filename class='headerfile'>errno.h</filename>
+				in
+				<filename class='directory'>/usr/include/sys</filename>
+				.
+			</para>
+		</section>
+		<section>
+			<title>cmdsynopsis</title>
+			<programlisting>
+			<![CDATA[
+<cmdsynopsis>
+  <command>cd</command>
+  <arg choice='req'><replaceable>directory</replaceable></arg>
+</cmdsynopsis>
+
+<cmdsynopsis>
+  <command>cal</command>
+  <arg>-j</arg>
+  <arg>-y</arg>
+  <arg>month <arg>year</arg></arg>
+</cmdsynopsis>
+
+<cmdsynopsis>
+  <command>chgrp</command>
+  <arg>-R
+    <group>
+      <arg>-H</arg>
+      <arg>-L</arg>
+      <arg>-P</arg>
+    </group>
+  </arg>
+  <arg>-f</arg>
+  <arg choice='plain'><replaceable>group</replaceable></arg>
+  <arg rep='repeat' choice='plain'><replaceable>file</replaceable></arg>
+</cmdsynopsis>
+
+<cmdsynopsis>
+  <command>emacs</command>
+  <arg>-t <replaceable>file</replaceable></arg>
+  <arg>-q</arg>
+  <arg>-u <replaceable>user</replaceable></arg>
+  <arg>+<replaceable>number</replaceable></arg>
+  <arg rep='repeat'>-f <replaceable>function</replaceable></arg>
+  <sbr/>
+  <arg rep='repeat'>-l <replaceable>file</replaceable></arg>
+  <arg rep='repeat' choice='plain'><replaceable>file</replaceable></arg>
+</cmdsynopsis>
+			]]>
+			</programlisting>
+			<cmdsynopsis>
+				<command>cd</command>
+				<arg choice='req'>
+					<replaceable>directory</replaceable>
+				</arg>
+			</cmdsynopsis>
+
+			<cmdsynopsis>
+				<command>cal</command>
+				<arg>-j</arg>
+				<arg>-y</arg>
+				<arg>
+					month
+					<arg>year</arg>
+				</arg>
+			</cmdsynopsis>
+
+			<cmdsynopsis>
+				<command>chgrp</command>
+				<arg>
+					-R
+					<group>
+						<arg>-H</arg>
+						<arg>-L</arg>
+						<arg>-P</arg>
+					</group>
+				</arg>
+				<arg>-f</arg>
+				<arg choice='plain'>
+					<replaceable>group</replaceable>
+				</arg>
+				<arg rep='repeat' choice='plain'>
+					<replaceable>file</replaceable>
+				</arg>
+			</cmdsynopsis>
+
+			<cmdsynopsis>
+				<command>emacs</command>
+				<arg>
+					-t
+					<replaceable>file</replaceable>
+				</arg>
+				<arg>-q</arg>
+				<arg>
+					-u
+					<replaceable>user</replaceable>
+				</arg>
+				<arg>
+					+
+					<replaceable>number</replaceable>
+				</arg>
+				<arg rep='repeat'>
+					-f
+					<replaceable>function</replaceable>
+				</arg>
+				<sbr />
+				<arg rep='repeat'>
+					-l
+					<replaceable>file</replaceable>
+				</arg>
+				<arg rep='repeat' choice='plain'>
+					<replaceable>file</replaceable>
+				</arg>
+			</cmdsynopsis>
+		</section>
+		<section>
+			<title>命令参数可选项</title>
+			<programlisting>
+			<![CDATA[
+<para>
+The <option>-a</option> option on the <acronym>UNIX</acronym>
+<command>ls</command> command or the <option>/r</option> option on the
+<acronym>DOS</acronym> <command>attrib</command>
+command, for example.
+</para>			
+
+<synopsis>
+ls <optional><option>-abcCdfFgilLmnopqrRstux1</option></optional>
+   <optional>names</optional>
+</synopsis>
+			]]>
+			</programlisting>
+			<para>
+				The
+				<option>-a</option>
+				option on the
+				<acronym>UNIX</acronym>
+				<command>ls</command>
+				command or the
+				<option>/r</option>
+				option on the
+				<acronym>DOS</acronym>
+				<command>attrib</command>
+				command, for example.
+			</para>
+			<synopsis>
+				ls
+				<optional>
+					<option>-abcCdfFgilLmnopqrRstux1</option>
+				</optional>
+				<optional>names</optional>
+			</synopsis>
+		</section>
+		<section>
+			<title>终端输出</title>
+			<programlisting>
+			<![CDATA[
+<para>
+The output from the date command,
+<computeroutput>Sun  Nov 16, 1997  21:03:29</computeroutput>,
+uses fixed-width fields so that it can easily be parsed.
+</para>			
+			]]>
+			</programlisting>
+			<para>
+				The output from the date command,
+				<computeroutput>Sun Nov 16, 1997 21:03:29</computeroutput>
+				,
+				uses fixed-width fields so that it can easily be parsed.
+			</para>
+		</section>
+	</section>
+</section>
+
+
+
+

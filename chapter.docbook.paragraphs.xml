@@ -46,6 +46,22 @@
 			</para>
 		</formalpara>
 	</section>
+	<section id="productname">
+		<title>产品名</title>
+		<programlisting>
+		<![CDATA[
+<para>
+<productname class='trade'>Frobozz</productname>: it's not
+just for breakfast anymore.
+</para>		
+		]]>
+		</programlisting>
+		<para>
+			<productname class='trade'>Frobozz</productname>
+			: it's not
+			just for breakfast anymore.
+		</para>
+	</section>
 
 	<section id="trademark">
 		<title>TM 商标 </title>
@@ -183,6 +199,45 @@ wiki
 		]]>
 		</screen>
 	</section>
+	<section id="medialabel">
+		<title>medialabel</title>
+		<programlisting>
+		<![CDATA[
+<para>
+To install <application>The Great Foo</application>, insert the disk
+labelled <medialabel>TGF Setup 1</medialabel> and run 
+<command>setup</command>.
+</para>
+
+<para>
+The weekly incremental backup tape is labelled
+<medialabel>Backup <replaceable>nn</replaceable></medialabel>, where
+<replaceable>nn</replaceable> is the week number.
+</para>		
+		]]>
+		</programlisting>
+		<para>
+			To install
+			<application>The Great Foo</application>
+			, insert the disk
+			labelled
+			<medialabel>TGF Setup 1</medialabel>
+			and run
+			<command>setup</command>
+			.
+		</para>
+
+		<para>
+			The weekly incremental backup tape is labelled
+			<medialabel>
+				Backup
+				<replaceable>nn</replaceable>
+			</medialabel>
+			, where
+			<replaceable>nn</replaceable>
+			is the week number.
+		</para>
+	</section>
 </section>
 
 <section id="blockquote">
@@ -237,3 +292,4 @@ wiki
 		</para>
 	</epigraph>
 </section>
+	&section.docbook.computer.xml;

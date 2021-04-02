@@ -75,6 +75,7 @@ Item 3
 		<programlisting>
 		<![CDATA[
 <orderedlist>
+	<title>普通列表</title>
 	<listitem><para>列表内容 1</para></listitem>
 	<listitem><para>列表内容 2</para></listitem>
 	<listitem><para>列表内容 3</para></listitem>
@@ -93,6 +94,7 @@ Item 3
 		]]>
 		</programlisting>
 		<orderedlist>
+			<title>普通列表</title>
 			<listitem>
 				<para>列表内容 1</para>
 			</listitem>
