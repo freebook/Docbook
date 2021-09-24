@@ -702,6 +702,23 @@ See the paragraph on <xref  linkend="ChooseSCSIid"  endterm="SCSIxref"/>.
 	</section>
 	<section id="footnote">
 		<title>footnote 脚注</title>
+		<programlisting>
+		<![CDATA[
+<article xmlns='http://docbook.org/ns/docbook'>
+<title>Example footnote</title>
+ 
+<para>An annual percentage rate (<abbrev>APR</abbrev>) of 13.9%<footnote>
+5	<para>The prime rate, as published in the <citetitle>Wall Street
+Journal</citetitle> on the first business day of the month,
+plus 7.0%.
+</para>
+</footnote>
+10	will be charged on all balances carried forward.
+</para>
+ 
+</article>		
+		]]>
+		</programlisting>
 		<screen>
 		<![CDATA[
 <para>During the installation of the product<footnote><para>In versions 2.3 and 2.4.</para> </footnote> you may see messages such as these. </para>		
