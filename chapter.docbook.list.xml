@@ -353,6 +353,7 @@ three columns:
 		<programlisting>
 		<![CDATA[
 <procedure>
+	<title>A procedure</title>
 	<step>
 		<para>Do this.</para>
 	</step>
@@ -392,6 +393,7 @@ three columns:
 		]]>
 		</programlisting>
 		<procedure>
+			<title>A procedure</title>
 			<step>
 				<para>Do this.</para>
 			</step>
