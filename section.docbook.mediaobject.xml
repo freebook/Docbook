@@ -185,6 +185,23 @@
 </article>		
 		]]>
 		</programlisting>
+		<programlisting>
+		<![CDATA[
+<!DOCTYPE mediaobject PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+          "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd">
+<mediaobject>
+<audioobject>
+  <objectinfo>
+    <title>Phaser sound effect</title>
+  </objectinfo>
+  <audiodata fileref="phaser.wav"/>
+</audioobject>
+<textobject>
+<phrase>A <trademark>Star Trek</trademark> phaser sound effect</phrase>
+</textobject>
+</mediaobject>		
+		]]>
+		</programlisting>
 	</section>
 	<section id="screenshot">
 		<title>screenshot</title>
