@@ -10,6 +10,20 @@
 $ sudo apt-get install python3-sphinx
 			</screen>
 		</section>
+		<section>
+			<title>Mac 安装</title>
+			<screen>
+			<![CDATA[
+brew info sphinx-doc		
+			]]>
+			</screen>
+			<para></para>
+			<screen>
+			<![CDATA[
+echo 'export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"' >> ~/.zshrc			
+			]]>
+			</screen>
+		</section>
 	</section>
 	<section id="sphinx-quickstart">
 		<title>建立sphinx工程</title>
