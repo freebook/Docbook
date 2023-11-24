@@ -21,6 +21,18 @@
 		<simpara>
 			Just the text, ma'am.
 		</simpara>
+		<programlisting>
+		<![CDATA[
+<article xmlns='http://docbook.org/ns/docbook'>
+<title>Example simpara</title>
+
+<simpara>
+Just the text, ma'am.
+</simpara>
+
+</article>		
+		]]>
+		</programlisting>
 	</section>
 	<section id="formalpara">
 		<title>formalpara 带标题的段落</title>
