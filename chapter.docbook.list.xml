@@ -17,6 +17,13 @@
 	<listitem><para>item 2</para></listitem>
 	<listitem><para>item 3</para></listitem>
 </itemizedlist>
+
+<itemizedlist>
+	<title>Title</title>
+	<listitem>item 1</listitem>
+	<listitem>item 2</listitem>
+	<listitem>item 3</listitem>
+</itemizedlist>
 		]]>
 		</programlisting>
 		<itemizedlist>
@@ -90,7 +97,15 @@ Item 3
 	<listitem><para>Two</para></listitem>
 	<listitem><para>Three</para></listitem>
 	<listitem><para>Four</para></listitem>
-</orderedlist>		
+</orderedlist>
+
+<orderedlist numeration="loweralpha">
+	<title>Title</title>
+	<listitem>One</listitem>
+	<listitem>Two</listitem>
+	<listitem>Three</listitem>
+	<listitem>Four</listitem>
+</orderedlist>
 		]]>
 		</programlisting>
 		<orderedlist>
@@ -115,13 +130,13 @@ Item 3
 			<![CDATA[
 <para>Here is a <tag>SimpleList</tag>, rendered inline:
 <simplelist type='inline'>
-<member>A</member>
-<member>B</member>
-<member>C</member>
-<member>D</member>
-<member>E</member>
-<member>F</member>
-<member>G</member>
+	<member>A</member>
+	<member>B</member>
+	<member>C</member>
+	<member>D</member>
+	<member>E</member>
+	<member>F</member>
+	<member>G</member>
 </simplelist>
 </para>
 			]]>
