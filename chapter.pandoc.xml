@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chapter id="pandoc">
 	<title>pandoc - general markup converter</title>
-	<para>http://johnmacfarlane.net/pandoc/</para>
+	<para>https://pandoc.org</para>
+	<section>
+		<title>安装</title>
+		<para>Linux</para>
+		<screen>
+		<![CDATA[
+dnf install pandoc		
+		]]>
+		</screen>
+		<para>MacOS</para>
+		<screen>
+		<![CDATA[
+brew install pandoc		
+		]]>
+		</screen>
+	</section>
 	<section id="docbook2markdown">
 		<title>Docbook to Markdown</title>
 		<screen>
@@ -34,5 +49,92 @@ rebuild : clean all
 			]]>
 			</screen>
 		</example>
+	</section>
+	<section id="pypandoc">
+		<title>pypandoc</title>
+		<screen>
+		<![CDATA[
+pip install pypandoc
+pip install pypandoc_binary		
+		]]>
+		</screen>
+		<programlisting>
+		<![CDATA[
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+##############################################
+# Home	: https://www.netkiller.cn
+# Author: Neo <netkiller@msn.com>
+# Upgrade: 2025-06-20
+##############################################
+import os.path
+
+try:
+    import uvicorn, logging
+    from typing import Union
+    from fastapi import FastAPI
+    from fastapi.params import Form
+    from fastapi.responses import FileResponse
+    import uuid
+    import pypandoc
+    # import os
+    # os.environ.setdefault('PYPANDOC_PANDOC', '/home/x/whatever/pandoc')
+except ImportError as err:
+    print("Import Error: %s" % (err))
+    exit()
+
+app = FastAPI()
+
+workdir = "/tmp/doc"
+if not os.path.exists(workdir):
+    os.makedirs(workdir)
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+@app.post("/markdown/{appid}/{device}/word")
+async def word(markdown: str = Form()):
+
+    filename = uuid.uuid1()
+    input_file=f"/{workdir}/{filename}.md"
+    output_file = f"/{workdir}/{filename}.docx"
+    with open(input_file,'w') as file:
+        file.write(markdown)
+
+    pypandoc.convert_file(input_file, 'docx', format="markdown", outputfile=output_file)
+    # media_type = "application/msword"
+    media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    return FileResponse(output_file,media_type=media_type, filename=os.path.basename(output_file))
+
+@app.post("/markdown/{appid}/{device}/ppt")
+async def powerpoint(markdown: str = Form()):
+
+    filename = uuid.uuid1()
+    input_file=f"/{workdir}/{filename}.md"
+    output_file = f"/{workdir}/{filename}.pptx"
+    with open(input_file,'w') as file:
+        file.write(markdown)
+
+    pypandoc.convert_file(input_file, 'pptx', format="markdown", outputfile=output_file)
+    # media_type = "application/vnd.ms-powerpoint"
+    media_type = "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+    return FileResponse(output_file,media_type=media_type, filename=os.path.basename(output_file))
+
+# Press the green button in the gutter to run the script.
+if __name__ == '__main__':
+    try:
+        # uvicorn.run('main:app', port=8000, reload=True)
+        uvicorn.run(app="main:app", host="0.0.0.0", port=8080, log_level="info")
+    except KeyboardInterrupt:
+        print("Crtl+C Pressed. Shutting down.")		
+		]]>
+		</programlisting>
+		<para></para>
+		<screen>
+		<![CDATA[
+uvicorn main:app --reload 		
+		]]>
+		</screen>
 	</section>
 </chapter>
