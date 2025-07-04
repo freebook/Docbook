@@ -20,16 +20,20 @@ brew install pandoc
 	<section id="docbook2markdown">
 		<title>Docbook to Markdown</title>
 		<screen>
+		<![CDATA[
 pandoc -f docbook -t markdown -s howto.xml -o example.text
+		]]>
 		</screen>
 	</section>
 	<section id="markdown2html">
 		<title>Markdown to HTML</title>
 		<screen>
-pandoc -f markdown -t html5 -s example.md -o example.html
+		<![CDATA[
+pandoc -f markdown -t html5 -s example.md -o example.html		
+		]]>
 		</screen>
 		<example>
-			<title>Makefile</title>	
+			<title>Makefile</title>
 			<screen>
 			<![CDATA[
 PANDOC = pandoc
@@ -49,6 +53,60 @@ rebuild : clean all
 			]]>
 			</screen>
 		</example>
+	</section>
+	<section id="pandoc.markdown">
+		<title>Markdown 转 Office 文档</title>
+		<section>
+			<title>Office 制作模版</title>
+			<para>从已存在文件制作模版</para>
+			<screen>
+			<![CDATA[
+pandoc -o template.dotx --print-default-data-file reference.docx
+pandoc -o template.potx --print-default-data-file reference.pptx
+			]]>
+			</screen>
+			<para>输出文件</para>
+			<screen>
+			<![CDATA[
+pandoc -f markdown -t docx --reference-doc=template.dotx -o test.docx test.md
+pandoc -f markdown -t pptx --reference-doc=template.potx -o test.pptx test.md
+			]]>
+			</screen>
+		</section>
+		<section>
+			<title>Word 目录</title>
+			<para>目录参数 --toc</para>
+			<para>目录深度 --toc-depth=3</para>
+			<screen>
+			<![CDATA[
+pandoc -f markdown -t docx --reference-doc=template.dotx --toc --toc-depth=3 -o test.docx test.md
+			]]>
+			</screen>
+			<para>设置目录标题</para>
+			<screen>
+			<![CDATA[
+pandoc input.md -o output.docx --toc -M toc-title="目录"			
+			]]>
+			</screen>
+			<para>参考文献</para>
+			<screen>
+			<![CDATA[
+pandoc --citeproc --number-sections \
+--csl gb-t-7714-2015-numeric-bilingual-no-uppercase-no-url-doi.csl \
+--bibliography ref.bib -M reference-section-title="参考文献" \
+-M link-citations=true --reference-doc=ref.docx -s input.md -o main.docx			
+			]]>
+			</screen>
+		</section>
+		<section>
+			<title>PPT 幻灯片大纲深度</title>
+			<screen>
+			<![CDATA[
+pandoc -f markdown -t pptx --reference-doc=template.potx --slide-level=2 -o test.pptx test.md			
+			]]>
+			</screen>
+		</section>
+		
 	</section>
 	<section id="pypandoc">
 		<title>pypandoc</title>
