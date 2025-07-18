@@ -61,6 +61,20 @@ rebuild : clean all
 			<para>从已存在文件制作模版</para>
 			<screen>
 			<![CDATA[
+pandoc -o template.docx --print-default-data-file reference.docx
+pandoc -o template.pptx --print-default-data-file reference.pptx
+			]]>
+			</screen>
+			<para>输出文件</para>
+			<screen>
+			<![CDATA[
+pandoc -f markdown -t docx --reference-doc=template.docx -o test.docx test.md
+pandoc -f markdown -t pptx --reference-doc=template.pptx -o test.pptx test.md
+			]]>
+			</screen>
+			<para>早起 office 使用 dotx 和 potx</para>
+			<screen>
+			<![CDATA[
 pandoc -o template.dotx --print-default-data-file reference.docx
 pandoc -o template.potx --print-default-data-file reference.pptx
 			]]>
@@ -85,7 +99,7 @@ pandoc -f markdown -t docx --reference-doc=template.dotx --toc --toc-depth=3 -o 
 			<para>设置目录标题</para>
 			<screen>
 			<![CDATA[
-pandoc input.md -o output.docx --toc -M toc-title="目录"			
+pandoc input.md -o output.docx --toc -M toc-title="目录" title="SSS"
 			]]>
 			</screen>
 			<para>参考文献</para>
@@ -97,6 +111,42 @@ pandoc --citeproc --number-sections \
 -M link-citations=true --reference-doc=ref.docx -s input.md -o main.docx			
 			]]>
 			</screen>
+			<section>
+				<title>设置目录标题</title>
+				<programlisting>
+				<![CDATA[
+---
+toc-title: "内容目录"
+lang: zh-CN
+---				
+				]]>
+				</programlisting>
+			</section>			
+			<section>
+				<title>标题和作者</title>
+				<para>方案一</para>
+				<screen>
+				<![CDATA[
+neo@netkiller neo % pandoc -f markdown -t docx --reference-doc=../template/template.dotx --toc --toc-depth=3  -M toc-title="目录" -M title="文档标题" -o test.docx test.md				
+				]]>
+				</screen>
+				<para>方案二，向 markdown 文件中添加声明</para>
+				<programlisting>
+				<![CDATA[
+---
+title:  'This is the title: it contains a colon'
+author:
+- Author One
+- Author Two
+keywords: [nothing, nothingness]
+abstract: |
+  This is the abstract.
+
+  It consists of two paragraphs.
+---
+				]]>
+				</programlisting>
+			</section>
 		</section>
 		<section>
 			<title>PPT 幻灯片大纲深度</title>
