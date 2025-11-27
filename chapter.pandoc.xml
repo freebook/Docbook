@@ -158,6 +158,91 @@ pandoc -f markdown -t pptx --reference-doc=template.potx --slide-level=2 -o test
 		</section>
 		
 	</section>
+	<section id="pandoc.Graphviz">
+		<title>Graphviz</title>
+		<screen>
+		<![CDATA[
+		
+		]]>
+		</screen>
+	</section>
+	
+
+	
+	<section id="pandoc.pdf">
+		<title>pdf</title>
+		<screen>
+		<![CDATA[
+dnf install texlive
+		]]>
+		</screen>
+		<para></para>
+		<screen>
+		<![CDATA[
+root@development ~/test# pdflatex --version
+pdfTeX 3.14159265-2.6-1.40.21 (TeX Live 2020)
+kpathsea version 6.3.2
+Copyright 2020 Han The Thanh (pdfTeX) et al.
+There is NO warranty.  Redistribution of this software is
+covered by the terms of both the pdfTeX copyright and
+the Lesser GNU General Public License.
+For more information about these matters, see the file
+named COPYING and the pdfTeX source.
+Primary author of pdfTeX: Han The Thanh (pdfTeX) et al.
+Compiled with libpng 1.6.37; using libpng 1.6.37
+Compiled with zlib 1.2.11; using zlib 1.2.11		
+		]]>
+		</screen>
+		<screen>
+		<![CDATA[
+pandoc test.md -o test.pdf --pdf-engine=xelatex -V CJKmainfont="Microsoft YaHei"
+		]]>
+		</screen>
+		<para>设置页边距</para>
+		<screen>
+		<![CDATA[
+pandoc --pdf-engine=xelatex -V geometry:"top=1.5cm, bottom=1.5cm, left=2cm, right=2cm" -o README.pdf README.md		
+		]]>
+		</screen>
+	</section>
+	<section id="pandoc-mermaid-filter">
+		<title>pandoc-mermaid-filter</title>
+		<screen>
+		<![CDATA[
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
+\. "$HOME/.nvm/nvm.sh"
+
+npm install --global mermaid-filter @mermaid-js/mermaid-cli
+		]]>
+		</screen>
+		<para></para>
+		<screen>
+		<![CDATA[
+[root@netkiller test]# pandoc -t html -F mermaid-filter -o example.html example.md
+		]]>
+		</screen>
+		<para></para>
+		<screen>
+		<![CDATA[
+pandoc input.md -o output.docx --filter mermaid-filter		
+		]]>
+		</screen>
+		<para>自定义安装 chromium</para>
+		<screen>
+		<![CDATA[
+[root@development test]# dnf install chromium
+
+[root@development test]# rpm -ql chromium | grep bin
+/usr/bin/chromium-browser
+
+PUPPETEER_SKIP_DOWNLOAD=true \
+PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium-browser \
+MMDC_ARGS="--no-sandbox" \
+pandoc test.md -F mermaid-filter -o test.html
+		]]>
+		</screen>
+	</section>
+	
 	<section id="pypandoc">
 		<title>pypandoc</title>
 		<screen>
